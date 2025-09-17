@@ -22,7 +22,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GzSz6duFOinc6EsuJVTO-14" value="Rentre les infos" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="GzSz6duFOinc6EsuJVTO-7">
+        <mxCell id="GzSz6duFOinc6EsuJVTO-14" value="Demande les&amp;nbsp;&lt;div&gt;informations&lt;/div&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;" edge="1" parent="1" source="GzSz6duFOinc6EsuJVTO-7">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="170" y="340" as="sourcePoint" />
             <mxPoint x="90" y="340" as="targetPoint" />
