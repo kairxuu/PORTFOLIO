@@ -17,8 +17,9 @@
           <mxGeometry x="200" y="260" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="GzSz6duFOinc6EsuJVTO-8" value="Recoit message" style="html=1;verticalAlign=bottom;endArrow=block;curved=0;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=5;" edge="1" target="GzSz6duFOinc6EsuJVTO-7" parent="1">
-          <mxGeometry relative="1" as="geometry">
+          <mxGeometry x="-0.0026" relative="1" as="geometry">
             <mxPoint x="90" y="265" as="sourcePoint" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="GzSz6duFOinc6EsuJVTO-9" value="return" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;curved=0;rounded=0;exitX=0;exitY=1;exitDx=0;exitDy=-5;" edge="1" source="GzSz6duFOinc6EsuJVTO-7" parent="1">
