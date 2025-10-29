@@ -4,12 +4,36 @@
     {
       "src": "index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "pages/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "CSS/*.css",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/*.js",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
       "dest": "/index.html"
+    },
+    {
+      "src": "/pages/(.*)",
+      "dest": "/pages/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot))",
+      "dest": "/$1"
     }
   ]
 }
