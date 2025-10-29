@@ -32,15 +32,21 @@
       "dest": "/pages/$1"
     },
     {
-      "src": "^/(?!assets|CSS|js|components|pages|_next/)([^/]+?)(?:\\.html)?/?$",
+      "src": "^/([^/]+)\\.html$",
       "dest": "/$1.html"
     },
     {
-      "src": "^/(.*)",
+      "src": "^/([^/]+)/?$",
+      "dest": "/$1.html"
+    },
+    {
+      "src": "^/",
       "dest": "/index.html"
+    },
+    {
+      "src": "^/(.*)",
+      "status": 404,
+      "dest": "/404.html"
     }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
