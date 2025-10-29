@@ -3,21 +3,41 @@
  * Contient les variables, les reset, les animations de base et les utilitaires
  */
 
-/* Variables CSS */
+/* Variables CSS - Thème noir et blanc */
 :root {
-    /* Couleurs */
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --secondary: #1f2937;
-    --accent: #502be7;
-    --text: #1f2937;
-    --text-light: #6b7280;
-    --bg-light: #f9fafb;
-    --bg-dark: #111827;
-    --border: #e5e7eb;
-    --success: #10b981;
-    --error: #ef4444;
-    --warning: #f59e0b;
+    /* Couleurs principales */
+    --primary: #ffffff;         /* Blanc pur */
+    --primary-hover: #e5e5e5;   /* Gris très clair */
+    --primary-light: #f3f4f6;   /* Gris clair */
+    --primary-dark: #d1d5db;    /* Gris moyen */
+    
+    /* Arrière-plans */
+    --bg-dark: #000000;         /* Noir pur */
+    --bg-darker: #0a0a0a;      /* Noir légèrement éclairci */
+    --bg-light: #1f2937;        /* Gris très foncé */
+    --bg-lighter: #374151;      /* Gris foncé */
+    
+    /* Texte */
+    --text: #ffffff;           /* Blanc pur */
+    --text-light: #d1d5db;     /* Gris clair */
+    --text-lighter: #9ca3af;   /* Gris moyen */
+    
+    /* Accents et états */
+    --accent: #9ca3af;         /* Gris moyen */
+    --accent-hover: #d1d5db;   /* Gris clair */
+    --success: #d1fae5;        /* Vert très clair */
+    --error: #fee2e2;          /* Rouge très clair */
+    --warning: #fef3c7;        /* Jaune très clair */
+    --info: #dbeafe;           /* Bleu très clair */
+    
+    /* Bordures et séparateurs */
+    --border: #374151;         /* Gris foncé */
+    --border-light: #4b5563;   /* Gris moyen-foncé */
+    --border-dark: #1f2937;    /* Gris très foncé */
+    
+    /* Dégradés */
+    --gradient-primary: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    --gradient-dark: linear-gradient(135deg, #000000 0%, #1f2937 100%);
     
     /* Espacements */
     --spacing-xs: 0.25rem;
@@ -48,22 +68,53 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--text);
-    background-color: #ffffff;
+    background-color: var(--bg-darker);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
 }
 
 img {
@@ -73,13 +124,14 @@ img {
 }
 
 a {
-    color: var(--primary);
     text-decoration: none;
     transition: var(--transition);
+    color: var(--primary);
 }
 
 a:hover {
     color: var(--primary-hover);
+    text-decoration: underline;
 }
 
 button,
@@ -95,6 +147,7 @@ textarea {
 button,
 input[type="submit"] {
     -webkit-appearance: button;
+    appearance: button;
 }
 
 /* Animations de base */
@@ -161,53 +214,175 @@ input[type="submit"] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.625rem 1.5rem;
-    border-radius: var(--radius-md);
+    padding: 0.75rem 1.5rem;
     font-weight: 500;
     text-align: center;
     white-space: nowrap;
-    transition: var(--transition);
+    border-radius: var(--radius-md);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    border: 1px solid transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .btn-primary {
-    background-color: var(--primary);
-    color: white;
-    box-shadow: var(--shadow);
+    background: var(--gradient-primary);
+    color: var(--bg-darker);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+    background: var(--primary);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
 }
 
 .btn-outline {
-    background-color: transparent;
-    border: 1px solid var(--primary);
+    background: transparent;
+    border: 2px solid var(--primary);
     color: var(--primary);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    z-index: -1;
+    opacity: 0;
 }
 
 .btn-outline:hover {
-    background-color: var(--primary);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    color: var(--bg-darker);
+    border-color: var(--primary);
+}
+
+.btn-outline:hover::before {
+    width: 100%;
+    opacity: 1;
 }
 
 /* Cartes */
 .card {
-    background: white;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    backdrop-filter: blur(10px);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1.5rem;
+    background: transparent;
+}
+
+.card-footer {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Badges */
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.badge-primary {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.badge-secondary {
+    background-color: var(--bg-lighter);
+    color: var(--text);
+}
+
+/* Effets de survol */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.03);
+}
+
+/* Effets de transition */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Effets de flou */
+.backdrop-blur {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Dégradés de texte */
+.text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 /* Grille */

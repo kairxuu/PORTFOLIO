@@ -6,7 +6,8 @@
     <title>Mes Projets - Mon Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/projects.css">
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
     <!-- Header -->
@@ -59,151 +60,19 @@
                         <div class="p-6">
                             <p class="text-gray-300 mb-4">Une plateforme e-commerce complète avec panier, paiement et tableau de bord administrateur.</p>
                             <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                <a onclick='window.open("http://github.com/kairxuu/Technova")' class="text-blue-400 hover:text-blue-300 flex items-center cursor-pointer     ">
                                     <i class="fab fa-github mr-1"></i> Code
                                 </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
+                                <a onclick='window.open("#")' class="text-blue-400 hover:text-blue-300 flex items-center cursor-pointer">
                                     <i class="fas fa-external-link-alt mr-1"></i> Voir en ligne
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Projet 2 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Projet 2" class="w-full h-48 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Réseau Social</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Vue.js</span>
-                                    <span class="bg-green-900 text-green-200 text-xs px-2 py-1 rounded">Firebase</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Un réseau social avec authentification, publications et messagerie en temps réel.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-github mr-1"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Voir en ligne
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet 3 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Projet 3" class="w-full h-48 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Application Météo</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">React</span>
-                                    <span class="bg-yellow-900 text-yellow-200 text-xs px-2 py-1 rounded">API REST</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Application météo en temps réel avec prévisions sur 7 jours et géolocalisation.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-github mr-1"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Voir en ligne
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet 4 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Projet 4" class="w-full h-48 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Jeu en Ligne</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">Phaser.js</span>
-                                    <span class="bg-green-900 text-green-200 text-xs px-2 py-1 rounded">Socket.io</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Jeu multijoueur en temps réel avec classement et chat intégré.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-github mr-1"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Jouer
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet 5 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Projet 5" class="w-full h-48 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Application Mobile</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">React Native</span>
-                                    <span class="bg-green-900 text-green-200 text-xs px-2 py-1 rounded">Firebase</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Application mobile de suivi d'activité physique avec statistiques détaillées.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-github mr-1"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-google-play mr-1"></i> Play Store
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Projet 6 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Projet 6" class="w-full h-48 object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Tableau de Bord</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">React</span>
-                                    <span class="bg-green-900 text-green-200 text-xs px-2 py-1 rounded">D3.js</span>
-                                    <span class="bg-yellow-900 text-yellow-200 text-xs px-2 py-1 rounded">API REST</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Tableau de bord analytique avec visualisation de données en temps réel.</p>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fab fa-github mr-1"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Voir la démo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Pagination -->
-                <div class="mt-16 flex justify-center">
-                    <nav class="flex items-center space-x-2">
+                <div class="mt-16 flex justify-center>">
+                    <nav class="flex absolute items-center space-x-2 bottom-0 mb-4">
                         <button class="px-4 py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition duration-300">
                             <i class="fas fa-chevron-left"></i>
                         </button>

@@ -19,7 +19,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Styles personnalisés -->
-    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/home.css">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/assets/favicon.ico">
@@ -38,7 +39,7 @@
     <!-- Contenu principal -->
     <main class="flex-grow">
         <!-- Section Accueil -->
-        <section id="accueil" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 pt-16 relative overflow-hidden">
+        <section id="accueil" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 pt-16 relative overflow-hidden">
             <!-- Effet de particules en arrière-plan -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="particles absolute inset-0"></div>
@@ -46,215 +47,52 @@
             
             <div class="text-center px-4 relative z-10 animate-fadeIn">
                 <div class="inline-block mb-6 animate-bounce-slow">
-                    <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-blue-900/30 border-2 border-blue-500/50 flex items-center justify-center mx-auto">
+                    <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center mx-auto backdrop-blur-sm">
                         <span class="text-4xl md:text-5xl">👨‍💻</span>
                     </div>
                 </div>
                 
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-400">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 text-white">
                     Alex
                 </h1>
                 
                 <div class="relative inline-block">
-                    <h2 class="text-2xl md:text-3xl text-blue-400 mb-8 inline-block relative">
+                    <h2 class="text-2xl md:text-3xl text-white mb-8 inline-block relative">
                         <span class="relative z-10">Développeur Web Junior</span>
                         <span class="absolute -bottom-1 left-0 w-full h-1 bg-blue-500/30 rounded-full"></span>
                     </h2>
                 </div>
                 
                 <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Je crée des <span class="text-blue-400 font-medium">expériences web modernes</span> et <span class="text-blue-400 font-medium">réactives</span> avec les dernières technologies.
+                    Je crée des <span class="text-white font-medium border-b-2 border-white/30 pb-1">expériences web modernes</span> et <span class="text-white font-medium border-b-2 border-white/30 pb-1">réactives</span> avec les dernières technologies.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#projets" 
+                    <a href="/pages/projets.html" 
                        class="btn-primary group relative overflow-hidden px-8 py-4 font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
                         <span class="relative z-10">Voir mes projets</span>
-                        <span class="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></span>
-                        <span class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute inset-0 bg-white/90 opacity-90 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                     
-                    <a href="/pages/contact.html" 
-                       class="btn-outline group relative overflow-hidden px-8 py-4 font-medium rounded-lg border-2 border-blue-400 text-blue-400 hover:text-white hover:border-transparent transition-all duration-300">
-                        <span class="relative z-10 flex items-center justify-center">
+                    <a href="#contact" 
+                       class="btn-outline group relative overflow-hidden px-8 py-4 font-medium rounded-lg border-2 border-white/50 text-white hover:text-gray-900 hover:border-transparent transition-all duration-300 inline-flex items-center">
+                        <span class="relative z-10 flex items-center">
                             Me contacter
                             <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
                         </span>
-                        <span class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                        <span class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                 </div>
                 
                 <div class="mt-16 animate-bounce">
-                    <a href="#projets" class="text-gray-400 hover:text-white transition-colors duration-300">
+                    <a href="#competences" class="text-gray-400 hover:text-white transition-colors duration-300">
                         <span class="block text-sm mb-2">Découvrir</span>
                         <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                         </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section Projets -->
-        <section id="projets" class="py-20 bg-gray-800 relative overflow-hidden">
-            <!-- Effet de fond décoratif -->
-            <div class="absolute inset-0 opacity-5">
-                <div class="absolute inset-0 bg-grid-white/[0.05] [mask-image:linear-gradient(0deg,white,transparent)]"></div>
-            </div>
-            
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div class="text-center mb-16">
-                    <span class="inline-block text-blue-400 text-sm font-semibold mb-2">PORTFOLIO</span>
-                    <h2 class="text-4xl font-bold mb-4">Mes Projets Récents</h2>
-                    <div class="w-20 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                
-                <!-- Filtres -->
-                <div class="flex flex-wrap justify-center gap-3 mb-12">
-                    <button class="filter-btn active" data-filter="all">Tous</button>
-                    <button class="filter-btn" data-filter="web">Web</button>
-                    <button class="filter-btn" data-filter="mobile">Mobile</button>
-                    <button class="filter-btn" data-filter="design">Design</button>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Carte de projet 1 -->
-                    <div class="project-card group" data-category="web">
-                        <div class="project-image-container rounded-t-lg overflow-hidden">
-                            <img src="https://via.placeholder.com/600x400/1e3a8a/ffffff?text=Projet+Web" 
-                                 alt="Projet Web" 
-                                 class="project-image w-full h-48 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="project-overlay">
-                                <a href="#" class="inline-flex items-center px-4 py-2 bg-white/90 text-gray-900 rounded-full font-medium hover:bg-white transition-colors">
-                                    Voir le projet
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bg-gray-700/80 backdrop-blur-sm p-6 rounded-b-lg border-t-0 transition-all duration-300 group-hover:bg-gray-700">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl font-semibold text-white">Site E-commerce</h3>
-                                <div class="flex space-x-2">
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-                                Plateforme e-commerce complète avec panier, paiement en ligne et tableau de bord administrateur.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-badge">React</span>
-                                <span class="skill-badge">Node.js</span>
-                                <span class="skill-badge">MongoDB</span>
-                            </div>
-                            <div class="flex space-x-3">
-                                <a href="#" class="text-blue-400 hover:text-blue-300">
-                                    <i class="fab fa-github"></i> Code
-                                </a>
-                                <a href="#" class="text-blue-400 hover:text-blue-300">
-                                    <i class="fas fa-external-link-alt"></i> Voir
-                                </a>
-                            </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte de projet 2 -->
-                    <div class="project-card group" data-category="mobile">
-                        <div class="project-image-container rounded-t-lg overflow-hidden">
-                            <img src="https://via.placeholder.com/600x400/1e3a8a/ffffff?text=App+Mobile" 
-                                 alt="Application Mobile" 
-                                 class="project-image w-full h-48 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="project-overlay">
-                                <a href="#" class="inline-flex items-center px-4 py-2 bg-white/90 text-gray-900 rounded-full font-medium hover:bg-white transition-colors">
-                                    Voir le projet
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bg-gray-700/80 backdrop-blur-sm p-6 rounded-b-lg border-t-0 transition-all duration-300 group-hover:bg-gray-700">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl font-semibold text-white">App Mobile</h3>
-                                <div class="flex space-x-2">
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fab fa-google-play"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-                                Application mobile hybride développée avec React Native pour iOS et Android avec synchronisation en temps réel.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-badge">React Native</span>
-                                <span class="skill-badge">Firebase</span>
-                                <span class="skill-badge">Redux</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Carte de projet 3 -->
-                    <div class="project-card group" data-category="design">
-                        <div class="project-image-container rounded-t-lg overflow-hidden">
-                            <img src="https://via.placeholder.com/600x400/1e3a8a/ffffff?text=Design+UI/UX" 
-                                 alt="Design UI/UX" 
-                                 class="project-image w-full h-48 md:h-56 object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="project-overlay">
-                                <a href="#" class="inline-flex items-center px-4 py-2 bg-white/90 text-gray-900 rounded-full font-medium hover:bg-white transition-colors">
-                                    Voir le projet
-                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="bg-gray-700/80 backdrop-blur-sm p-6 rounded-b-lg border-t-0 transition-all duration-300 group-hover:bg-gray-700">
-                            <div class="flex justify-between items-start mb-3">
-                                <h3 class="text-xl font-semibold text-white">Design UI/UX</h3>
-                                <div class="flex space-x-2">
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fab fa-dribbble"></i>
-                                    </a>
-                                    <a href="#" class="text-gray-400 hover:text-blue-400 transition-colors">
-                                        <i class="fab fa-figma"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="text-gray-300 mb-4 text-sm leading-relaxed">
-                                Conception d'interface utilisateur moderne et expérience utilisateur optimisée pour une application web.
-                            </p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="skill-badge">Figma</span>
-                                <span class="skill-badge">Adobe XD</span>
-                                <span class="skill-badge">UI/UX</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-16">
-                    <a href="/pages/projets.html" 
-                       class="btn-outline group relative overflow-hidden px-8 py-3 font-medium rounded-lg border-2 border-blue-400 text-blue-400 hover:text-white hover:border-transparent transition-all duration-300 inline-flex items-center">
-                        <span class="relative z-10 flex items-center">
-                            Voir tous les projets
-                            <svg class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </span>
-                        <span class="absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                     </a>
                 </div>
             </div>
