@@ -7,97 +7,97 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <style>
-        .sidebar {
-            transition: all 0.3s ease;
-        }
-        .sidebar.collapsed {
-            width: 70px;
-        }
-        .sidebar.collapsed .nav-text {
-            display: none;
-        }
-        .sidebar.collapsed .logo-text,
-        .sidebar.collapsed .toggle-btn i:first-child {
-            display: none;
-        }
-        .sidebar.collapsed .toggle-btn i:last-child {
-            display: block;
-        }
-        .main-content {
-            margin-left: 250px;
-            transition: all 0.3s ease;
-        }
-        .main-content.expand {
-            margin-left: 70px;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                left: -250px;
-            }
-            .sidebar.active {
-                left: 0;
-                width: 250px;
-            }
-            .main-content {
-                margin-left: 0;
-                width: 100%;
-            }
-            .main-content.expand {
-                margin-left: 0;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        dark: '#1F2937',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
             }
         }
-    </style>
+    </script>
+    
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
     <!-- Sidebar -->
-    <div class="sidebar fixed h-full bg-gray-800 text-white w-64 overflow-y-auto">
-        <div class="p-4 flex items-center justify-between border-b border-gray-700">
+    <div class="sidebar w-64 bg-white border-r border-gray-200">
+        <div class="p-6 flex items-center justify-between">
             <div class="flex items-center">
-                <i class="ri-dashboard-line text-2xl text-blue-400"></i>
-                <span class="logo-text ml-3 text-xl font-semibold">Admin Panel</span>
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <i class="ri-palette-line text-white text-lg"></i>
+                </div>
+                <span class="logo-text ml-3 text-xl font-bold text-dark">Portfolio</span>
             </div>
-            <button class="toggle-btn text-gray-400 hover:text-white focus:outline-none">
-                <i class="ri-arrow-left-s-line"></i>
-                <i class="ri-arrow-right-s-line hidden"></i>
+            <button class="toggle-btn p-2 rounded-lg hover:bg-gray-100 text-gray-500">
+                <i class="ri-arrow-left-s-line text-xl"></i>
+                <i class="ri-arrow-right-s-line text-xl hidden"></i>
             </button>
         </div>
         
-        <nav class="mt-6">
-            <div>
-                <p class="px-6 py-2 text-xs uppercase text-gray-400 font-semibold">Menu</p>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="dashboard">
-                    <i class="ri-dashboard-line"></i>
-                    <span class="nav-text ml-3">Tableau de bord</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="projects">
-                    <i class="ri-briefcase-line"></i>
-                    <span class="nav-text ml-3">Projets</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="skills">
-                    <i class="ri-star-line"></i>
-                    <span class="nav-text ml-3">Compétences</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="messages">
-                    <i class="ri-mail-line"></i>
-                    <span class="nav-text ml-3">Messages</span>
-                    <span class="ml-auto bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">3</span>
-                </a>
+        <div class="px-4 pt-2 pb-6">
+            <div class="relative">
+                <input type="text" placeholder="Rechercher..." class="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent">
+                <i class="ri-search-line absolute left-3 top-2.5 text-gray-400"></i>
             </div>
+        </div>
+        
+        <nav class="px-2 space-y-1">
+            <p class="px-4 py-2 text-xs font-medium text-gray-500 uppercase tracking-wider">Menu Principal</p>
             
-            <div class="mt-6">
-                <p class="px-6 py-2 text-xs uppercase text-gray-400 font-semibold">Paramètres</p>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="profile">
-                    <i class="ri-user-line"></i>
-                    <span class="nav-text ml-3">Profil</span>
-                </a>
-                <a href="#" class="flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-white transition-colors" data-section="settings">
-                    <i class="ri-settings-3-line"></i>
-                    <span class="nav-text ml-3">Paramètres</span>
-                </a>
-                <button id="logout-btn" class="w-full text-left flex items-center px-6 py-3 text-gray-300 hover:bg-gray-700 hover:text-red-400 transition-colors">
-                    <i class="ri-logout-box-line"></i>
+            <a href="#" class="nav-item active" data-section="dashboard">
+                <i class="ri-dashboard-line"></i>
+                <span class="nav-text ml-3">Tableau de bord</span>
+                <span class="badge badge-primary ml-auto">Nouveau</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="projects">
+                <i class="ri-briefcase-line"></i>
+                <span class="nav-text ml-3">Projets</span>
+                <span class="badge badge-warning ml-auto">5</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="blog">
+                <i class="ri-article-line"></i>
+                <span class="nav-text ml-3">Articles</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="skills">
+                <i class="ri-star-line"></i>
+                <span class="nav-text ml-3">Compétences</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="messages">
+                <i class="ri-message-2-line"></i>
+                <span class="nav-text ml-3">Messages</span>
+                <span class="badge bg-red-100 text-red-800 ml-auto">3</span>
+            </a>
+            
+            <p class="px-4 py-2 mt-6 text-xs font-medium text-gray-500 uppercase tracking-wider">Paramètres</p>
+            
+            <a href="#" class="nav-item" data-section="profile">
+                <i class="ri-user-line"></i>
+                <span class="nav-text ml-3">Profil</span>
+            </a>
+            
+            <a href="#" class="nav-item" data-section="settings">
+                <i class="ri-settings-3-line"></i>
+                <span class="nav-text ml-3">Paramètres</span>
+            </a>
+            
+            <button id="logout-btn" class="w-full nav-item text-left text-red-500 hover:bg-red-50 hover:text-red-600">
+                <i class="ri-logout-box-r-line"></i>
                     <span class="nav-text ml-3">Déconnexion</span>
                 </button>
             </div>
@@ -105,36 +105,58 @@
     </div>
 
     <!-- Main Content -->
-    <div class="main-content min-h-screen">
+    <div class="main-content">
         <!-- Top Navigation -->
-        <header class="bg-white shadow-sm">
+        <header class="bg-white border-b border-gray-200">
             <div class="flex items-center justify-between p-4">
                 <div class="flex items-center">
-                    <button class="text-gray-600 hover:text-gray-900 focus:outline-none md:hidden" id="mobile-menu-button">
-                        <i class="ri-menu-line text-2xl"></i>
+                    <button class="menu-toggle p-2 rounded-lg hover:bg-gray-100 text-gray-500 lg:hidden">
+                        <i class="ri-menu-line text-xl"></i>
                     </button>
-                    <h1 class="text-xl font-semibold text-gray-800 ml-4">Tableau de bord</h1>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <div class="relative">
-                        <button class="text-gray-600 hover:text-gray-900 focus:outline-none relative">
-                            <i class="ri-notification-3-line text-xl"></i>
-                            <span class="absolute top-0 right-0 h-2 w-2 rounded-full bg-red-500"></span>
-                        </button>
+                    <div class="ml-2 relative">
+                        <h1 class="text-lg font-semibold text-gray-800">Tableau de bord</h1>
+                        <p class="text-xs text-gray-500">Bienvenue sur votre espace d'administration</p>
                     </div>
-                    <div class="relative" id="profile-menu">
-                        <button class="flex items-center space-x-2 focus:outline-none" id="profile-button">
-                            <img src="https://via.placeholder.com/32" alt="Profile" class="w-8 h-8 rounded-full">
-                            <span class="hidden md:inline text-gray-700">Admin</span>
-                            <i class="ri-arrow-down-s-line"></i>
+                </div>
+                
+                <div class="flex items-center space-x-3">
+                    <div class="relative hidden md:block">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="ri-search-line text-gray-400"></i>
+                        </div>
+                        <input type="text" class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-lg focus:ring-primary/50 focus:border-primary block w-64 pl-10 p-2.5" placeholder="Rechercher...">
+                    </div>
+                    
+                    <button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full relative">
+                        <i class="ri-notification-3-line text-xl"></i>
+                        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    
+                    <div class="border-l border-gray-200 h-8 mx-2"></div>
+                    
+                    <div class="relative group">
+                        <button class="flex items-center space-x-2 focus:outline-none">
+                            <div class="w-9 h-9 rounded-full bg-gradient-to-r from-primary to-indigo-500 flex items-center justify-center text-white font-medium">
+                                AU
+                            </div>
+                            <div class="hidden md:block text-left">
+                                <p class="text-sm font-medium text-gray-800">Alex User</p>
+                                <p class="text-xs text-gray-500">Administrateur</p>
+                            </div>
+                            <i class="ri-arrow-down-s-line text-gray-500"></i>
                         </button>
-                        <div class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10" id="dropdown-menu">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mon profil</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Paramètres</a>
-                            <div class="border-t border-gray-200"></div>
-                            <button id="logout-btn-top" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50">
-                                Déconnexion
-                            </button>
+                        
+                        <div class="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 py-1 z-50 hidden group-hover:block">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                                <i class="ri-user-line mr-2"></i> Mon profil
+                            </a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
+                                <i class="ri-settings-3-line mr-2"></i> Paramètres
+                            </a>
+                            <div class="border-t border-gray-100 my-1"></div>
+                            <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50">
+                                <i class="ri-logout-box-r-line mr-2"></i> Déconnexion
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -142,205 +164,660 @@
         </header>
 
         <!-- Page Content -->
-        <main class="p-4 md:p-6">
-            <!-- Stats Cards -->
+        <main class="p-4 md:p-6 bg-gray-50 min-h-[calc(100vh-72px)]">
+            <!-- Welcome Banner -->
+            <div class="bg-gradient-to-r from-primary to-indigo-600 rounded-xl shadow-md p-6 mb-8 text-white">
+                <div class="flex flex-col md:flex-row md:items-center justify-between">
+                    <div class="mb-4 md:mb-0">
+                        <h2 class="text-2xl font-bold mb-2">Bonjour, Alex 👋</h2>
+                        <p class="opacity-90 max-w-2xl">Voici un aperçu de votre activité et de vos performances ce mois-ci.</p>
+                    </div>
+                    <button class="bg-white/20 hover:bg-white/30 backdrop-blur-sm px-6 py-2.5 rounded-lg font-medium transition-all">
+                        Voir le rapport complet
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-blue-100 text-blue-600">
-                            <i class="ri-eye-line text-xl"></i>
+                <!-- Visiteurs -->
+                <div class="stat-card group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 mb-1">Visiteurs</p>
+                            <h3 class="text-2xl font-bold text-gray-800">8,549</h3>
+                            <div class="flex items-center mt-2">
+                                <span class="text-green-500 text-sm font-medium flex items-center">
+                                    <i class="ri-arrow-up-line mr-1"></i> 12.5%
+                                </span>
+                                <span class="text-gray-500 text-xs ml-2">vs mois dernier</span>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <p class="text-gray-500 text-sm">Vues totales</p>
-                            <h3 class="text-2xl font-bold">12,458</h3>
-                            <p class="text-green-500 text-xs">+12% ce mois-ci</p>
+                        <div class="p-3 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
+                            <i class="ri-line-chart-line text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full w-3/4"></div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-green-100 text-green-600">
-                            <i class="ri-briefcase-line text-xl"></i>
+                <!-- Taux d'engagement -->
+                <div class="stat-card group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 mb-1">Temps moyen</p>
+                            <h3 class="text-2xl font-bold text-gray-800">4m 23s</h3>
+                            <div class="flex items-center mt-2">
+                                <span class="text-green-500 text-sm font-medium flex items-center">
+                                    <i class="ri-arrow-up-line mr-1"></i> 5.2%
+                                </span>
+                                <span class="text-gray-500 text-xs ml-2">vs mois dernier</span>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <p class="text-gray-500 text-sm">Projets</p>
-                            <h3 class="text-2xl font-bold">24</h3>
-                            <p class="text-green-500 text-xs">+2 ce mois-ci</p>
+                        <div class="p-3 rounded-xl bg-purple-50 text-purple-600 group-hover:bg-purple-100 transition-colors">
+                            <i class="ri-time-line text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-purple-400 to-purple-600 rounded-full w-5/6"></div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-yellow-100 text-yellow-600">
-                            <i class="ri-message-2-line text-xl"></i>
+                <!-- Projets -->
+                <div class="stat-card group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 mb-1">Projets</p>
+                            <h3 class="text-2xl font-bold text-gray-800">24</h3>
+                            <div class="flex items-center mt-2">
+                                <span class="text-amber-500 text-sm font-medium flex items-center">
+                                    <i class="ri-arrow-up-line mr-1"></i> 3 en cours
+                                </span>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <p class="text-gray-500 text-sm">Messages</p>
-                            <h3 class="text-2xl font-bold">156</h3>
-                            <p class="text-red-500 text-xs">+12 non lus</p>
+                        <div class="p-3 rounded-xl bg-amber-50 text-amber-600 group-hover:bg-amber-100 transition-colors">
+                            <i class="ri-briefcase-line text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="flex items-center justify-between text-xs text-gray-500">
+                            <span>3 en cours</span>
+                            <span>21 terminés</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bg-white rounded-lg shadow p-6">
-                    <div class="flex items-center">
-                        <div class="p-3 rounded-full bg-purple-100 text-purple-600">
-                            <i class="ri-download-cloud-line text-xl"></i>
+                <!-- Messages -->
+                <div class="stat-card group">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-sm font-medium text-gray-500 mb-1">Messages</p>
+                            <h3 class="text-2xl font-bold text-gray-800">12</h3>
+                            <div class="flex items-center mt-2">
+                                <span class="text-red-500 text-sm font-medium flex items-center">
+                                    <i class="ri-arrow-down-line mr-1"></i> 2.4%
+                                </span>
+                                <span class="text-gray-500 text-xs ml-2">non lus</span>
+                            </div>
                         </div>
-                        <div class="ml-4">
-                            <p class="text-gray-500 text-sm">Téléchargements</p>
-                            <h3 class="text-2xl font-bold">1,245</h3>
-                            <p class="text-green-500 text-xs">+245 ce mois-ci</p>
+                        <div class="p-3 rounded-xl bg-green-50 text-green-600 group-hover:bg-green-100 transition-colors">
+                            <i class="ri-message-2-line text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-gray-100">
+                        <div class="flex items-center justify-between text-xs">
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
+                                <span class="text-gray-500">10 lus</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                                <span class="text-gray-500">2 non lus</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- Recent Projects -->
-            <div class="bg-white rounded-lg shadow mb-8">
-                <div class="p-6 border-b border-gray-200">
-                    <div class="flex justify-between items-center">
-                        <h2 class="text-lg font-semibold text-gray-800">Projets récents</h2>
-                        <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">Voir tout</button>
+            
+            <!-- Graphiques et Tableau -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Graphique d'activité -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Activité du site</h3>
+                            <p class="text-sm text-gray-500">Performances des 30 derniers jours</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 text-sm rounded-lg bg-primary/10 text-primary font-medium">Mois</button>
+                            <button class="px-3 py-1 text-sm rounded-lg text-gray-500 hover:bg-gray-100">Semaine</button>
+                            <button class="px-3 py-1 text-sm rounded-lg text-gray-500 hover:bg-gray-100">Jour</button>
+                        </div>
+                    </div>
+                    <div class="h-80">
+                        <canvas id="activityChart"></canvas>
                     </div>
                 </div>
+                
+                <!-- Sources de trafic -->
+                <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Sources de trafic</h3>
+                            <p class="text-sm text-gray-500">Principales sources ce mois-ci</p>
+                        </div>
+                        <button class="text-primary text-sm font-medium">Voir tout</button>
+                    </div>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium">Réseaux sociaux</span>
+                                <span class="text-gray-800 font-medium">45%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-indigo-600 h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-gray-500">+12.5%</span>
+                                <span class="text-xs text-gray-500">2,450 visites</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium">Recherche directe</span>
+                                <span class="text-gray-800 font-medium">32%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-green-500 to-emerald-600 h-2 rounded-full" style="width: 32%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-gray-500">+8.2%</span>
+                                <span class="text-xs text-gray-500">1,784 visites</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium">Moteurs de recherche</span>
+                                <span class="text-gray-800 font-medium">18%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-amber-400 to-amber-500 h-2 rounded-full" style="width: 18%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-gray-500">-2.1%</span>
+                                <span class="text-xs text-gray-500">980 visites</span>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span class="font-medium">Autres sources</span>
+                                <span class="text-gray-800 font-medium">5%</span>
+                            </div>
+                            <div class="w-full bg-gray-100 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-gray-400 to-gray-500 h-2 rounded-full" style="width: 5%"></div>
+                            </div>
+                            <div class="flex justify-between mt-1">
+                                <span class="text-xs text-gray-500">+1.2%</span>
+                                <span class="text-xs text-gray-500">273 visites</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Derniers projets -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="px-6 py-4 border-b border-gray-100">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-800">Derniers projets</h3>
+                            <p class="text-sm text-gray-500">Vos projets les plus récents</p>
+                        </div>
+                        <button class="mt-2 sm:mt-0 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/50">
+                            <i class="ri-add-line mr-2"></i> Nouveau projet
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="overflow-x-auto">
                     <table class="min-w-full divide-y divide-gray-200">
                         <thead class="bg-gray-50">
                             <tr>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Projet</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Technologies</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Client</th>
                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Statut</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                                <th scope="col" class="relative px-6 py-3">
+                                    <span class="sr-only">Actions</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
-                            <tr>
+                            <!-- Projet 1 -->
+                            <tr class="hover:bg-gray-50">
                                 <td class="px-6 py-4 whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-md flex items-center justify-center">
-                                            <i class="ri-global-line text-blue-600"></i>
+                                        <div class="flex-shrink-0 h-10 w-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600">
+                                            <i class="ri-global-line text-xl"></i>
                                         </div>
                                         <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">Site E-commerce</div>
-                                            <div class="text-sm text-gray-500">12/10/2023</div>
+                                            <div class="text-sm font-medium text-gray-900">Site Web Corporate</div>
+                                            <div class="text-sm text-gray-500">www.acme.com</div>
                                         </div>
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex space-x-1">
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">React</span>
-                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Node.js</span>
+                                    <div class="flex items-center">
+                                        <div class="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-medium text-sm">
+                                            AI
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Acme Inc.</div>
+                                            <div class="text-sm text-gray-500">contact@acme.com</div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">En ligne</span>
+                                    <span class="px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Actif
+                                    </span>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <div class="flex space-x-2">
-                                        <button class="text-blue-600 hover:text-blue-900"><i class="ri-edit-line"></i></button>
-                                        <button class="text-red-600 hover:text-red-900"><i class="ri-delete-bin-line"></i></button>
+                                    15 Juin 2023
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <div class="flex items-center justify-end space-x-3">
+                                        <button class="text-blue-600 hover:text-blue-900">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900">
+                                            <i class="ri-pencil-line"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </button>
                                     </div>
                                 </td>
                             </tr>
-                            <!-- Plus de lignes de projets ici -->
+                            
+                            <!-- Projet 2 -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-amber-50 rounded-lg flex items-center justify-center text-amber-600">
+                                            <i class="ri-shopping-cart-2-line text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Boutique en ligne</div>
+                                            <div class="text-sm text-gray-500">boutique.tech.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-medium text-sm">
+                                            TC
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">TechCorp</div>
+                                            <div class="text-sm text-gray-500">contact@techcorp.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        En cours
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    2 Juil. 2023
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <div class="flex items-center justify-end space-x-3">
+                                        <button class="text-blue-600 hover:text-blue-900">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900">
+                                            <i class="ri-pencil-line"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Projet 3 -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10 bg-green-50 rounded-lg flex items-center justify-center text-green-600">
+                                            <i class="ri-smartphone-line text-xl"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">App Mobile</div>
+                                            <div class="text-sm text-gray-500">app.creative.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-medium text-sm">
+                                            CD
+                                        </div>
+                                        <div class="ml-3">
+                                            <div class="text-sm font-medium text-gray-900">Creative Design</div>
+                                            <div class="text-sm text-gray-500">info@creativedesign.com</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2.5 py-0.5 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                        En attente
+                                    </span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    20 Juil. 2023
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <div class="flex items-center justify-end space-x-3">
+                                        <button class="text-blue-600 hover:text-blue-900">
+                                            <i class="ri-eye-line"></i>
+                                        </button>
+                                        <button class="text-gray-600 hover:text-gray-900">
+                                            <i class="ri-pencil-line"></i>
+                                        </button>
+                                        <button class="text-red-600 hover:text-red-900">
+                                            <i class="ri-delete-bin-line"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
+                </div>
+                
+                <div class="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+                    <div class="text-sm text-gray-500">
+                        Affichage de <span class="font-medium">1</span> à <span class="font-medium">3</span> sur <span class="font-medium">12</span> projets
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Précédent
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-white bg-primary hover:bg-primary/90">
+                            1
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            2
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            3
+                        </button>
+                        <button class="px-3 py-1 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">
+                            Suivant
+                        </button>
+                    </div>
                 </div>
             </div>
         </main>
     </div>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
     <script>
         // Configuration Firebase
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
-            authDomain: "votre-projet.firebaseapp.com",
-            projectId: "votre-projet-id",
-            storageBucket: "votre-projet.appspot.com",
-            messagingSenderId: "1234567890",
-            appId: "1:1234567890:web:abcdef123456"
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
         };
 
-        // Initialiser Firebase
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
+        // Initialisation de Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Basculer la sidebar
+        document.querySelector('.toggle-btn').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+            document.querySelector('.main-content').classList.toggle('expand');
+            
+            // Basculer entre les icônes de flèche gauche et droite
+            const icons = this.querySelectorAll('i');
+            icons.forEach(icon => icon.classList.toggle('hidden'));
+            
+            // Sauvegarder l'état dans le localStorage
+            const isCollapsed = document.querySelector('.sidebar').classList.contains('collapsed');
+            localStorage.setItem('sidebarCollapsed', isCollapsed);
+        });
+
+        // Menu mobile
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('-translate-x-full');
+        });
+
+        // Déconnexion
+        document.getElementById('logout-btn').addEventListener('click', function() {
+            firebase.auth().signOut().then(() => {
+                window.location.href = 'login.html';
+            }).catch((error) => {
+                console.error('Erreur de déconnexion:', error);
+            });
+        });
+
+        // Vérifier l'état d'authentification
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                window.location.href = 'login.html';
+            } else {
+                // Mettre à jour les informations de l'utilisateur
+                updateUserInfo(user);
+                // Charger les données du tableau de bord
+                loadDashboardData();
+            }
+        });
+
+        // Gestion de la navigation
+        document.querySelectorAll('[data-section]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.getAttribute('data-section');
+                loadSection(section);
+            });
+        });
+
+        // Initialiser les graphiques
+        function initCharts() {
+            // Graphique d'activité
+            const ctx = document.getElementById('activityChart').getContext('2d');
+            const activityChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['1', '5', '10', '15', '20', '25', '30'],
+                    datasets: [
+                        {
+                            label: 'Visiteurs',
+                            data: [65, 59, 80, 81, 56, 55, 70],
+                            borderColor: '#4F46E5',
+                            backgroundColor: 'rgba(79, 70, 229, 0.05)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Pages vues',
+                            data: [28, 48, 40, 19, 86, 27, 90],
+                            borderColor: '#10B981',
+                            backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                usePointStyle: true,
+                                padding: 20
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'white',
+                            titleColor: '#1F2937',
+                            bodyColor: '#4B5563',
+                            borderColor: '#E5E7EB',
+                            borderWidth: 1,
+                            padding: 12,
+                            boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + (context.datasetIndex === 0 ? ' visiteurs' : ' pages');
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                display: false
+                            },
+                            ticks: {
+                                color: '#6B7280'
+                            }
+                        },
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#F3F4F6'
+                            },
+                            ticks: {
+                                color: '#6B7280',
+                                callback: function(value) {
+                                    return value + (value === 100 ? '' : '');
+                                }
+                            }
+                        }
+                    },
+                    elements: {
+                        point: {
+                            radius: 0,
+                            hoverRadius: 6,
+                            hoverBorderWidth: 2
+                        }
+                    }
+                }
+            });
         }
 
-        // Gestion du menu latéral
-        document.addEventListener('DOMContentLoaded', function() {
-            const toggleBtn = document.querySelector('.toggle-btn');
-            const sidebar = document.querySelector('.sidebar');
-            const mainContent = document.querySelector('.main-content');
-            const mobileMenuBtn = document.getElementById('mobile-menu-button');
-            const profileButton = document.getElementById('profile-button');
-            const dropdownMenu = document.getElementById('dropdown-menu');
-            const logoutBtns = document.querySelectorAll('#logout-btn, #logout-btn-top');
-
-            // Toggle sidebar sur desktop
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', () => {
-                    sidebar.classList.toggle('collapsed');
-                    mainContent.classList.toggle('expand');
-                });
+        // Mettre à jour les informations de l'utilisateur
+        function updateUserInfo(user) {
+            const userInitials = user.displayName 
+                ? user.displayName.split(' ').map(n => n[0]).join('').toUpperCase()
+                : user.email ? user.email[0].toUpperCase() : 'U';
+                
+            const userElement = document.querySelector('.user-initials');
+            if (userElement) {
+                userElement.textContent = userInitials;
             }
-
-            // Toggle sidebar sur mobile
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', () => {
-                    sidebar.classList.toggle('active');
-                });
+            
+            if (user.photoURL) {
+                const avatarImg = document.createElement('img');
+                avatarImg.src = user.photoURL;
+                avatarImg.alt = user.displayName || 'Utilisateur';
+                avatarImg.className = 'w-9 h-9 rounded-full';
+                
+                const avatarPlaceholder = document.querySelector('.user-avatar');
+                if (avatarPlaceholder) {
+                    avatarPlaceholder.parentNode.replaceChild(avatarImg, avatarPlaceholder);
+                }
             }
+        }
 
-            // Gestion du menu déroulant du profil
-            if (profileButton && dropdownMenu) {
-                profileButton.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    dropdownMenu.classList.toggle('hidden');
-                });
-
-                // Fermer le menu déroulant quand on clique ailleurs
-                document.addEventListener('click', (e) => {
-                    if (!profileButton.contains(e.target)) {
-                        dropdownMenu.classList.add('hidden');
-                    }
-                });
-            }
-
-            // Gestion de la déconnexion
-            logoutBtns.forEach(btn => {
-                btn.addEventListener('click', async () => {
-                    try {
-                        await firebase.auth().signOut();
-                        window.location.href = '/admin/login.html';
-                    } catch (error) {
-                        console.error('Erreur lors de la déconnexion:', error);
-                    }
-                });
+        // Charger les données du tableau de bord
+        function loadDashboardData() {
+            // Ici, vous pourriez charger des données depuis Firestore
+            // Par exemple :
+            /*
+            db.collection('analytics').doc('stats').get().then((doc) => {
+                if (doc.exists) {
+                    const data = doc.data();
+                    // Mettre à jour l'interface utilisateur avec les données
+                }
+            }).catch((error) => {
+                console.error("Erreur lors du chargement des données:", error);
             });
+            */
+            
+            // Pour l'instant, on initialise juste les graphiques
+            initCharts();
+        }
 
-            // Vérifier l'authentification
-            firebase.auth().onAuthStateChanged((user) => {
-                if (!user) {
-                    window.location.href = '/admin/login.html';
-                } else {
-                    // Mettre à jour les informations du profil
-                    const profileName = document.querySelectorAll('.profile-name');
-                    const profileEmail = document.querySelectorAll('.profile-email');
-                    const profileImage = document.querySelector('.profile-image');
-                    
-                    if (user.displayName && profileName) {
-                        profileName.forEach(el => el.textContent = user.displayName);
-                    }
-                    
-                    if (user.email && profileEmail) {
-                        profileEmail.forEach(el => el.textContent = user.email);
-                    }
-                    
+        // Charger une section spécifique
+        function loadSection(section) {
+            // Mettre à jour l'état actif de la navigation
+            document.querySelectorAll('[data-section]').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === section) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Ici, vous pourriez charger le contenu de la section via AJAX
+            // Pour l'instant, on se contente de mettre à jour le titre
+            const titleMap = {
+                'dashboard': 'Tableau de bord',
+                'projects': 'Projets',
+                'blog': 'Articles',
+                'skills': 'Compétences',
+                'messages': 'Messages',
+                'profile': 'Profil',
+                'settings': 'Paramètres'
+            };
+            
+            const mainTitle = document.querySelector('.main-content h1');
+            if (mainTitle && titleMap[section]) {
+                mainTitle.textContent = titleMap[section];
+            }
+        }
+
+        // Restaurer l'état de la sidebar
+        document.addEventListener('DOMContentLoaded', function() {
+            const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+            if (isCollapsed) {
+                document.querySelector('.sidebar').classList.add('collapsed');
+                document.querySelector('.main-content').classList.add('expand');
+                const icons = document.querySelector('.toggle-btn').querySelectorAll('i');
+                icons[0].classList.add('hidden');
+                icons[1].classList.remove('hidden');
+            }
+            
+            // Initialiser les tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
                     if (user.photoURL && profileImage) {
                         profileImage.src = user.photoURL;
                     }
