@@ -196,10 +196,30 @@
 
     <!-- Scripts -->
     <script>
+        // Fonction pour initialiser le menu mobile
+        function initMobileMenu() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('animate-fadeInDown');
+                });
+                
+                // Fermer le menu au clic sur un lien
+                document.querySelectorAll('#mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        }
+
         // Fonction pour charger les composants
         function loadComponents() {
             // Charger le header
-            fetch('/components/header.html')
+            fetch('./components/header.html')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Erreur de chargement du header');
@@ -207,27 +227,19 @@
                     return response.text();
                 })
                 .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                    
-                    // Gestion du menu mobile
-                    const mobileMenuButton = document.getElementById('mobile-menu-button');
-                    if (mobileMenuButton) {
-                        // Supprimer les anciens écouteurs pour éviter les doublons
-                        const newButton = mobileMenuButton.cloneNode(true);
-                        mobileMenuButton.parentNode.replaceChild(newButton, mobileMenuButton);
-                        
-                        // Ajouter le nouvel écouteur
-                        newButton.addEventListener('click', function() {
-                            const menu = document.getElementById('mobile-menu');
-                            if (menu) {
-                                menu.classList.toggle('hidden');
-                                menu.classList.toggle('animate-fadeInDown');
-                            }
-                        });
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    if (headerPlaceholder) {
+                        headerPlaceholder.innerHTML = html;
+                        // Initialiser le menu mobile après le chargement du header
+                        initMobileMenu();
                     }
                 })
                 .catch(error => {
                     console.error('Erreur lors du chargement du header:', error);
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    if (headerPlaceholder) {
+                        headerPlaceholder.innerHTML = '<div class="bg-red-500 text-white p-2">Erreur de chargement du menu</div>';
+                    }
                 });
 
             // Charger le footer
@@ -239,7 +251,10 @@
                     return response.text();
                 })
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    if (footerPlaceholder) {
+                        footerPlaceholder.innerHTML = html;
+                    }
                 })
                 .catch(error => {
                     console.error('Erreur lors du chargement du footer:', error);

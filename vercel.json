@@ -2,31 +2,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
+      "src": "**/*.html",
       "use": "@vercel/static"
     },
     {
-      "src": "pages/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "CSS/*.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "js/*.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "components/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "assets/**/*",
+      "src": "**/*.{css,js,ico,svg,png,jpg,jpeg,gif,woff,woff2,ttf,eot}",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "^/assets/(.*)",
+      "dest": "/assets/$1"
+    },
     {
       "src": "^/CSS/(.*)",
       "dest": "/CSS/$1"
@@ -36,23 +24,19 @@
       "dest": "/js/$1"
     },
     {
-      "src": "^/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
       "src": "^/components/(.*)",
       "dest": "/components/$1"
     },
     {
-      "src": "^/pages/(.*)",
+      "src": "^/pages/(.+)",
       "dest": "/pages/$1"
     },
     {
-      "src": "/",
-      "dest": "/index.html"
+      "src": "^/([^/]+)$",
+      "dest": "/$1.html"
     },
     {
-      "src": "/(.*)",
+      "src": "^/(.*)",
       "dest": "/index.html"
     }
   ],
