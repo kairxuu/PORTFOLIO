@@ -805,24 +805,46 @@
 
         // Restaurer l'état de la sidebar
         document.addEventListener('DOMContentLoaded', function() {
+            // Restaurer l'état du menu latéral
             const isCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
             if (isCollapsed) {
                 document.querySelector('.sidebar').classList.add('collapsed');
                 document.querySelector('.main-content').classList.add('expand');
                 const icons = document.querySelector('.toggle-btn').querySelectorAll('i');
-                icons[0].classList.add('hidden');
-                icons[1].classList.remove('hidden');
+                if (icons.length >= 2) {
+                    icons[0].classList.add('hidden');
+                    icons[1].classList.remove('hidden');
+                }
             }
             
-            // Initialiser les tooltips
-            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-            tooltipTriggerList.map(function (tooltipTriggerEl) {
-                return new bootstrap.Tooltip(tooltipTriggerEl);
-                    if (user.photoURL && profileImage) {
-                        profileImage.src = user.photoURL;
+            // Gestionnaire d'événement pour le bouton de bascule du menu
+            const toggleBtn = document.querySelector('.toggle-btn');
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', function() {
+                    const sidebar = document.querySelector('.sidebar');
+                    const mainContent = document.querySelector('.main-content');
+                    const isCollapsed = sidebar.classList.toggle('collapsed');
+                    mainContent.classList.toggle('expand');
+                    
+                    // Sauvegarder l'état dans le localStorage
+                    localStorage.setItem('sidebarCollapsed', isCollapsed);
+                    
+                    // Basculer les icônes
+                    const icons = this.querySelectorAll('i');
+                    if (icons.length >= 2) {
+                        icons[0].classList.toggle('hidden');
+                        icons[1].classList.toggle('hidden');
                     }
-                }
-            });
+                });
+            }
+            
+            // Initialiser les tooltips si Bootstrap est disponible
+            if (typeof bootstrap !== 'undefined') {
+                const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.forEach(function(tooltipTriggerEl) {
+                    new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            }
         });
     </script>
 </body>
