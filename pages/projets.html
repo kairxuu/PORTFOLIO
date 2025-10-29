@@ -6,93 +6,111 @@
     <title>Mes Projets - Mon Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../CSS/main.css">
-    <link rel="stylesheet" href="../CSS/projects.css">
+    <link rel="stylesheet" href="/CSS/main.css">
+    <link rel="stylesheet" href="/CSS/projects.css">
 </head>
 <body class="bg-gray-900 text-white min-h-screen flex flex-col">
     <!-- Header -->
-    <div id="header-placeholder"></div>
+    <div id="header-placeholder">
+        <!-- Le header sera chargé dynamiquement -->
+    </div>
 
     <!-- Contenu principal -->
     <main class="flex-grow pt-16">
         <!-- Section Projets -->
-        <section class="py-20 bg-gray-800">
+        <section class="py-12 md:py-20 bg-gray-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h1 class="text-4xl font-bold mb-4">Mes Projets</h1>
-                    <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                <div class="text-center mb-12 md:mb-16 px-4">
+                    <h1 class="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Mes Projets</h1>
+                    <p class="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
                         Découvrez une sélection de mes projets récents et des technologies que j'ai utilisées.
                     </p>
                 </div>
 
                 <!-- Filtres -->
-                <div class="mb-12">
-                    <h2 class="text-2xl font-semibold mb-4">Filtrer par technologie</h2>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-700 transition duration-300">
+                <div class="mb-10 md:mb-12 px-2">
+                    <h2 class="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Filtrer par technologie</h2>
+                    <div class="flex flex-wrap gap-2 sm:gap-3">
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-600 text-white rounded-full text-xs sm:text-sm font-medium hover:bg-blue-700 transition duration-300 whitespace-nowrap">
                             Tous
                         </button>
-                        <button class="px-4 py-2 bg-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-gray-600 transition duration-300">
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-600 transition duration-300 whitespace-nowrap">
                             PHP
                         </button>
-                        <button class="px-4 py-2 bg-gray-700 text-gray-300 rounded-full text-sm font-medium hover:bg-gray-600 transition duration-300">
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-full text-xs sm:text-sm font-medium hover:bg-gray-600 transition duration-300 whitespace-nowrap">
                             React
                         </button>
                     </div>
                 </div>
 
                 <!-- Grille des projets -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-2 sm:px-0">
                     <!-- Projet 1 -->
-                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
-                        <div class="relative">
-                            <img src="https://via.placeholder.com/600x400" alt="Technova" class="w-full h-48 object-cover">
+                    <div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg transform transition duration-500 hover:scale-[1.02] hover:shadow-xl">
+                        <div class="relative aspect-video">
+                            <img src="https://via.placeholder.com/600x400" alt="Technova" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
-                            <div class="absolute bottom-4 left-4">
-                                <h3 class="text-xl font-semibold text-white">Site e-commerce</h3>
-                                <div class="flex flex-wrap gap-2 mt-2">
-                                    <span class="bg-blue-900 text-blue-200 text-xs px-2 py-1 rounded">PHP</span>
-                                    <span class="bg-green-900 text-green-200 text-xs px-2 py-1 rounded">JavaScript</span>
-                                    <span class="bg-yellow-900 text-yellow-200 text-xs px-2 py-1 rounded">CSS</span>
+                            <div class="absolute bottom-3 left-3 right-3">
+                                <h3 class="text-lg sm:text-xl font-semibold text-white">Site e-commerce</h3>
+                                <div class="flex flex-wrap gap-1.5 mt-1.5">
+                                    <span class="bg-blue-900/80 text-blue-200 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">PHP</span>
+                                    <span class="bg-green-900/80 text-green-200 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">JavaScript</span>
+                                    <span class="bg-yellow-900/80 text-yellow-200 text-[10px] sm:text-xs px-2 py-0.5 sm:py-1 rounded">CSS</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-6">
-                            <p class="text-gray-300 mb-4">Une plateforme e-commerce complète avec panier, paiement et tableau de bord administrateur.</p>
-                            <div class="flex space-x-4">
-                                <a onclick='window.open("http://github.com/kairxuu/Technova")' class="text-blue-400 hover:text-blue-300 flex items-center cursor-pointer     ">
-                                    <i class="fab fa-github mr-1"></i> Code
+                        <div class="p-4 sm:p-5">
+                            <p class="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4">Une plateforme e-commerce complète avec panier, paiement et tableau de bord administrateur.</p>
+                            <div class="flex flex-wrap gap-3 sm:gap-4">
+                                <a onclick='window.open("https://github.com/kairxuu/Technova")' class="text-blue-400 hover:text-blue-300 flex items-center text-sm sm:text-base cursor-pointer transition-colors">
+                                    <i class="fab fa-github mr-1.5 text-base"></i> Code
                                 </a>
-                                <a onclick='window.open("#")' class="text-blue-400 hover:text-blue-300 flex items-center cursor-pointer">
-                                    <i class="fas fa-external-link-alt mr-1"></i> Voir en ligne
+                                <a href="#" class="text-blue-400 hover:text-blue-300 flex items-center text-sm sm:text-base cursor-pointer transition-colors">
+                                    <i class="fas fa-external-link-alt mr-1.5 text-sm"></i> Voir en ligne
                                 </a>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Ajoutez plus de projets ici avec la même structure -->
+                    
+                </div>
+                
+                <!-- Pagination -->
+                <div class="mt-12 md:mt-16 flex justify-center">
+                    <nav class="flex items-center space-x-2">
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                            <i class="fas fa-chevron-left text-xs sm:text-sm"></i>
+                        </button>
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-600 text-white rounded-md text-sm sm:text-base">1</button>
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base">2</button>
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base">3</button>
+                        <span class="px-2 text-gray-400 hidden sm:inline">...</span>
+                        <button class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-700 text-gray-300 rounded-md hover:bg-gray-600 transition-colors text-sm sm:text-base">
+                            <i class="fas fa-chevron-right text-xs sm:text-sm"></i>
+                        </button>
+                    </nav>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
+    <div id="footer-placeholder">
+        <!-- Le footer sera chargé dynamiquement -->
+    </div>
 
     <script>
         // Chargement du header
         fetch('/components/header.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('header-placeholder').innerHTML = data;
-                // Réinitialiser le gestionnaire d'événements après le chargement
-                const mobileMenuButton = document.getElementById('mobile-menu-button');
-                if (mobileMenuButton) {
-                    mobileMenuButton.addEventListener('click', function() {
-                        const menu = document.querySelector('.md\:hidden + .hidden');
-                        if (menu) {
-                            menu.classList.toggle('hidden');
-                        }
-                    });
+                const headerPlaceholder = document.getElementById('header-placeholder');
+                if (headerPlaceholder) {
+                    headerPlaceholder.innerHTML = data;
                 }
-            });
+            })
+            .catch(error => console.error('Erreur lors du chargement du header:', error));
 
         // Chargement du footer
         fetch('/components/footer.html')
