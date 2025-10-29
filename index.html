@@ -19,11 +19,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Styles personnalisés -->
-    <link rel="stylesheet" href="/CSS/main.css">
-    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/home.css">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/assets/favicon.ico">
+    <link rel="icon" type="image/png" href="./assets/favicon.ico">
     
     <!-- Meta tags pour le référencement -->
     <meta property="og:title" content="Alex - Développeur Web Junior | Portfolio">
@@ -231,7 +231,7 @@
                 });
 
             // Charger le footer
-            fetch('/components/footer.html')
+            fetch('./components/footer.html')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Erreur de chargement du footer');

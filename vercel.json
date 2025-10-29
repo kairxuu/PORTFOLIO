@@ -18,22 +18,43 @@
       "use": "@vercel/static"
     },
     {
+      "src": "components/*.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "assets/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "^/CSS/(.*)",
+      "dest": "/CSS/$1"
     },
     {
-      "src": "/pages/(.*)",
+      "src": "^/js/(.*)",
+      "dest": "/js/$1"
+    },
+    {
+      "src": "^/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "^/components/(.*)",
+      "dest": "/components/$1"
+    },
+    {
+      "src": "^/pages/(.*)",
       "dest": "/pages/$1"
     },
     {
-      "src": "/(.*\\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot))",
-      "dest": "/$1"
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
-  ]
+  ],
+  "cleanUrls": true
 }
