@@ -28,11 +28,11 @@
       "dest": "/components/$1"
     },
     {
-      "src": "^/pages/(.+)",
+      "src": "^/pages/(.*)",
       "dest": "/pages/$1"
     },
     {
-      "src": "^/([^/]+)$",
+      "src": "^/(?!assets|CSS|js|components|pages|_next/)([^/]+?)(?:\\.html)?/?$",
       "dest": "/$1.html"
     },
     {
@@ -40,5 +40,7 @@
       "dest": "/index.html"
     }
   ],
-  "cleanUrls": true
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }
