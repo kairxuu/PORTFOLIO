@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Mon Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contenu principal -->
+    <main class="flex-grow pt-16">
+        <!-- Section Contact -->
+        <section class="py-20 bg-gray-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl font-bold text-center mb-4">Contactez-moi</h1>
+                <p class="text-xl text-center text-gray-300 mb-12 max-w-2xl mx-auto">
+                    N'hésitez pas à me contacter pour toute question ou opportunité de collaboration.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Formulaire de contact -->
+                    <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl font-semibold mb-6">Envoyez-moi un message</h2>
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nom complet</label>
+                                <input type="text" id="name" name="name" required 
+                                    class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Sujet</label>
+                                <input type="text" id="subject" name="subject" required
+                                    class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none">
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="5" required
+                                    class="w-full px-4 py-2 rounded-md bg-gray-800 border border-gray-600 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none"></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-medium transition duration-300">
+                                    Envoyer le message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Informations de contact -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4">Coordonnées</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-blue-400 mt-1">
+                                        <i class="fas fa-envelope text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium">Email</h3>
+                                        <p class="text-gray-400">alexksly@proton.me</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-blue-400 mt-1">
+                                        <i class="fas fa-phone-alt text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium">Téléphone</h3>
+                                        <p class="text-gray-400">+33 6 27 57 90 33</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="flex-shrink-0 text-blue-400 mt-1">
+                                        <i class="fas fa-map-marker-alt text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg font-medium">Localisation</h3>
+                                        <p class="text-gray-400">Paris, France</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-4">Réseaux sociaux</h2>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/kairxuu" class="text-gray-400 hover:text-white transition duration-300">
+                                    <i class="fab fa-github text-3xl"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/alexandre-keolasy-287887276/" class="text-gray-400 hover:text-blue-400 transition duration-300">
+                                    <i class="fab fa-linkedin text-3xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-700 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold mb-3">Disponibilité</h3>
+                            <p class="text-gray-300 mb-4">Je suis actuellement disponible pour des opportunités de freelance ou de collaboration. N'hésitez pas à me contacter pour discuter de votre projet.</p>
+                            <div class="flex items-center text-green-400">
+                                <span class="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
+                                <span>Disponible pour de nouveaux projets</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Chargement du header
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+                // Réinitialiser le gestionnaire d'événements après le chargement
+                const mobileMenuButton = document.getElementById('mobile-menu-button');
+                if (mobileMenuButton) {
+                    mobileMenuButton.addEventListener('click', function() {
+                        const menu = document.querySelector('.md\:hidden + .hidden');
+                        if (menu) {
+                            menu.classList.toggle('hidden');
+                        }
+                    });
+                }
+            });
+
+        // Chargement du footer
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+
+        // Gestion du formulaire de contact
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Récupération des valeurs du formulaire
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // Ici, vous pouvez ajouter le code pour envoyer les données à un serveur
+                console.log('Formulaire de contact soumis:', formData);
+                
+                // Afficher un message de succès
+                alert('Merci pour votre message ! Je vous répondrai dès que possible.');
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+            });
+        }
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
