@@ -63,4 +63,4 @@ Ce projet est sous licence MIT. N'hésitez pas à l'utiliser comme base pour vot
 
 ---
 
-Développé avec ❤️ par Alex
+Développé par Kairxuu
