@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets PPE - Alexandre KEOLASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Styles spécifiques à la page PPE */
+        .ppe-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ppe-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .ppe-hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .ppe-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .ppe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .ppe-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .ppe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+        .ppe-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .ppe-content {
+            padding: 1.5rem;
+        }
+
+        .ppe-category {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .ppe-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+        }
+
+        .ppe-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .ppe-details {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        .ppe-details i {
+            margin-right: 0.3rem;
+            color: var(--text-primary);
+        }
+
+        .ppe-technologies {
+            margin-top: 1rem;
+        }
+
+        .ppe-technologies span {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+        
+        .ppe-technologies span:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .ppe-button {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .ppe-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .ppe-button:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .ppe-button:hover::before {
+            left: 100%;
+        }
+        
+        .ppe-button i {
+            margin-left: 0.5rem;
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        
+        .ppe-button:hover i {
+            transform: translateX(3px);
+        }
+
+        @media (max-width: 768px) {
+            .ppe-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .ppe-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+            
+            .ppe-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar sera chargée dynamiquement -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="ppe-hero">
+        <h1>Projets Pluritechniques Encadrés</h1>
+        <p>Découvrez mes projets réalisés dans le cadre de ma formation BTS SIO</p>
+    </section>
+
+    <div class="ppe-container">
+        <div class="ppe-grid" id="ppeGrid">
+            <!-- PPE 1 -->
+            <div class="ppe-card">
+                <img src="https://source.unsplash.com/random/600x400/?coding,programming" alt="PPE 1" class="ppe-image">
+                <div class="ppe-content">
+                    <span class="ppe-category">PPE 1</span>
+                    <h3 class="ppe-title">Titre du PPE 1</h3>
+                    <p class="ppe-description">
+                        Description détaillée du premier projet pluritechnique encadré. 
+                        Ce projet a été réalisé dans le cadre de ma formation BTS SIO.
+                    </p>
+                    <div class="ppe-details">
+                        <span><i class="far fa-calendar-alt"></i> Janvier 2023 - Avril 2023</span>
+                        <span><i class="fas fa-user-graduate"></i> BTS SIO 1</span>
+                    </div>
+                    <div class="ppe-technologies">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                    </div>
+                    <a href="#" class="ppe-button">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- PPE 2 -->
+            <div class="ppe-card">
+                <img src="https://source.unsplash.com/random/600x400/?web,development" alt="PPE 2" class="ppe-image">
+                <div class="ppe-content">
+                    <span class="ppe-category">PPE 2</span>
+                    <h3 class="ppe-title">Titre du PPE 2</h3>
+                    <p class="ppe-description">
+                        Description détaillée du deuxième projet pluritechnique encadré. 
+                        Ce projet plus avancé a permis de consolider mes compétences en développement.
+                    </p>
+                    <div class="ppe-details">
+                        <span><i class="far fa-calendar-alt"></i> Septembre 2023 - Décembre 2023</span>
+                        <span><i class="fas fa-user-graduate"></i> BTS SIO 2</span>
+                    </div>
+                    <div class="ppe-technologies">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>MongoDB</span>
+                        <span>API REST</span>
+                    </div>
+                    <a href="#" class="ppe-button">Voir le projet <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer sera chargé dynamiquement -->
+    <div id="footer-container"></div>
+
+    <script>
+        // Chargement dynamique de la barre de navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Chargement de la barre de navigation
+            fetch('components/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar-container').innerHTML = data;
+                    // Mettre à jour la classe active pour la page actuelle
+                    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                    const navLinks = document.querySelectorAll('.nav-link');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === currentPage) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+
+            // Chargement du footer
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-container').innerHTML = data;
+                });
+        });
+    </script>
+</body>
+</html>
