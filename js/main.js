@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize components
     initGlossyDots();
     initHeroAnimation();
-    initMobileMenu();
+    initNavigation(); // Initialisation de la navigation
     initSmoothScrolling();
     initScrollReveal();
+    
+    // Mettre à jour le lien actif après un court délai pour s'assurer que le DOM est prêt
+    setTimeout(updateActiveLink, 100);
 });
 
 /**
@@ -102,101 +105,246 @@ function initHeroAnimation() {
 }
 
 /**
- * Initialize mobile menu functionality
+ * ===========================================
+ * GESTION DE LA NAVIGATION
+ * - Menu mobile avec animation fluide
+ * - Navigation au clavier
+ * - Gestion des états accessibles
+ * - Fermeture automatique au redimensionnement
+ * ===========================================
  */
-function initMobileMenu() {
-    const menuButton = document.querySelector('.mobile-menu-button');
-    const navLinks = document.querySelector('.nav-links');
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialisation de la navigation
+    initNavigation();
     
-    if (!menuButton || !navLinks) return;
+    // Mise à jour du lien actif au chargement
+    updateActiveLink();
     
-    // Créer l'overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'menu-overlay';
-    document.body.appendChild(overlay);
+    // Écouteur pour les changements d'URL (pour les SPA ou chargements dynamiques)
+    window.addEventListener('popstate', updateActiveLink);
+});
+
+/**
+ * Initialise la navigation principale
+ */
+function initNavigation() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const navContainer = document.querySelector('.nav-container');
+    const navOverlay = document.getElementById('nav-overlay');
     
-    // Ajouter le span pour l'animation du bouton
-    const menuIcon = document.createElement('span');
-    menuButton.innerHTML = '';
-    menuButton.appendChild(menuIcon);
+    // Fonction pour vérifier et mettre à jour l'état mobile
+    const updateMobileState = () => {
+        const isMobile = window.innerWidth <= 991;
+        
+        // Mettre à jour l'affichage du bouton menu
+        if (menuButton) {
+            menuButton.style.display = isMobile ? 'flex' : 'none';
+        }
+        
+        // Si on passe en mode desktop, fermer le menu
+        if (!isMobile && navContainer && navContainer.getAttribute('aria-expanded') === 'true') {
+            toggleMenu(false);
+        }
+        
+        return isMobile;
+    };
     
-    // Gestion du clic sur le bouton
+    // Vérifier l'état initial
+    let isMobile = updateMobileState();
+    
+    // Mettre à jour lors du redimensionnement
+    window.addEventListener('resize', () => {
+        isMobile = updateMobileState();
+    });
+    
+    if (!menuButton || !navContainer) {
+        console.warn('Éléments de navigation non trouvés');
+        return;
+    }
+    
+    // Récupérer tous les liens de navigation
+    const navLinks = navContainer.querySelectorAll('.nav-link');
+    const firstNavItem = navLinks[0];
+    const lastNavItem = navLinks[navLinks.length - 1];
+    
+    // Fonction pour ouvrir/fermer le menu
+    const toggleMenu = (open = null) => {
+        // Ne rien faire si on est sur desktop
+        if (!isMobile) return;
+        
+        const isOpen = open !== null ? open : menuButton.getAttribute('aria-expanded') === 'false';
+        
+        console.log(`Toggle menu: ${isOpen}`);
+        
+        // Mettre à jour l'état du bouton
+        menuButton.setAttribute('aria-expanded', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        
+        // Basculer les classes pour l'animation
+        if (isOpen) {
+            navContainer.setAttribute('aria-expanded', 'true');
+            if (navOverlay) {
+                navOverlay.style.display = 'block';
+                setTimeout(() => navOverlay.classList.add('visible'), 10);
+            }
+            
+            // Déplacer le focus vers le premier élément du menu
+            setTimeout(() => {
+                if (firstNavItem) firstNavItem.focus();
+            }, 100);
+        } else {
+            navContainer.setAttribute('aria-expanded', 'false');
+            if (navOverlay) {
+                navOverlay.classList.remove('visible');
+                setTimeout(() => {
+                    if (navOverlay.classList.contains('visible') === false) {
+                        navOverlay.style.display = 'none';
+                    }
+                }, 300);
+            }
+            
+            // Replacer le focus sur le bouton menu
+            menuButton.focus();
+        }
+    };
+    
+    // Gestion du clic sur le bouton menu
     menuButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleMenu();
+        if (isMobile) {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+        }
     });
     
     // Gestion du clic sur l'overlay
-    overlay.addEventListener('click', () => {
-        closeMenu();
-    });
+    if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+            if (isMobile) toggleMenu(false);
+        });
+    }
     
-    // Gestion des touches du clavier
-    menuButton.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleMenu();
-        } else if (e.key === 'Escape' && navLinks.classList.contains('show')) {
-            closeMenu();
-            menuButton.focus();
-        }
-    });
-    
-    // Fermer le menu au clic sur un lien
-    navLinks.querySelectorAll('a').forEach(link => {
+    // Fermer le menu en cliquant sur un lien (mobile uniquement)
+    navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            closeMenu();
-        });
-        
-        // Gestion de la navigation au clavier dans le menu
-        link.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeMenu();
-                menuButton.focus();
-            }
+            if (isMobile) toggleMenu(false);
         });
     });
     
-    // Fonction pour basculer le menu
-    function toggleMenu() {
-        const isOpen = navLinks.classList.toggle('show');
-        menuButton.classList.toggle('active', isOpen);
-        overlay.classList.toggle('visible', isOpen);
-        document.body.classList.toggle('menu-open', isOpen);
-        
-        // Gestion de l'accessibilité
-        const menuItems = navLinks.querySelectorAll('a');
-        if (isOpen) {
-            // Mettre à jour aria-expanded
-            menuButton.setAttribute('aria-expanded', 'true');
-            // Déplacer le focus vers le premier élément du menu
-            if (menuItems.length > 0) {
-                menuItems[0].focus();
-            }
-        } else {
-            menuButton.setAttribute('aria-expanded', 'false');
+    // Navigation au clavier
+    const handleKeyboardNavigation = (e) => {
+        // Échap pour fermer le menu
+        if (e.key === 'Escape') {
+            e.preventDefault();
+            toggleMenu(false);
+            return;
         }
-    }
+        
+        // Tabulation et flèches pour la navigation
+        if (e.key === 'Tab') {
+            // Si on est sur le dernier élément et qu'on appuie sur Tab, boucler au début
+            if (e.shiftKey && document.activeElement === firstNavItem) {
+                e.preventDefault();
+                lastNavItem.focus();
+            } 
+            // Si on est sur le premier élément et qu'on appuie sur Maj+Tab, aller à la fin
+            else if (!e.shiftKey && document.activeElement === lastNavItem) {
+                e.preventDefault();
+                firstNavItem.focus();
+            }
+        }
+        
+        // Navigation avec les flèches haut/bas
+        if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+            e.preventDefault();
+            const currentIndex = Array.from(navLinks).indexOf(document.activeElement);
+            const nextIndex = (currentIndex + 1) % navLinks.length;
+            navLinks[nextIndex].focus();
+        } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+            e.preventDefault();
+            const currentIndex = Array.from(navLinks).indexOf(document.activeElement);
+            const prevIndex = (currentIndex - 1 + navLinks.length) % navLinks.length;
+            navLinks[prevIndex].focus();
+        }
+    };
     
-    // Fonction pour fermer le menu
-    function closeMenu() {
-        navLinks.classList.remove('show');
-        menuButton.classList.remove('active');
-        overlay.classList.remove('visible');
-        document.body.classList.remove('menu-open');
-        menuButton.setAttribute('aria-expanded', 'false');
-    }
+    // Ajouter les écouteurs d'événements pour la navigation au clavier
+    navContainer.addEventListener('keydown', handleKeyboardNavigation);
     
-    // Gestion du redimensionnement de la fenêtre
+    // Fermer le menu au redimensionnement de la fenêtre
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 767) {
-                closeMenu();
+            if (window.innerWidth > 768 && menuButton.getAttribute('aria-expanded') === 'true') {
+                toggleMenu(false);
+            }
+            
+            // Mettre à jour l'état mobile/desktop
+            if (window.innerWidth > 768) {
+                document.body.classList.remove('menu-open');
             }
         }, 250);
     });
+    
+    // Désactiver le défilement lorsque le menu est ouvert sur mobile
+    document.addEventListener('touchmove', (e) => {
+        if (isMobile && menuButton.getAttribute('aria-expanded') === 'true') {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    console.log('Navigation initialisée avec succès');
+}
+
+/**
+ * Met à jour le lien actif dans la navigation en fonction de l'URL courante
+ */
+function updateActiveLink() {
+    // Récupérer le chemin actuel sans les paramètres de requête ni le hash
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Si aucun lien n'est trouvé, sortir de la fonction
+    if (navLinks.length === 0) {
+        console.warn('Aucun lien de navigation trouvé');
+        return;
+    }
+    
+    let hasActiveLink = false;
+    
+    // Parcourir tous les liens de navigation
+    navLinks.forEach(link => {
+        // Récupérer le chemin du lien (sans le chemin complet)
+        const linkPath = link.getAttribute('href');
+        
+        // Vérifier si le lien correspond à la page courante
+        const isActive = 
+            (currentPath === '' && (linkPath === 'index.html' || linkPath === '/')) ||
+            (linkPath !== 'index.html' && currentPath.includes(linkPath.replace('.html', '')));
+        
+        // Mettre à jour les classes et attributs
+        if (isActive) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+            hasActiveLink = true;
+        } else {
+            link.classList.remove('active');
+            link.removeAttribute('aria-current');
+        }
+    });
+    
+    // Si aucun lien n'est actif et qu'on n'est pas sur la page d'accueil
+    if (!hasActiveLink && !currentPath.endsWith('index.html') && currentPath !== '') {
+        const homeLink = document.querySelector('.nav-link[href="index.html"], .nav-link[href="/"]');
+        if (homeLink) {
+            homeLink.classList.add('active');
+            homeLink.setAttribute('aria-current', 'page');
+        }
+    }
+    
+    console.log('Mise à jour des liens actifs terminée');
 }
 
 /**

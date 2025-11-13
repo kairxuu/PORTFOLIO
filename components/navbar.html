@@ -1,34 +1,83 @@
-<!-- Navigation -->
-<header class="header">
-    <nav class="navbar-glassy" aria-label="Navigation principale">
-        <div class="logo-ak">
-            <a href="index.html" aria-label="Retour à l'accueil">
-                <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
-                    <text x="0" y="28" font-family="'Outfit'" font-size="28" font-weight="300" fill="currentColor">AK</text>
+<!-- ============================================
+    NAVIGATION PRINCIPALE
+    - Barre de navigation fixe en haut de page
+    - Design glassmorphisme avec flou et transparence
+    - Menu responsive avec animation fluide
+    - Accessibilité optimisée (ARIA, navigation clavier)
+================================================ -->
+<header class="header" id="main-header">
+    <div class="container">
+        <nav class="navbar" aria-label="Navigation principale">
+            <!-- Logo -->
+            <a href="index.html" class="logo" aria-label="Retour à l'accueil">
+                <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+                    <text x="0" y="28" font-family="'Outfit', sans-serif" font-size="28" font-weight="300" fill="currentColor">AK</text>
                 </svg>
             </a>
-        </div>
-        
-        <button 
-            class="mobile-menu-button" 
-            aria-label="Menu" 
-            aria-expanded="false" 
-            aria-controls="main-navigation"
-        >
-            <span aria-hidden="true"></span>
-        </button>
-        
-        <div class="nav-links" id="main-navigation" role="navigation">
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link" data-page="index">Accueil</a></li>
-                <li><a href="about.html" class="nav-link" data-page="about">À propos</a></li>
-                <li><a href="cv.html" class="nav-link" data-page="cv">CV</a></li>
-                <li><a href="experiences.html" class="nav-link" data-page="experiences">Expériences</a></li>
-                <li><a href="stage1.html" class="nav-link" data-page="stage1">Stage 1</a></li>
-                <li><a href="stage2.html" class="nav-link" data-page="stage2">Stage 2</a></li>
-                <li><a href="veille.html" class="nav-link" data-page="veille">Veille Techno</a></li>
-                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+            
+            <!-- Bouton menu mobile -->
+            <button 
+                class="mobile-menu-button" 
+                id="mobile-menu-button"
+                aria-label="Menu" 
+                aria-expanded="false" 
+                aria-controls="main-navigation"
+                aria-haspopup="true"
+            >
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            
+            <!-- Navigation principale -->
+            <div class="nav-container" id="main-navigation">
+                <ul class="nav-list" role="menubar">
+                    <li role="none">
+                        <a href="index.html" class="nav-link" data-page="index" role="menuitem">
+                            <span class="nav-text">Accueil</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="about.html" class="nav-link" data-page="about" role="menuitem">
+                            <span class="nav-text">À propos</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="cv.html" class="nav-link" data-page="cv" role="menuitem">
+                            <span class="nav-text">CV</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="experiences.html" class="nav-link" data-page="experiences" role="menuitem">
+                            <span class="nav-text">Expériences</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="stage1.html" class="nav-link" data-page="stage1" role="menuitem">
+                            <span class="nav-text">Stage 1</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="stage2.html" class="nav-link" data-page="stage2" role="menuitem">
+                            <span class="nav-text">Stage 2</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="veille.html" class="nav-link" data-page="veille" role="menuitem">
+                            <span class="nav-text">Veille Techno</span>
+                        </a>
+                    </li>
+                    <li role="none">
+                        <a href="contact.html" class="nav-link" data-page="contact" role="menuitem">
+                            <span class="nav-text">Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Overlay pour le menu mobile -->
+            <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+        </nav>
+    </div>
 </header>
+
+<!-- Espacement pour la hauteur fixe de la navbar -->
+<div class="header-spacer"></div>

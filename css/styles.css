@@ -95,110 +95,348 @@ h3 { font-size: 1.8rem; }
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Navigation */
+/* ============================================
+   NAVIGATION PRINCIPALE
+   - Barre de navigation fixe en haut de page
+   - Design glassmorphisme avec flou et transparence
+   - Menu responsive avec animation fluide
+   - Accessibilité optimisée (ARIA, navigation clavier)
+================================================ */
+
+/* Conteneur principal du header */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.navbar-glassy {
+/* Conteneur pour centrer le contenu */
+.header .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Barre de navigation */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    position: relative;
 }
 
-.logo-ak a {
+/* Logo */
+.logo {
     display: flex;
     align-items: center;
     text-decoration: none;
     color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
     font-size: 1.5rem;
-    font-weight: 600;
-    transition: opacity 0.2s ease;
+    z-index: 1002;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.logo-ak a:hover {
-    opacity: 0.8;
+.logo:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
 }
 
-.logo-ak svg {
-    margin-right: 0.5rem;
+.logo svg {
+    width: 40px;
+    height: 40px;
     transition: transform 0.3s ease;
 }
 
-.logo-ak a:hover svg {
-    transform: scale(1.1);
-}
-
-/* Styles de la navigation principale */
-.nav-links {
+/* Conteneur de navigation */
+.nav-container {
     display: flex;
+    align-items: center;
 }
 
+/* Liste de navigation */
 .nav-list {
     display: flex;
-    gap: 1.5rem;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
+/* Éléments de la liste */
 .nav-list li {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
+/* Liens de navigation */
 .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    padding: 0.5rem 0.8rem;
-    border-radius: 4px;
-    display: block;
+    overflow: hidden;
+    z-index: 1;
 }
 
-.nav-link:hover,
-.nav-link:focus,
+/* Texte des liens */
+.nav-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* Effet de survol et focus */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    border-radius: 6px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: -1;
+}
+
+.nav-link:hover::before,
+.nav-link:focus::before,
+.nav-link.active::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* État actif */
 .nav-link.active {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
-    outline: none;
+    font-weight: 500;
 }
 
+/* Indicateur de page active */
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 0.5rem;
     left: 50%;
-    transform: translateX(-50%);
-    width: 0;
+    transform: translateX(-50%) scaleX(0);
+    width: 24px;
     height: 2px;
     background-color: var(--accent);
-    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 2px;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
 
 .nav-link:hover::after,
 .nav-link:focus::after,
 .nav-link.active::after {
-    width: 70%;
-    left: 15%;
+    transform: translateX(-50%) scaleX(1);
+    width: 50%;
 }
 
-/* Amélioration du focus pour l'accessibilité */
-.nav-link:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
+/* Bouton menu mobile */
+.mobile-menu-button {
+    display: none; /* Caché par défaut sur desktop */
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1002;
+    transition: all 0.3s ease;
+}
+
+/* Icône du menu hamburger */
+.menu-icon {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-primary);
+    left: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.menu-icon::before {
+    top: -8px;
+    width: 100%;
+    transform: translateY(0) rotate(0);
+}
+
+.menu-icon::after {
+    bottom: -8px;
+    width: 100%;
+    transform: translateY(0) rotate(0);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation de l'icône du menu */
+.mobile-menu-button[aria-expanded="true"] .menu-icon {
+    background-color: transparent;
+}
+
+.mobile-menu-button[aria-expanded="true"] .menu-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-button[aria-expanded="true"] .menu-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu-button[aria-expanded="true"] .menu-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Overlay du menu mobile */
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.nav-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Espacement pour la hauteur fixe du header */
+.header-spacer {
+    height: 70px; /* Doit correspondre à la hauteur de la navbar */
+    width: 100%;
+}
+
+/* ============================================
+   STYLES RESPONSIVE
+================================================ */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+    .nav-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header .container {
+        padding: 0 1.5rem;
+    }
+    
+    /* Afficher le bouton menu */
+    .mobile-menu-button {
+        display: flex;
+    }
+    
+    /* Masquer la navigation par défaut */
+    .nav-container {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: rgba(20, 20, 30, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 6rem 1.5rem 2rem;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        overflow-y: auto;
+    }
+    
+    /* Afficher la navigation quand le menu est ouvert */
+    .nav-container[aria-expanded="true"] {
+        transform: translateX(-100%);
+    }
+    
+    /* Liste de navigation en colonne sur mobile */
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.25rem;
+    }
+    
+    /* Liens de navigation sur mobile */
+    .nav-link {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        margin-bottom: 0.25rem;
+    }
+    
+    /* Afficher l'overlay quand le menu est ouvert */
+    .nav-overlay.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Ajuster l'espacement du header */
+    .header-spacer {
+        height: 70px;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+    .header .container {
+        padding: 0 1rem;
+    }
+    
+    .nav-container {
+        width: 90%;
+    }
 }
 
 /* Hero Section */
@@ -682,73 +920,110 @@ box-shadow: 0 0 0 0.2rem rgba(255, 77, 77, 0.25);
     transform: rotate(-45deg);
 }
 
-/* Afficher uniquement sur mobile (moins de 768px) */
-@media (max-width: 767px) {
+/* Styles de base pour le menu mobile */
+.mobile-menu-button {
+    display: none; /* Caché par défaut */
+}
+
+/* Afficher uniquement sur mobile (moins de 992px) */
+@media (max-width: 991px) {
+    /* Bouton menu mobile */
     .mobile-menu-button {
         display: flex;
+        z-index: 1002;
+        position: relative;
+        margin-left: auto; /* Pour le pousser à droite */
     }
 
-    /* Fond flou quand le menu est ouvert */
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(4px);
-        z-index: 800;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .menu-overlay.visible {
-        display: block;
-        opacity: 1;
-    }
-
-    .nav-links {
-        display: flex;
+    /* Conteneur de navigation mobile */
+    .nav-container {
         position: fixed;
         top: 0;
         right: -100%;
         bottom: 0;
         width: 85%;
         max-width: 300px;
-        background: var(--glass-bg);
+        background: rgba(30, 30, 30, 0.98);
         backdrop-filter: blur(16px);
         -webkit-backdrop-filter: blur(16px);
+        display: flex;
         flex-direction: column;
-        padding: 6rem 2rem 2rem;
-        z-index: 900;
-        transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1);
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+        padding: 6rem 1.5rem 2rem;
+        z-index: 1001;
+        transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
         overflow-y: auto;
+        margin: 0;
+        visibility: hidden;
+        opacity: 0;
     }
-
-    .nav-links.show {
+    
+    /* État ouvert du menu */
+    .nav-container[aria-expanded="true"] {
         transform: translateX(-100%);
+        visibility: visible;
+        opacity: 1;
     }
-
-    /* Styles des liens du menu mobile */
-    .nav-links a {
+    
+    /* Liste de navigation mobile */
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        margin: 0;
+    }
+    
+    /* Liens du menu mobile */
+    .nav-link {
+        display: block;
         padding: 0.8rem 1rem;
-        margin: 0.3rem 0;
+        margin: 0.2rem 0;
         border-radius: 6px;
-        transition: all 0.2s ease;
         font-size: 1.1rem;
+        transition: all 0.25s ease;
+        position: relative;
+        overflow: hidden;
     }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-        background: rgba(255, 255, 255, 0.1);
-        transform: translateX(5px);
+    
+    .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: var(--accent);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateX(8px);
+    }
+    
+    .nav-link:hover::before,
+    .nav-link:focus::before,
+    .nav-link.active::before {
+        transform: scaleY(1);
     }
 
     /* Désactiver le défilement du corps quand le menu est ouvert */
     body.menu-open {
         overflow: hidden;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* Ajuster le conteneur principal pour le menu ouvert */
+    body.menu-open .container {
+        position: relative;
+        z-index: 1;
     }
 }
 
