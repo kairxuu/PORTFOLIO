@@ -110,23 +110,92 @@ function initMobileMenu() {
     
     if (!menuButton || !navLinks) return;
     
-    // Toggle mobile menu
-    menuButton.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
+    // Créer l'overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'menu-overlay';
+    document.body.appendChild(overlay);
+    
+    // Ajouter le span pour l'animation du bouton
+    const menuIcon = document.createElement('span');
+    menuButton.innerHTML = '';
+    menuButton.appendChild(menuIcon);
+    
+    // Gestion du clic sur le bouton
+    menuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMenu();
     });
     
-    // Close menu when clicking on a link
+    // Gestion du clic sur l'overlay
+    overlay.addEventListener('click', () => {
+        closeMenu();
+    });
+    
+    // Gestion des touches du clavier
+    menuButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggleMenu();
+        } else if (e.key === 'Escape' && navLinks.classList.contains('show')) {
+            closeMenu();
+            menuButton.focus();
+        }
+    });
+    
+    // Fermer le menu au clic sur un lien
     navLinks.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            navLinks.classList.remove('show');
+            closeMenu();
+        });
+        
+        // Gestion de la navigation au clavier dans le menu
+        link.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMenu();
+                menuButton.focus();
+            }
         });
     });
     
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!navLinks.contains(e.target) && e.target !== menuButton) {
-            navLinks.classList.remove('show');
+    // Fonction pour basculer le menu
+    function toggleMenu() {
+        const isOpen = navLinks.classList.toggle('show');
+        menuButton.classList.toggle('active', isOpen);
+        overlay.classList.toggle('visible', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+        
+        // Gestion de l'accessibilité
+        const menuItems = navLinks.querySelectorAll('a');
+        if (isOpen) {
+            // Mettre à jour aria-expanded
+            menuButton.setAttribute('aria-expanded', 'true');
+            // Déplacer le focus vers le premier élément du menu
+            if (menuItems.length > 0) {
+                menuItems[0].focus();
+            }
+        } else {
+            menuButton.setAttribute('aria-expanded', 'false');
         }
+    }
+    
+    // Fonction pour fermer le menu
+    function closeMenu() {
+        navLinks.classList.remove('show');
+        menuButton.classList.remove('active');
+        overlay.classList.remove('visible');
+        document.body.classList.remove('menu-open');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
+    
+    // Gestion du redimensionnement de la fenêtre
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 767) {
+                closeMenu();
+            }
+        }, 250);
     });
 }
 

@@ -1,23 +1,34 @@
 <!-- Navigation -->
-<nav class="navbar-glassy">
-    <div class="logo-ak">
-        <a href="/">
-            <svg width="40" height="40" viewBox="0 0 40 40">
-                <text x="0" y="28" font-family="'Outfit'" font-size="28" font-weight="300" fill="#fff">AK</text>
-            </svg>
-        </a>
-    </div>
-    <div class="nav-links">
-        <a href="index.html" class="nav-link" data-page="index">Accueil</a>
-        <a href="about.html" class="nav-link" data-page="about">À propos</a>
-        <a href="cv.html" class="nav-link" data-page="cv">CV</a>
-        <a href="experiences.html" class="nav-link" data-page="experiences">Expériences</a>
-        <a href="stage1.html" class="nav-link" data-page="stage1">Stage 1</a>
-        <a href="stage2.html" class="nav-link" data-page="stage2">Stage 2</a>
-        <a href="veille.html" class="nav-link" data-page="veille">Veille Techno</a>
-        <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
-    </div>
-    <button class="mobile-menu-button" aria-label="Menu">
-        <span class="menu-icon">☰</span>
-    </button>
-</nav>
+<header class="header">
+    <nav class="navbar-glassy" aria-label="Navigation principale">
+        <div class="logo-ak">
+            <a href="index.html" aria-label="Retour à l'accueil">
+                <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                    <text x="0" y="28" font-family="'Outfit'" font-size="28" font-weight="300" fill="currentColor">AK</text>
+                </svg>
+            </a>
+        </div>
+        
+        <button 
+            class="mobile-menu-button" 
+            aria-label="Menu" 
+            aria-expanded="false" 
+            aria-controls="main-navigation"
+        >
+            <span aria-hidden="true"></span>
+        </button>
+        
+        <div class="nav-links" id="main-navigation" role="navigation">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link" data-page="index">Accueil</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">À propos</a></li>
+                <li><a href="cv.html" class="nav-link" data-page="cv">CV</a></li>
+                <li><a href="experiences.html" class="nav-link" data-page="experiences">Expériences</a></li>
+                <li><a href="stage1.html" class="nav-link" data-page="stage1">Stage 1</a></li>
+                <li><a href="stage2.html" class="nav-link" data-page="stage2">Stage 2</a></li>
+                <li><a href="veille.html" class="nav-link" data-page="veille">Veille Techno</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
