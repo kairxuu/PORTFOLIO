@@ -25,17 +25,19 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        .stage-hero {
+            position: relative;
+        }
+
         .stage-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            z-index: -1;
-            opacity: 0.15;
-            filter: grayscale(80%) brightness(0.6);
+            display: none; /* On désactive l'ancien fond */
+        }
+
+        .stage-icon {
+            font-size: 3.5rem;
+            color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 1.5rem;
+            display: block;
         }
 
         .stage-hero h1 {
@@ -388,8 +390,8 @@
 
     <!-- Hero Section -->
     <section class="stage-hero">
-        <img src="https://source.unsplash.com/random/1920x1080/?office,tech,developer" alt="Stage Développement Web" class="stage-hero-bg">
         <div class="container">
+            <i class="fas fa-laptop-code stage-icon"></i>
             <span class="stage-category">Stage de 1ère année</span>
             <h1 class="stage-title">Développeur Web front-end</h1>
             <p class="stage-subtitle">Conception et développement d'un site e-commerce pour la vente de vêtements</p>
@@ -558,13 +560,7 @@
             <aside class="sidebar">
                 <div class="info-card">
                     <h3 class="info-title">Détails du stage</h3>
-                    <div class="info-item">
-                        <i class="fas fa-building"></i>
-                        <div>
-                            <h4>Entreprise</h4>
-                            <p>Bxtterly</p>
-                        </div>
-                    </div>
+
                     <div class="info-item">
                         <i class="fas fa-calendar-alt"></i>
                         <div>
