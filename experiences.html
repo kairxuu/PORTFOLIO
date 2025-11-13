@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expériences - Alexandre KEOLASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Styles spécifiques à la page Expériences */
+        .experiences-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .experiences-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background: #fff;
+            color: #181818;
+            font-weight: 400;
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .experience-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            padding: 1.8rem;
+        }
+
+        .experience-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .experience-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
+        }
+
+        .experience-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .experience-meta i {
+            margin-right: 0.3rem;
+        }
+
+        .experience-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .experience-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 768px) {
+            .experiences-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experiences-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .experiences-container {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .filters::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar sera chargée dynamiquement -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="experiences-hero">
+        <h1>Mes Expériences</h1>
+        <p class="subtitle">Découvrez mon parcours professionnel et mes réalisations</p>
+    </section>
+
+    <!-- Experiences Content -->
+    <div class="experiences-container">
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">Tout</button>
+            <button class="filter-btn" data-filter="stage">Stages</button>
+            <button class="filter-btn" data-filter="projet">Projets</button>
+            <button class="filter-btn" data-filter="formation">Formation</button>
+        </div>
+
+        <div class="experiences-grid" id="experiencesGrid">
+            <!-- Stage 1 -->
+            <div class="experience-card" data-category="stage">
+                <img src="https://source.unsplash.com/random/600x400/?office,work" alt="Stage Développeur Web" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Stage</span>
+                    <h3 class="experience-title">Développeur Web Full Stack</h3>
+                    <div class="experience-meta">
+                        <span><i class="far fa-building"></i> Entreprise X</span>
+                        <span><i class="far fa-calendar-alt"></i> Jan - Avr 2024</span>
+                    </div>
+                    <p class="experience-description">Développement d'une application web de gestion de contenu avec React en frontend et Node.js/Express en backend. Mise en place d'une API RESTful et d'une base de données MongoDB.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">React</span>
+                        <span class="experience-tag">Node.js</span>
+                        <span class="experience-tag">MongoDB</span>
+                        <span class="experience-tag">API REST</span>
+                    </div>
+                    <a href="/stage1.html" class="btn-outline">
+                        En savoir plus
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 1 -->
+            <div class="experience-card" data-category="projet">
+                <img src="https://source.unsplash.com/random/600x400/?website,design" alt="Portfolio" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Projet</span>
+                    <h3 class="experience-title">Portfolio Personnel</h3>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-code"></i> Projet Personnel</span>
+                        <span><i class="far fa-calendar-alt"></i> 2024</span>
+                    </div>
+                    <p class="experience-description">Conception et développement d'un portfolio moderne avec HTML, CSS et JavaScript vanilla. Mise en place d'une interface utilisateur réactive et élégante.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">HTML5</span>
+                        <span class="experience-tag">CSS3</span>
+                        <span class="experience-tag">JavaScript</span>
+                        <span class="experience-tag">Responsive</span>
+                    </div>
+                    <a href="#" class="btn-outline">
+                        Voir le projet
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="experience-card" data-category="stage">
+                <img src="https://source.unsplash.com/random/600x400/?programming,code" alt="Stage Développeur Frontend" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Stage</span>
+                    <h3 class="experience-title">Développeur Frontend</h3>
+                    <div class="experience-meta">
+                        <span><i class="far fa-building"></i> Agence Y</span>
+                        <span><i class="far fa-calendar-alt"></i> Juin - Juil 2023</span>
+                    </div>
+                    <p class="experience-description">Développement de sites web vitrines et e-commerce pour divers clients. Intégration de maquettes en HTML/CSS/JavaScript avec une attention particulière au responsive design.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">HTML/CSS</span>
+                        <span class="experience-tag">JavaScript</span>
+                        <span class="experience-tag">Responsive</span>
+                        <span class="experience-tag">UI/UX</span>
+                    </div>
+                    <a href="/stage2.html" class="btn-outline">
+                        En savoir plus
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 2 -->
+            <div class="experience-card" data-category="projet">
+                <img src="https://source.unsplash.com/random/600x400/?app,mobile" alt="Application de Gestion de Tâches" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Projet</span>
+                    <h3 class="experience-title">Application de Gestion de Tâches</h3>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-code"></i> Projet Scolaire</span>
+                        <span><i class="far fa-calendar-alt"></i> 2023</span>
+                    </div>
+                    <p class="experience-description">Développement d'une application web de gestion de tâches avec authentification utilisateur. Fonctionnalités : création, édition, suppression et catégorisation des tâches.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">React</span>
+                        <span class="experience-tag">Firebase</span>
+                        <span class="experience-tag">Material-UI</span>
+                        <span class="experience-tag">Authentication</span>
+                    </div>
+                    <a href="#" class="btn-outline">
+                        Voir le projet
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Formation -->
+            <div class="experience-card" data-category="formation">
+                <img src="https://source.unsplash.com/random/600x400/?university,campus" alt="Formation BTS SIO" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Formation</span>
+                    <h3 class="experience-title">BTS SIO Option SLAM</h3>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-graduation-cap"></i> Lycée Louis Armand</span>
+                        <span><i class="far fa-calendar-alt"></i> 2023 - 2025</span>
+                    </div>
+                    <p class="experience-description">Formation en développement d'applications avec des cours en développement web, bases de données, cybersécurité et gestion de projet.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">Développement Web</span>
+                        <span class="experience-tag">Bases de Données</span>
+                        <span class="experience-tag">Cybersécurité</span>
+                    </div>
+                    <a href="/cv.html" class="btn-outline">
+                        Voir mon CV
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Projet 3 -->
+            <div class="experience-card" data-category="projet">
+                <img src="https://source.unsplash.com/random/600x400/?ecommerce,shop" alt="Site E-commerce" class="experience-image">
+                <div class="experience-content">
+                    <span class="experience-category">Projet</span>
+                    <h3 class="experience-title">Plateforme E-commerce</h3>
+                    <div class="experience-meta">
+                        <span><i class="fas fa-code"></i> Projet de Formation</span>
+                        <span><i class="far fa-calendar-alt"></i> 2023</span>
+                    </div>
+                    <p class="experience-description">Conception et développement d'une plateforme e-commerce complète avec panier d'achat, système de paiement et espace administrateur.</p>
+                    <div class="experience-tags">
+                        <span class="experience-tag">PHP</span>
+                        <span class="experience-tag">MySQL</span>
+                        <span class="experience-tag">JavaScript</span>
+                        <span class="experience-tag">Stripe</span>
+                    </div>
+                    <a href="#" class="btn-outline">
+                        Voir le projet
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer sera chargé dynamiquement -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/loadComponents.js"></script>
+    <script>
+        // Filtrage des expériences
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const experienceCards = document.querySelectorAll('.experience-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Mise à jour des boutons actifs
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    // Filtrage des cartes
+                    experienceCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Animation au chargement
+            const grid = document.getElementById('experiencesGrid');
+            if (grid) {
+                grid.style.opacity = '0';
+                grid.style.transform = 'translateY(20px)';
+                grid.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                
+                setTimeout(() => {
+                    grid.style.opacity = '1';
+                    grid.style.transform = 'translateY(0)';
+                }, 100);
+            }
+        });
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

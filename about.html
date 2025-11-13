@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - Alexandre KEOLASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Styles spécifiques à la page À propos */
+        .about-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item.left {
+            left: 0;
+            text-align: right;
+            padding-right: 70px;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+            text-align: left;
+            padding-left: 70px;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-content {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+
+        .timeline-item.left::after {
+            right: -10px;
+        }
+
+        .timeline-item.right::after {
+            left: -10px;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Skills */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: #fff;
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Interests */
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .interest-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            min-width: 120px;
+            transition: transform 0.3s ease;
+        }
+
+        .interest-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .interest-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+                text-align: left;
+            }
+
+            .timeline-item.left, 
+            .timeline-item.right {
+                left: 0;
+                text-align: left;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::after {
+                left: 21px;
+            }
+
+            .timeline-item.right::after {
+                left: 21px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar sera chargée dynamiquement -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <img src="https://via.placeholder.com/300" alt="Alexandre KEOLASY" class="profile-image">
+        <h1>Alexandre KEOLASY</h1>
+        <p class="subtitle">Développeur Web - 2ème année BTS SIO</p>
+        <p class="lead">Passionné par le développement web et les nouvelles technologies, je m'épanouis dans la création d'expériences numériques élégantes et performantes.</p>
+    </section>
+
+    <!-- About Content -->
+    <div class="about-content">
+
+        <!-- Formation BTS SIO - Mise en avant -->
+        <section class="section" style="margin: 5rem 0; position: relative;">
+            <div style="position: relative; z-index: 1;">
+                <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                    <div style="width: 4px; height: 40px; background: #4f46e5; margin-right: 1rem;"></div>
+                    <h2 class="section-title" style="margin: 0; font-size: 2.2rem; font-weight: 400;">
+                        <span style="color: #4f46e5;">BTS SIO</span> - Mon Parcours
+                    </h2>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(79, 70, 229, 0.05) 100%); border: 1px solid rgba(79, 70, 229, 0.2); border-radius: 16px; padding: 3rem; margin-top: 1.5rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; width: 200px; height: 200px; background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(79, 70, 229, 0) 70%); border-radius: 50%; transform: translate(30%, -30%);"></div>
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 2rem;
+                    background: rgba(79, 70, 229, 0.1); border-radius: 12px; padding: 1.5rem; border-left: 4px solid #4f46e5;">
+                    <div>
+                        <h3 style="color: #fff; margin: 0 0 0.5rem 0; font-size: 1.5rem;">BTS Services Informatiques aux Organisations</h3>
+                        <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.5rem;
+                            color: #a5b4fc; font-size: 0.95rem;">
+                            <span><i class="fas fa-graduation-cap" style="margin-right: 0.5rem;"></i> Option SLAM</span>
+                            <span><i class="far fa-calendar-alt" style="margin-right: 0.5rem;"></i> 2024 - 2026</span>
+                            <span><i class="fas fa-university" style="margin-right: 0.5rem;"></i> Aurlom BTS+</span>
+                        </div>
+                    </div>
+                    <div style="background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 0.5rem 1rem; 
+                        border-radius: 20px; font-weight: 500; font-size: 0.9rem; margin-top: 1rem;">
+                        En cours de formation
+                    </div>
+                </div>
+                
+                <!-- Objectifs du BTS SIO -->
+                <div style="background: rgba(79, 70, 229, 0.05); border: 1px dashed rgba(79, 70, 229, 0.3); 
+                    padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
+                    <h4 style="color: #fff; margin-top: 0; margin-bottom: 1rem; display: flex; align-items: center;">
+                        <i class="fas fa-bullseye" style="color: #4f46e5; margin-right: 0.75rem;"></i>
+                        Objectifs de la formation
+                    </h4>
+                    <p style="color: var(--text-secondary); margin: 0; line-height: 1.7;">
+                        Le BTS SIO option SLAM forme des spécialistes capables de développer et de maintenir des solutions logicielles adaptées aux besoins des entreprises. 
+                        L'accent est mis sur la maîtrise des langages de programmation, la gestion de bases de données, la cybersécurité et la conduite de projets informatiques.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.75rem;">
+                            <div style="width: 36px; height: 36px; background: rgba(79, 70, 229, 0.2); border-radius: 8px; 
+                                display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="fas fa-check-circle" style="color: #4f46e5; font-size: 1.1rem;"></i>
+                            </div>
+                            <h4 style="color: #fff; margin: 0; font-size: 1.2rem;">Compétences acquises</h4>
+                        </div>
+                        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Développement d'applications web et mobiles</li>
+                            <li>Gestion de bases de données</li>
+                            <li>Cybersécurité des services informatiques</li>
+                            <li>Conduite de projets informatiques</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.75rem;">
+                            <div style="width: 36px; height: 36px; background: rgba(79, 70, 229, 0.2); border-radius: 8px; 
+                                display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">
+                                <i class="fas fa-project-diagram" style="color: #4f46e5; font-size: 1.1rem;"></i>
+                            </div>
+                            <h4 style="color: #fff; margin: 0; font-size: 1.2rem;">Projets marquants</h4>
+                        </div>
+                        <ul style="margin: 0; padding-left: 1.2rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Développement d'applications métiers</li>
+                            <li>Mise en place de solutions cloud</li>
+                            <li>Gestion de parc informatique</li>
+                            <li>Projets en équipe avec méthodologie Agile</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <h4 style="color: #fff; margin: 0; font-size: 1.3rem; display: inline-flex; align-items: center;
+                            background: rgba(79, 70, 229, 0.2); padding: 0.5rem 1.5rem; border-radius: 50px;
+                            border: 1px solid rgba(79, 70, 229, 0.4);">
+                            <i class="fas fa-briefcase" style="margin-right: 0.75rem; color: #a5b4fc;"></i>
+                            Débouchés professionnels
+                        </h4>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+                        <span style="background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 0.6rem 1.2rem; border-radius: 8px; 
+                            font-size: 0.9rem; border: 1px solid rgba(79, 70, 229, 0.3); transition: all 0.3s ease;
+                            display: flex; align-items: center;">
+                            <i class="fas fa-laptop-code" style="margin-right: 0.5rem; font-size: 0.9em;"></i>
+                            Développeur d'applications
+                        </span>
+                        <span style="background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 0.6rem 1.2rem; border-radius: 8px; 
+                            font-size: 0.9rem; border: 1px solid rgba(79, 70, 229, 0.3); transition: all 0.3s ease;
+                            display: flex; align-items: center;">
+                            <i class="fas fa-code" style="margin-right: 0.5rem; font-size: 0.9em;"></i>
+                            Analyste programmeur
+                        </span>
+                        <span style="background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 0.6rem 1.2rem; border-radius: 8px; 
+                            font-size: 0.9rem; border: 1px solid rgba(79, 70, 229, 0.3); transition: all 0.3s ease;
+                            display: flex; align-items: center;">
+                            <i class="fas fa-search" style="margin-right: 0.5rem; font-size: 0.9em;"></i>
+                            Technicien d'études
+                        </span>
+                        <span style="background: rgba(79, 70, 229, 0.2); color: #a5b4fc; padding: 0.6rem 1.2rem; border-radius: 8px; 
+                            font-size: 0.9rem; border: 1px solid rgba(79, 70, 229, 0.3); transition: all 0.3s ease;
+                            display: flex; align-items: center;">
+                            <i class="fas fa-layer-group" style="margin-right: 0.5rem; font-size: 0.9em;"></i>
+                            Développeur full-stack
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Centres d'intérêt -->
+        <section class="section">
+            <h2 class="section-title">Centres d'Intérêt</h2>
+            <div class="interests">
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <span>Développement Web</span>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <span>Intelligence Artificielle</span>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <span>Mobile</span>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <span>Veille Technologique</span>
+                </div>
+                <div class="interest-item">
+                    <div class="interest-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <span>Jeux Vidéo</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parcours -->
+        <section class="section">
+            <h2 class="section-title">Mon Parcours</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2024 - 2026</span>
+                        <h3>BTS SIO option SLAM</h3>
+                        <p>Aurlom BTS+, Paris</p>
+                        <p>Service Informatique aux Organisations</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - 2024</span>
+                        <h3>License Mathématique et Informatique</h3>
+                        <p>Université Gustave Eiffel, Noisy-Champs</p>
+                        <p>Mathématiques et Informatique</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <span class="timeline-date">2020 - 2023</span>
+                        <h3>Baccalauréat Générale</h3>
+                        <p>Lycée Augste Blanqui, Saint-Ouen</p>
+                        <p>Matières fondamentales</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer sera chargé dynamiquement -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/loadComponents.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

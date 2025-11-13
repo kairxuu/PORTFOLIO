@@ -1,0 +1,76 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Règle pour la collection 'experiences'
+    match /experiences/{experienceId} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux utilisateurs authentifiés
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+    
+    // Règle pour la collection 'projects'
+    match /projects/{projectId} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux utilisateurs authentifiés
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+    
+    // Règle pour la collection 'skills'
+    match /skills/{skillId} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux utilisateurs authentifiés
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+    
+    // Règle pour la collection 'education'
+    match /education/{educationId} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux utilisateurs authentifiés
+      allow create: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+    
+    // Règle pour la collection 'settings'
+    match /settings/{document=**} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux administrateurs
+      allow write: if request.auth != null && 
+                  request.auth.token.admin === true;
+    }
+    
+    // Règle pour la collection 'users'
+    match /users/{userId} {
+      // L'utilisateur peut lire ses propres données
+      allow read: if request.auth != null && request.auth.uid == userId;
+      
+      // L'utilisateur peut mettre à jour son propre profil
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
+
+// Règles pour Firebase Storage
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      // Lecture autorisée à tous
+      allow read: if true;
+      
+      // Écriture réservée aux utilisateurs authentifiés
+      allow write: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,259 @@
+/* Styles spécifiques au formulaire de contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: fit-content;
+}
+
+.contact-info h2 {
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Styles pour les méthodes de contact */
+.contact-method {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+}
+
+.contact-method i {
+    font-size: 1.2rem;
+    color: #4a90e2;
+    margin-top: 0.3rem;
+    min-width: 20px;
+}
+
+.contact-method h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.contact-method a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.contact-method a:hover {
+    color: #4a90e2;
+    text-decoration: underline;
+}
+
+/* Styles pour le formulaire */
+.contact-form {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-form h2 {
+    margin-bottom: 1rem;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.contact-form p {
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Styles pour les champs de formulaire */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group:last-child {
+    margin-bottom: 2rem;
+}
+
+.form-label {
+    display: block;
+    margin: 0.75rem 0 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control {
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/* Style au focus */
+.form-control:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Désactiver les styles de validation par défaut du navigateur */
+input:required, textarea:required, select:required {
+    box-shadow: none !important;
+}
+
+input:invalid, textarea:invalid, select:invalid {
+    box-shadow: none !important;
+}
+
+/* Style pour les champs en erreur */
+.form-control.error {
+    border-color: #ff4d4d !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 77, 77, 0.25) !important;
+}
+
+/* Style pour les messages d'erreur */
+.form-error {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+    min-height: 1.25rem;
+    display: block;
+}
+
+/* Style pour le message de succès/erreur */
+.form-message {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    display: none;
+}
+
+.form-message.error {
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 1px solid rgba(255, 77, 77, 0.2);
+    color: #ff6b6b;
+}
+
+.form-message.success {
+    background-color: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+}
+
+/* Bouton d'envoi */
+.btn-submit {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 1rem 0 0;
+}
+
+.btn-submit:hover {
+    background: #3a7bc8;
+    transform: translateY(-2px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-text {
+    display: inline-block;
+}
+
+.btn-loader {
+    display: none;
+    margin-right: 0.5rem;
+}
+
+.btn-loader i {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Liens sociaux */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background: #4a90e2;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+}

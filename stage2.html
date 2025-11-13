@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stage 2ème année - Alexandre KEOLASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Styles spécifiques à la page Stage 2 */
+        .stage-hero {
+            padding: 10rem 2rem 4rem; /* Augmenté de 8rem à 10rem pour éviter le chevauchement */
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            margin-top: 6rem; /* Marge supplémentaire pour s'assurer qu'il n'y a pas de chevauchement */
+        }
+
+        .stage-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+            z-index: -1;
+        }
+
+        .stage-hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .stage-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+        }
+
+        .stage-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stage-category {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stage-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .stage-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .stage-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .meta-item i {
+            color: #fff;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .stage-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .main-content {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #fff;
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #fff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-title {
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-title i {
+            color: var(--accent-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+        }
+
+        .gallery-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .info-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-color);
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-item {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+        }
+
+        .info-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .info-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 992px) {
+            .stage-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .sidebar {
+                position: static;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .stage-hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .stage-container {
+                padding: 0 1.5rem 4rem;
+            }
+
+            .stage-title {
+                font-size: 2rem;
+            }
+
+            .stage-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .stage-meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar sera chargée dynamiquement -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section class="stage-hero">
+        <img src="https://source.unsplash.com/random/1920x1080/?mobile,app,development" alt="Stage Développement Mobile" class="stage-hero-bg">
+        <div class="container">
+            <span class="stage-category">Stage de 2ème année</span>
+            <h1 class="stage-title">Développeur Mobile</h1>
+            <p class="stage-subtitle">Développement d'applications mobiles cross-plateformes chez Digital Innov</p>
+            
+            <div class="stage-meta">
+                <span class="meta-item">
+                    <i class="fas fa-building"></i>
+                    Digital Innov
+                </span>
+                <span class="meta-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Lyon, France
+                </span>
+                <span class="meta-item">
+                    <i class="far fa-calendar-alt"></i>
+                    Mai - Juillet 2024 (12 semaines)
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stage Content -->
+    <div class="stage-container">
+        <div class="stage-header" style="margin-top: 3rem;">
+            <h2 class="section-title">Rapport de Stage</h2>
+        </div>
+
+        <div class="stage-content">
+            <div class="main-content">
+                <section>
+                    <h3 class="section-title">Contexte du stage</h3>
+                    <p>J'ai effectué mon stage de deuxième année de BTS SIO au sein de Digital Innov, une agence spécialisée dans le développement d'applications mobiles innovantes. L'entreprise accompagne des startups et des PME dans la réalisation de leurs projets digitaux.</p>
+                    
+                    <div class="highlight">
+                        <div class="highlight-title">
+                            <i class="fas fa-lightbulb"></i>
+                            Mission principale
+                        </div>
+                        <p>Ma mission principale a été de participer au développement d'une application mobile de gestion de tâches collaborative pour une entreprise du secteur des services. L'application permet aux équipes de gérer leurs projets, tâches et échéances de manière efficace.</p>
+                    </div>
+
+                    <h4>Objectifs du projet :</h4>
+                    <ul style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                        <li>Développer une application mobile cross-plateforme (iOS et Android)</li>
+                        <li>Mettre en place une synchronisation en temps réel des données</li>
+                        <li>Créer une interface utilisateur intuitive et réactive</li>
+                        <li>Assurer la sécurité des données utilisateurs</li>
+                        <li>Mettre en place des tests automatisés</li>
+                    </ul>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h3 class="section-title">Réalisation</h3>
+                    <p>J'ai intégré une équipe agile de 4 personnes (2 développeurs, 1 designer et 1 chef de projet) suivant la méthodologie Scrum avec des sprints de 2 semaines et des revues de sprint hebdomadaires.</p>
+                    
+                    <h4 style="margin: 2rem 0 1rem; font-size: 1.2rem; color: #fff;">Tâches réalisées :</h4>
+                    <ul style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
+                        <li><strong>Développement Frontend :</strong> Création d'interfaces utilisateur avec Flutter, implémentation d'animations fluides, développement de widgets personnalisés</li>
+                        <li><strong>Backend & API :</strong> Intégration avec une API REST existante, gestion de l'authentification avec Firebase Auth, mise en place de WebSockets pour les mises à jour en temps réel</li>
+                        <li><strong>Tests :</strong> Écriture de tests unitaires et d'intégration, tests sur appareils physiques et émulateurs</li>
+                        <li><strong>CI/CD :</strong> Configuration du déploiement continu avec GitHub Actions, publication sur Google Play Store et Apple App Store</li>
+                    </ul>
+
+                    <div class="gallery">
+                        <div class="gallery-item">
+                            <img src="https://source.unsplash.com/random/600x400/?mobile,app,ui" alt="Interface utilisateur">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://source.unsplash.com/random/600x400/?coding,programming" alt="Développement">
+                        </div>
+                    </div>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h3 class="section-title">Compétences acquises</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fab fa-flutter"></i>
+                            </div>
+                            <h4 class="skill-name">Flutter</h4>
+                            <p class="skill-desc">Développement d'applications mobiles cross-plateformes avec le framework Flutter et le langage Dart.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-fire"></i>
+                            </div>
+                            <h4 class="skill-name">Firebase</h4>
+                            <p class="skill-desc">Utilisation des services Firebase (Auth, Firestore, Cloud Functions) pour le backend.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4 class="skill-name">UI/UX Mobile</h4>
+                            <p class="skill-desc">Conception d'interfaces utilisateur adaptées aux plateformes mobiles et respectant les guidelines Material Design.</p>
+                        </div>
+                        <div class="skill-card">
+                            <div class="skill-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <h4 class="skill-name">CI/CD</h4>
+                            <p class="skill-desc">Mise en place de pipelines d'intégration et de déploiement continus avec GitHub Actions.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section style="margin-top: 4rem;">
+                    <h3 class="section-title">Bilan</h3>
+                    <p>Ce deuxième stage a été une expérience professionnelle très enrichissante qui m'a permis de me spécialiser dans le développement mobile cross-plateforme. J'ai pu participer activement à toutes les phases du projet, de la conception à la publication sur les stores d'applications.</p>
+                    
+                    <div class="highlight" style="margin-top: 2rem;">
+                        <div class="highlight-title">
+                            <i class="fas fa-trophy"></i>
+                            Résultats obtenus
+                        </div>
+                        <ul style="margin: 1rem 0 0 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+                            <li>Application publiée avec succès sur Google Play Store et Apple App Store</li>
+                            <li>Plus de 500 téléchargements lors du premier mois</li>
+                            <li>Note moyenne de 4.8/5 sur les stores</li>
+                            <li>Retour très positif de l'équipe et du client</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <div class="info-card">
+                    <h3 class="info-title">Détails du stage</h3>
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <span class="info-label">Entreprise</span>
+                            <span class="info-value">Digital Innov</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Durée</span>
+                            <span class="info-value">12 semaines</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Période</span>
+                            <span class="info-value">Mai - Juillet 2024</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Tuteur</span>
+                            <span class="info-value">Marie Martin</span>
+                            <span style="display: block; font-size: 0.9rem; color: var(--text-secondary);">Mobile Lead</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3 class="info-title">Technologies</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Dart</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Firestore</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                        <span class="tech-tag">Figma</span>
+                    </div>
+                </div>
+
+                <a href="#" class="btn-outline">
+                    <i class="fas fa-file-pdf"></i>
+                    Télécharger le rapport complet
+                </a>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer sera chargé dynamiquement -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/loadComponents.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation des éléments au défilement
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.skill-card, .gallery-item, .highlight');
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+            // Initialisation des animations
+            const skillCards = document.querySelectorAll('.skill-card');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const highlights = document.querySelectorAll('.highlight');
+
+            skillCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            });
+
+            galleryItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = `opacity 0.6s ease ${0.3 + index * 0.1}s, transform 0.6s ease ${0.3 + index * 0.1}s`;
+            });
+
+            highlights.forEach(highlight => {
+                highlight.style.opacity = '0';
+                highlight.style.transform = 'translateY(20px)';
+                highlight.style.transition = 'opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s';
+            });
+
+            // Déclenchement initial
+            animateOnScroll();
+
+            // Déclenchement au défilement
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

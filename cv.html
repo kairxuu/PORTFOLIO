@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alexandre KEOLASY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* CV Specific Styles */
+        .cv-container {
+            max-width: 1200px;
+            margin: 6rem auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .cv-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cv-header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cv-download:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+        }
+
+        .cv-sidebar {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 2rem;
+            height: fit-content;
+        }
+
+        .cv-main {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .cv-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cv-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-item i {
+            width: 24px;
+            margin-right: 1rem;
+            text-align: center;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Experience & Education */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            left: -7px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .timeline-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Languages */
+        .language-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .language-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .language-level {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .language-progress {
+            height: 100%;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cv-sidebar {
+                order: 2;
+            }
+
+            .cv-main {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .cv-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .cv-header p {
+                font-size: 1rem;
+            }
+
+            .cv-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar sera chargée dynamiquement -->
+    <div id="navbar-container"></div>
+
+    <!-- CV Content -->
+    <div class="cv-container">
+        <header class="cv-header">
+            <h1>Alexandre KEOLASY</h1>
+            <p>140 rue du Landy, SAINT-OUEN, 93400 – +33 6 27 57 90 33 – alexklsy@proton.me</p>
+            <a href="#" class="cv-download">
+                <i class="fas fa-download"></i>
+                Télécharger le CV
+            </a>
+        </header>
+
+        <div class="cv-grid">
+            <!-- Sidebar -->
+            <aside class="cv-sidebar">
+                <div class="profile-image-container">
+                    <img src="https://via.placeholder.com/300" alt="Alexandre KEOLASY" class="profile-image" style="width: 100%; border-radius: 12px; margin-bottom: 1.5rem;">
+                </div>
+
+                <h3 class="section-title">Contact</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>alexklsy@proton.me</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+33 6 27 57 90 33</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>140 rue du Landy, 93400 Saint-Ouen, France</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a target="_blank" href="https://github.com/kairxuu" >Github</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a target="_blank" href="https://linkedin.com/in/alexk">Linkedin</a>
+                    </div>
+                </div>
+
+                <h3 class="section-title" style="margin-top: 2.5rem;">Compétences</h3>
+                <div class="skills">
+                    <h4>Techniques</h4>
+                    <div class="skills-list">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Word</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">PowerPoint</span>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem;">Langues</h4>
+                    <div class="languages-list" style="margin-top: 0.5rem;">
+                        <div class="language-item" style="margin-bottom: 0.8rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>- Français</span>
+                            </div>
+                        </div>
+                        <div class="language-item" style="margin-bottom: 0.8rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>- Anglais</span>
+                            </div>
+                        </div>
+                        <div class="language-item">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span>- Vietnamien</span>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="section-title" style="margin-top: 2.5rem;">Centres d'intérêt</h3>
+                <div class="interests">
+                    <div class="interest-item" style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                        <i class="fas fa-users" style="margin-right: 0.8rem; width: 20px; text-align: center;"></i>
+                        <span>Esprit d'équipe</span>
+                    </div>
+                    <div class="interest-item" style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                        <i class="fas fa-tasks" style="margin-right: 0.8rem; width: 20px; text-align: center;"></i>
+                        <span>Organisation</span>
+                    </div>
+                    <div class="interest-item" style="display: flex; align-items: center;">
+                        <i class="fas fa-random" style="margin-right: 0.8rem; width: 20px; text-align: center;"></i>
+                        <span>Polyvalence</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="cv-main">
+                <!-- À propos -->
+                <section class="cv-section">
+                    <h2 class="section-title">À propos</h2>
+                    <p>En formation en BTS Services Informatiques aux Organisations, je recherche un emploi à temps partiel les weekends ainsi que les lundis et mardis. Sérieux et motivé, je suis prêt à m'investir et à contribuer efficacement.</p>
+                </section>
+
+                <!-- Expérience Professionnelle -->
+                <section class="cv-section">
+                    <h2 class="section-title">Expérience Professionnelle</h2>
+                
+                    <div class="timeline-item">
+                        <span class="timeline-date">Janv. 2024 - Août 2024</span>
+                        <h3 class="timeline-title">Équipier Polyvalent</h3>
+                        <span class="timeline-subtitle">Coco Fresh Tea & Juice, Paris</span>
+                        <div class="timeline-description">
+                            <p>• Service au bar, préparation des boissons et gestion des commandes</p>
+                            <p>• Nettoyage des espaces de travail et de service</p>
+                            <p>• Encaissement des clients et gestions des comptes en fin de service</p>
+                            <p>• Préparation des ingrédients nécessaires pour les boissons</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">Février 2018</span>
+                        <h3 class="timeline-title">Stage d'observation</h3>
+                        <span class="timeline-subtitle">Groupe OCP Santé - DSI, Saint-Ouen</span>
+                        <div class="timeline-description">
+                            <p>• Participation aux réunions avec les équipes informatiques</p>
+                            <p>• Entretien de présentation des services et projets en cours</p>
+                            <p>• Planification des rendez-vous et soutien aux tâches administratives (mails, rangement de documents)</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Formation -->
+                <section class="cv-section">
+                    <h2 class="section-title">Formation</h2>
+                
+                    <div class="timeline-item">
+                        <span class="timeline-date">2024 - 2026</span>
+                        <h3 class="timeline-title">BTS Services Informatiques aux Organisations (SIO)</h3>
+                        <div class="timeline-description">
+                            <p>• Administration des systèmes et des réseaux et mise à disposition de services informatiques</p>
+                            <p>• Introduction à la cybersécurité des services informatiques</p>
+                            <p>• Développement d'applications mobiles</p>
+                            <p>• Culture économique, juridique et managériale pour l'informatique</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - 2023</span>
+                        <h3 class="timeline-title">Licence Mathématiques et Informatique</h3>
+                        <span class="timeline-subtitle">Université Gustave Eiffel</span>
+                        <div class="timeline-description">
+                            <p>• Modélisation mathématique et analyse de données</p>
+                            <p>• Programmation et développement d'algorithmes</p>
+                            <p>• Simulation numérique et gestion de base de données</p>
+                            <p>• Création d'application web et outils de prédiction</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2019 - 2022</span>
+                        <h3 class="timeline-title">Baccalauréat Scientifique</h3>
+                        <span class="timeline-subtitle">Lycée Polyvalent Auguste Blanqui</span>
+                        <div class="timeline-description">
+                            <p>• Bases en algèbres, analyse et probabilités</p>
+                            <p>• Introduction à la programmation</p>
+                            <p>• Résolution de problèmes mathématiques appliqués</p>
+                            <p>• Initialisation à la logique et aux algorithmes</p>
+                        </div>
+                        <div class="timeline-description">
+                            <p>Option SIN (Systèmes d'Information et Numérique)</p>
+                            <p>Mention Bien</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projets -->
+                <section class="cv-section">
+                    <h2 class="section-title">Projets Récents</h2>
+                    
+                    <div class="project-item" style="margin-bottom: 1.5rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Portfolio Personnel</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Développement d'un portfolio moderne avec HTML, CSS et JavaScript vanilla</p>
+                        <div class="skills-list" style="margin-top: 0.5rem;">
+                            <span class="skill-tag" style="font-size: 0.8rem;">HTML5</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">CSS3</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">JavaScript</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">PHP</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">MySQL</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">C#</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Application de Gestion de Tâches</h3>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Application web de gestion de tâches avec React et Firebase</p>
+                        <div class="skills-list" style="margin-top: 0.5rem;">
+                            <span class="skill-tag" style="font-size: 0.8rem;">React</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">Firebase</span>
+                            <span class="skill-tag" style="font-size: 0.8rem;">Material-UI</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer sera chargé dynamiquement -->
+    <div id="footer-container"></div>
+
+    <!-- Scripts -->
+    <script src="/js/loadComponents.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
