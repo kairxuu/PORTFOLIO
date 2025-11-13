@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.form-control').forEach(input => {
             input.classList.remove('error');
             const errorElement = input.nextElementSibling;
-            if (errorElement && errorElement.classList.contains('error-message')) {
+            if (errorElement && errorElement.classList.contains('form-error')) {
                 errorElement.textContent = '';
             }
         });
@@ -112,14 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
         if (formMessage) formMessage.style.display = 'none';
         
         try {
-            // Utiliser FormSubmit.co pour gérer l'envoi des emails
+            // Utiliser Formspree pour gérer l'envoi des emails
             const formData = new FormData(contactForm);
-            const response = await fetch('https://formsubmit.co/ajax/alexklsy@proton.me', {
+            const response = await fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
-                headers: { 
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                headers: {
+                    'Accept': 'application/json'
                 }
             });
             
@@ -129,8 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 showMessage('Votre message a été envoyé avec succès ! Je vous répondrai dès que possible.', 'success');
                 contactForm.reset();
                 formSubmitted = false;
+                
+                // Redirection après succès (optionnel)
+                const nextUrl = contactForm.querySelector('[name="_next"]')?.value;
+                if (nextUrl) {
+                    setTimeout(() => {
+                        window.location.href = nextUrl;
+                    }, 2000);
+                }
             } else {
-                throw new Error(result.message || 'Une erreur est survenue lors de l\'envoi du formulaire.');
+                throw new Error(result.errors ? result.errors.map(e => e.message).join(', ') : 'Une erreur est survenue lors de l\'envoi du formulaire.');
             }
             
         } catch (error) {

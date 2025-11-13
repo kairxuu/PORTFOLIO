@@ -247,11 +247,13 @@
             
             <div id="formMessage" class="form-message"></div>
             
-            <form id="contactForm" action="https://formspree.io/f/xdovgqld" method="POST" novalidate data-need-validation="true">
-                <!-- Champ anti-spam -->
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                    <input type="text" name="_gotcha" tabindex="-1">
-                </div>
+            <form id="contactForm" action="https://formspree.io/f/xgvrvdbk" method="POST" novalidate data-need-validation="true">
+                <!-- Champ caché pour la redirection après soumission -->
+                <input type="hidden" name="_next" value="https://portfolio-kairxuu.vercel.app/index.html">
+                <!-- Désactiver le reCAPTCHA de Formspree -->
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Désactiver la redirection automatique -->
+                <input type="hidden" name="_autoresponse" value="Merci pour votre message ! Je vous répondrai dès que possible.">
                 
                 <div class="form-group">
                     <label for="name" class="form-label">Nom complet *</label>
