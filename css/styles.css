@@ -565,6 +565,47 @@ box-shadow: 0 0 0 0.2rem rgba(255, 77, 77, 0.25);
     color: var(--text-primary);
 }
 
+/* Menu Mobile */
+.mobile-menu-button {
+    display: none; /* Caché par défaut */
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+/* Afficher le bouton uniquement sur tablettes et mobiles */
+@media (max-width: 1024px) {
+    .mobile-menu-button {
+        display: block; /* Afficher sur les écrans jusqu'à 1024px */
+    }
+
+    .nav-links {
+        display: none; /* Cacher les liens par défaut sur mobile */
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 70%;
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 900;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .hero h1 {
