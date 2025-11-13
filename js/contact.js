@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             // Utiliser FormSubmit.co pour gérer l'envoi des emails
             const formData = new FormData(contactForm);
-            const response = await fetch('https://formsubmit.co/ajax/your-email@example.com', {
+            const response = await fetch('https://formsubmit.co/ajax/alexklsy@proton.me', {
                 method: 'POST',
                 body: formData,
                 headers: { 
