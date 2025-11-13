@@ -5,7 +5,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Charge la navbar
-    fetch('/components/navbar.html')
+    fetch('components/navbar.html')
         .then(response => response.text())
         .then(html => {
             // Insère la navbar au début du body
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
     // Charge le footer
-    fetch('/components/footer.html')
+    fetch('components/footer.html')
         .then(response => response.text())
         .then(html => {
             // Insère le footer à la fin du body
@@ -65,39 +65,14 @@ function getCurrentPageName() {
 /**
  * Initialise le menu mobile
  */
-function initMobileMenu() {
-    const menuButton = document.querySelector('.mobile-menu-button');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (menuButton && navLinks) {
-        menuButton.addEventListener('click', () => {
-            const isExpanded = navLinks.style.display === 'flex';
-            navLinks.style.display = isExpanded ? 'none' : 'flex';
-            menuButton.innerHTML = isExpanded ? '☰' : '✕';
-            menuButton.setAttribute('aria-expanded', !isExpanded);
-        });
-        
-        // Ferme le menu lorsqu'un lien est cliqué (sur mobile)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
-                    menuButton.innerHTML = '☰';
-                    menuButton.setAttribute('aria-expanded', 'false');
-                }
-            });
-        });
-    }
-}
-
 // Gère le redimensionnement de la fenêtre pour le menu mobile
 window.addEventListener('resize', function() {
     const navLinks = document.querySelector('.nav-links');
-    const menuButton = document.querySelector('.mobile-menu-button');
     
-    if (window.innerWidth > 768) {
-        if (navLinks) navLinks.style.display = '';
-    } else if (menuButton && menuButton.getAttribute('aria-expanded') === 'false') {
-        if (navLinks) navLinks.style.display = 'none';
+    if (!navLinks) return;
+    
+    // Réinitialise le menu quand on passe en mode desktop
+    if (window.innerWidth > 767) {
+        navLinks.classList.remove('show');
     }
 });
