@@ -3,471 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veille Technologique - Automatisation des Agents IA</title>
+    <title>Veille Technologique - Actualités IT</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Styles spécifiques à la page Veille Technologique */
-        .veille-hero {
-            padding: 6rem 2rem 3rem;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .veille-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem 4rem;
-        }
-
-        .veille-intro {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            text-align: center;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .veille-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .veille-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .veille-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .veille-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .veille-content {
-            padding: 1.5rem;
-        }
-
-        .veille-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .veille-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-        }
-
-        .veille-meta i {
-            margin-right: 0.3rem;
-            color: var(--text-secondary);
-            opacity: 0.7;
-        }
-
-        .veille-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .veille-source {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 0.25rem 0.75rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 3rem 0;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        .error {
-            text-align: center;
-            padding: 2rem;
-            color: #ff6b6b;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .veille-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .veille-container {
-                padding: 0 1.5rem 3rem;
-            }
-            
-            .veille-hero {
-                padding: 5rem 1.5rem 2rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/veille.css">
 </head>
 <body>
-    <!-- Navbar sera chargée dynamiquement -->
-    <div id="navbar-container"></div>
+    <div id="main-content">
+        <!-- Navbar sera chargée dynamiquement -->
+        <div id="navbar-container"></div>
 
-    <!-- Hero Section -->
-    <section class="veille-hero">
-        <h1>Veille Technologique</h1>
-        <p>Automatisation des Agents IA : Tendances et Innovations</p>
-    </section>
-
-    <!-- Contenu principal -->
-    <div class="veille-container">
-        <div class="veille-intro">
-            <p>L'automatisation des agents IA représente une révolution majeure dans le domaine de l'intelligence artificielle. Cette page est dédiée au suivi des avancées, des outils et des cas d'utilisation des agents IA autonomes et automatisés qui transforment notre façon d'interagir avec la technologie.</p>
-        </div>
-
-        <!-- Section Flux RSS -->
-        <div class="veille-section">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Actualités en temps réel</h2>
-            <div id="rss-feed" class="veille-grid">
-                <div class="loading">
-                    <p>Chargement des actualités en cours...</p>
+        <!-- Contenu principal -->
+        <div class="content-wrapper">
+            <!-- Section Veille Technologique -->
+            <section class="veille-section">
+                <div class="container">
+                    <div class="header-container">
+                        <div>
+                            <h1>Veille Technologique</h1>
+                            <p class="lead">Restez informé des dernières actualités en intelligence artificielle et automatisation.</p>
+                        </div>
+                        <div class="button-group">
+                            <button id="refresh-btn" class="refresh-btn" title="Actualiser les articles">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Actualiser</span>
+                            </button>
+                            <button id="clear-cache-btn" class="refresh-btn danger" title="Vider le cache et recharger">
+                                <i class="fas fa-trash-alt"></i>
+                                <span>Vider le cache</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div id="veille-container">
+                        <div class="loading">
+                            <div class="spinner"></div>
+                            <p>Chargement des actualités en cours...</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </section>
         </div>
+
+        <!-- Footer sera chargé dynamiquement -->
+        <div id="footer-container"></div>
     </div>
 
-    <!-- Footer sera chargé dynamiquement -->
-    <div id="footer-container"></div>
-
-    <!-- Script pour le chargement des composants -->
-    <script src="js/loadComponents.js"></script>
-    
-    <!-- Script pour le flux RSS -->
+    <!-- Scripts -->
+    <script src="/js/loadComponents.js"></script>
+    <script src="/js/veille.js"></script>
     <script>
-        // Configuration
-        const config = {
-            // Flux RSS directs (sans API tierce)
-            rssFeeds: [
-                {
-                    name: 'Le Monde Informatique - IA',
-                    url: 'https://www.lemondeinformatique.fr/rss/ia-donnees.xml',
-                    enabled: true
-                },
-                {
-                    name: 'ZDNet France - IA',
-                    url: 'https://www.zdnet.fr/feeds/rss/actualites/ia/artificial-intelligence/',
-                    enabled: true
-                },
-                {
-                    name: 'Journal du Net - Tech',
-                    url: 'https://www.journaldunet.com/rss/tech.xml',
-                    enabled: false
-                }
-            ],
-            // Paramètres d'affichage
-            refreshInterval: 30 * 60 * 1000, // 30 minutes
-            maxItems: 6,
-            debug: true,
-            useFallback: true // Activer les articles de secours en cas d'erreur
-        };
-        
-        // Articles de secours (affichés si le chargement échoue)
-        const fallbackArticles = [
-            {
-                title: 'L\'intelligence artificielle et l\'automatisation',
-                description: 'Découvrez comment l\'IA et l\'automatisation transforment les entreprises modernes.',
-                link: 'https://www.lemondeinformatique.fr/ia-donnees.html',
-                date: new Date().toLocaleDateString('fr-FR'),
-                image: 'https://source.unsplash.com/random/600x400/?ai,technology',
-                source: 'Le Monde Informatique'
-            },
-            {
-                title: 'Les agents IA autonomes',
-                description: 'Les agents IA autonomes sont en train de révolutionner la façon dont nous interagissons avec la technologie.',
-                link: 'https://www.zdnet.fr/actualites/ia/',
-                date: new Date().toLocaleDateString('fr-FR'),
-                image: 'https://source.unsplash.com/random/600x400/?ai,robot',
-                source: 'ZDNet France'
-            },
-            {
-                title: 'L\'automatisation des processus métiers',
-                description: 'Comment l\'automatisation et l\'IA optimisent les processus métiers dans les entreprises.',
-                link: 'https://www.journaldunet.com/ebusiness/ia',
-                date: new Date().toLocaleDateString('fr-FR'),
-                image: 'https://source.unsplash.com/random/600x400/?automation,business',
-                source: 'Journal du Net'
-            }
-        ];
-
-        if (config.debug) {
-            console.log('Configuration du flux RSS:', config);
-        }
-
-        // Fonction pour charger un flux RSS directement
-        async function fetchRSS() {
-            const container = document.getElementById('rss-feed');
-            
-            try {
-                console.log('Tentative de chargement du flux RSS...');
-                
-                // Récupérer le premier flux activé
-                const activeFeed = config.rssFeeds.find(feed => feed.enabled);
-                if (!activeFeed) {
-                    throw new Error('Aucun flux RSS activé dans la configuration');
-                }
-                
-                console.log('Chargement du flux:', activeFeed.name);
-                
-                // Essayer de charger le flux directement
-                const response = await fetch(activeFeed.url);
-                console.log('Réponse reçue, statut:', response.status);
-                
-                if (!response.ok) {
-                    throw new Error(`Erreur HTTP: ${response.status} - ${response.statusText}`);
-                }
-                
-                const xmlText = await response.text();
-                console.log('Données XML reçues');
-                
-                // Parser le XML
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                
-                // Vérifier les erreurs de parsing
-                const parserError = xmlDoc.querySelector('parsererror');
-                if (parserError) {
-                    console.error('Erreur de parsing XML:', parserError.textContent);
-                    throw new Error('Erreur de format du flux RSS');
-                }
-                
-                // Extraire les articles
-                const items = xmlDoc.querySelectorAll('item, entry');
-                const articles = [];
-                
-                items.forEach((item, index) => {
-                    if (index >= config.maxItems) return;
-                    
-                    // Gestion des différents formats RSS/Atom
-                    const title = item.querySelector('title')?.textContent?.trim() || 'Sans titre';
-                    const description = item.querySelector('description, summary')?.textContent?.trim() || '';
-                    
-                    // Gestion des liens (RSS et Atom)
-                    let link = '#';
-                    const linkElement = item.querySelector('link');
-                    if (linkElement) {
-                        // Pour Atom
-                        if (linkElement.getAttribute('href')) {
-                            link = linkElement.getAttribute('href');
-                        } 
-                        // Pour RSS
-                        else if (linkElement.textContent) {
-                            link = linkElement.textContent.trim();
-                        }
-                    }
-                    
-                    // Nettoyer le lien s'il est relatif
-                    if (link.startsWith('/')) {
-                        const url = new URL(activeFeed.url);
-                        link = `${url.origin}${link}`;
-                    }
-                    
-                    const pubDate = item.querySelector('pubDate, published, updated, dc\:date')?.textContent?.trim() || 
-                                  new Date().toISOString();
-                    const image = item.querySelector('enclosure')?.getAttribute('url') || 
-                                 item.querySelector('media\:content, content')?.getAttribute('url') ||
-                                 'https://source.unsplash.com/random/600x400/?ai,technology';
-                    
-                    articles.push({
-                        title,
-                        description: cleanDescription(description),
-                        link,
-                        date: formatDate(pubDate),
-                        image,
-                        source: activeFeed.name
-                    });
+        // Gestion du bouton de rafraîchissement
+        document.addEventListener('DOMContentLoaded', () => {
+            const refreshBtn = document.getElementById('refresh-btn');
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', () => {
+                    // Forcer le rechargement des articles
+                    localStorage.removeItem('veille_techno_last_update');
+                    const container = document.getElementById('veille-container');
+                    container.innerHTML = '<div class="loading">Actualisation en cours...</div>';
+                    loadAndDisplayArticles();
                 });
-                
-                if (articles.length > 0) {
-                    displayArticles(articles);
-                } else {
-                    throw new Error('Aucun article trouvé dans le flux');
-                }
-            } catch (error) {
-                console.error('Erreur lors du chargement du flux RSS:', error);
-                
-                // Si le mode secours est activé, afficher les articles de secours
-                if (config.useFallback) {
-                    console.warn('Utilisation des articles de secours');
-                    displayArticles(fallbackArticles);
-                    return;
-                }
-                
-                // Sinon, afficher un message d'erreur
-                const errorHtml = `
-                    <div class="error" style="grid-column: 1 / -1;">
-                        <p>Impossible de charger le flux RSS. Voici quelques solutions :</p>
-                        <ol style="text-align: left; max-width: 600px; margin: 1rem auto;">
-                            <li>Vérifiez votre connexion Internet</li>
-                            <li>Rafraîchissez la page (F5 ou Ctrl+F5)</li>
-                            <li>Activez un autre flux RSS dans la configuration</li>
-                        </ol>
-                        <button onclick="location.reload()" style="
-                            background: rgba(255, 255, 255, 0.1);
-                            border: 1px solid rgba(255, 255, 255, 0.2);
-                            color: white;
-                            padding: 8px 16px;
-                            border-radius: 4px;
-                            cursor: pointer;
-                            margin-top: 1rem;
-                        ">
-                            Rafraîchir la page
-                        </button>
-                        <div style="margin-top: 1rem; font-size: 0.9em; color: #aaa;">
-                            <p>Détails techniques : ${error.message}</p>
-                            <p>URL du flux : ${config.rssFeeds.find(f => f.enabled)?.url || 'Aucun'}</p>
-                        </div>
-                    </div>
-                `;
-                
-                const container = document.getElementById('rss-feed');
-                if (container) {
-                    container.innerHTML = errorHtml;
-                }
             }
-        }
-
-        // Nettoyer la description HTML
-        function cleanDescription(html) {
-            if (!html) return 'Aucune description disponible';
-            
-            // Supprimer les balises HTML
-            const tmp = document.createElement('div');
-            tmp.innerHTML = html;
-            let text = tmp.textContent || tmp.innerText || '';
-            
-            // Nettoyer les espaces multiples et les sauts de ligne
-            text = text.replace(/\s+/g, ' ').trim();
-            
-            // Tronquer si trop long
-            return text.length > 200 ? text.substring(0, 200) + '...' : text;
-        }
-
-        // Formater la date
-        function formatDate(dateString) {
-            try {
-                const date = new Date(dateString);
-                if (isNaN(date.getTime())) return 'Date inconnue';
-                
-                return new Intl.DateTimeFormat('fr-FR', {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric'
-                }).format(date);
-            } catch (e) {
-                console.error('Erreur de formatage de la date:', e);
-                return 'Date inconnue';
-            }
-        }
-
-        // Afficher les articles dans le DOM
-        function displayArticles(articles) {
-            const container = document.getElementById('rss-feed');
-            if (!container) return;
-            
-            if (!articles || articles.length === 0) {
-                container.innerHTML = `
-                    <div class="error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                        <p>Aucun article disponible pour le moment.</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            container.innerHTML = articles.map(article => `
-                <article class="veille-card">
-                    <img src="${article.image}" alt="${article.title}" class="veille-image" onerror="this.src='https://source.unsplash.com/random/600x400/?ai,technology'">
-                    <div class="veille-content">
-                        <span class="veille-source">${article.source}</span>
-                        <h3 class="veille-title">${article.title}</h3>
-                        <div class="veille-meta">
-                            <span><i class="far fa-calendar"></i> ${article.date}</span>
-                        </div>
-                        <p class="veille-description">${article.description}</p>
-                        <a href="${article.link}" target="_blank" rel="noopener noreferrer" class="btn-outline">
-                            Lire l'article <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        // Initialisation
-        function initVeille() {
-            // Charger le flux RSS
-            fetchRSS();
-            
-            // Configurer le rafraîchissement automatique
-            if (config.refreshInterval > 0) {
-                setInterval(fetchRSS, config.refreshInterval);
-                if (config.debug) {
-                    console.log(`Rafraîchissement automatique configuré toutes les ${config.refreshInterval / 60000} minutes`);
-                }
-            }
-        }
-        
-        // Démarrer l'initialisation après le chargement du DOM
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initVeille);
-        } else {
-            initVeille();
-        }
+        });
     </script>
 </body>
 </html>
