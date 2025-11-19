@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Présentation Interactive - BXTTERFLY</title>
+  <style>
+    :root {
+      --color-bg: #0a0a0a;
+      --color-slide: #191922;
+      --color-surface: #2a2a2a;
+      --color-accent: #a855f7;
+      --color-accent-gradient: linear-gradient(90deg, #a855f7 0%, #ec4899 100%);
+      --color-text: #fff;
+      --color-muted: #b0b0b0;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--color-bg);
+    }
+    body {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slide-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--color-bg);
+    }
+
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: var(--color-slide);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2.5rem;
+      box-sizing: border-box;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 2;
+    }
+
+    .slide h1, .slide h2, .slide h3 {
+      color: var(--color-accent);
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: -.5px;
+      text-shadow: 0 2px 8px rgba(168,85,247,0.08);
+    }
+    .slide h1 { font-size: 2.5rem; margin-bottom: 2.5rem;}
+    .slide h2 { font-size: 2rem; margin-bottom: 2rem;}
+
+    .slide p, .slide ul {
+      color: var(--color-text);
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+      max-width: 700px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .slide ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.2rem 0;
+    }
+    .slide ul li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      position: relative;
+      padding-left: 1.3em;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .slide ul li:before {
+      content: "▸";
+      color: var(--color-accent);
+      position: absolute;
+      left: 0;
+    }
+    .slide .img-preview,
+    .slide .profile-pic {
+      border-radius: 12px;
+      border: 2.5px solid var(--color-accent);
+      margin: 2rem auto 1rem auto;
+      box-shadow: 0 6px 32px rgba(168,85,247,0.18);
+      max-width: 320px;
+      object-fit: cover;
+      background: #222;
+      max-height: 300px;
+      display: block;
+    }
+    .slide .profile-pic {
+      border-radius: 50%;
+      width: 136px;
+      height: 136px;
+    }
+    .card-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .card-rect {
+      background: var(--color-surface);
+      border-radius: 16px;
+      border: 1.5px solid rgba(168,85,247,0.25);
+      box-shadow: 0 2px 12px rgba(168,85,247,0.085);
+      padding: 1rem 1.5rem;
+      flex: 1 1 220px;
+      max-width: 260px;
+      min-width: 200px;
+      color: var(--color-text);
+      text-align: center;
+    }
+    .card-rect h3 {
+      font-size: 1.02rem;
+      color: var(--color-accent);
+      margin-bottom: 0.7rem;
+    }
+    .card-rect p {
+      font-size: 0.97rem;
+      color: var(--color-muted);
+      margin-bottom: 0.3rem;
+    }
+    .slide .accent-bar {
+      width: 88px;
+      height: 5px;
+      background: var(--color-accent-gradient);
+      border-radius: 3px;
+      margin: 1.5rem auto 1.9rem auto;
+    }
+
+    /* Controls */
+    .controls {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      z-index: 10;
+    }
+    .control-btn {
+      background: var(--color-accent-gradient);
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 50%;
+      width: 54px;
+      height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 6px rgba(168,85,247,0.138));
+      cursor: pointer;
+      transition: background 0.18s, box-shadow 0.18s;
+      outline: none;
+      box-shadow: 0 2px 8px rgba(168,85,247,0.13);
+    }
+    .control-btn:active {
+      box-shadow: 0 0px 4px rgba(168,85,247,0.14);
+    }
+
+    .slide-index {
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+      margin-left: 12px;
+      margin-right: 12px;
+      opacity: 0.6;
+      font-family: monospace;
+    }
+
+    /* Fullscreen Button */
+    .fullscreen-btn {
+      position: absolute;
+      top: 28px;
+      right: 38px;
+      background: var(--color-surface);
+      color: var(--color-accent);
+      border-radius: 8px;
+      border: none;
+      font-size: 1.18rem;
+      padding: 8px 20px;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(168,85,247,0.13);
+      transition: background 0.14s;
+      z-index: 20;
+    }
+    .fullscreen-btn:hover {
+      background: var(--color-accent);
+      color: #fff;
+    }
+    @media (max-width: 900px) {
+      .slide, .slide-container {
+        padding: 1.1rem 0.5rem;
+      }
+      h1 { font-size: 2rem;}
+      h2 { font-size: 1.32rem;}
+      .card-row { gap: 1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container" id="slides">
+    <!-- Slide 1 -->
+    <section class="slide" data-index="0">
+      <div class="accent-bar"></div>
+      <h1>Stage Développeur Front-End</h1>
+      <p style="color: var(--color-accent); font-weight: 600;">BXTTERFLY Streetwear</p>
+      <p>1ère année BTS SIO SLAM</p>
+      <div style="width: 62%; height: 2px; background:var(--color-accent-gradient); margin: 2rem auto;"></div>
+      <p style="color: var(--color-muted); font-size: 0.96rem; margin-bottom: 0;">Alexandre KEOLASY</p>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide" data-index="1">
+      <h2>Plan de présentation</h2>
+      <ul>
+        <li>Présentation de l'entreprise BXTTERFLY</li>
+        <li>Portrait du gérant : Mohamed Amine Ben Mansour</li>
+        <li>Missions et compétences développées</li>
+        <li>Bilan du stage et apports personnels</li>
+      </ul>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide" data-index="2">
+      <h2>BXTTERFLY</h2>
+      <ul>
+        <li>MOHAMED AMINE EI - BXTTERFLY</li>
+        <li>Saint-Ouen-sur-Seine (93400)</li>
+        <li>SIRET : 98079833400010</li>
+        <li>Vente de vêtements streetwear</li>
+      </ul>
+      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/2d4daf87-5a2f-4b8e-a9c7-8843b5e132f7" alt="BXTTERFLY Instagram" class="img-preview">
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide" data-index="3">
+      <h2>Contexte du stage 🎯</h2>
+      <ul>
+        <li>Entreprise spécialisée en e-commerce streetwear</li>
+        <li>Projet : refonte de la plateforme avec design moderne</li>
+        <li>Amélioration de l'expérience utilisateur</li>
+        <li>Optimisation technique du site</li>
+      </ul>
+      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/cba911ce-443f-45fb-9727-3702ed561233" alt="Preview de la page d'accueil BXTTERFLY" class="img-preview">
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide" data-index="4">
+      <h2>Portrait du gérant</h2>
+      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/e7ad4d77-8cb7-4a11-bcb4-b64c798cf569" alt="Mohamed Amine Ben Mansour" class="profile-pic">
+      <ul>
+        <li>Entrepreneur passionné dans le digital</li>
+        <li>Travail en binôme avec suivi quotidien</li>
+        <li>Validation régulière des fonctionnalités</li>
+      </ul>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide" data-index="5">
+      <h2>Le gérant</h2>
+      <ul>
+        <li>Entrepreneur dans le secteur digital</li>
+        <li>Vision : solutions web innovantes</li>
+        <li>Petite structure : équipe de 2 personnes</li>
+        <li>Accompagnement personnalisé</li>
+      </ul>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide" data-index="6">
+      <h2>Relation professionnelle</h2>
+      <div style="font-size: 5rem; color: var(--color-accent); margin-bottom: 1.5rem;">🤝</div>
+      <ul>
+        <li>Bonne entente et communication</li>
+        <li>Conversations fluides et constructives</li>
+        <li>Compréhensif, à l'écoute et bienveillant</li>
+      </ul>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide" data-index="7">
+      <h2>Objectifs du projet 🎨</h2>
+      <ul>
+        <li>Interface élégante et moderne</li>
+        <li>Design responsive</li>
+        <li>Système de filtrage performant</li>
+        <li>Navigation intuitive</li>
+      </ul>
+    </section>
+
+    <!-- Slide 9 -->
+    <section class="slide" data-index="8">
+      <h2>Méthode de travail 🔄</h2>
+      <div class="card-row">
+        <div class="card-rect">
+          <h3>Approche itérative</h3>
+          <p>Développement par phases et validations régulières.</p>
+        </div>
+        <div class="card-rect">
+          <h3>Méthodologie BEM</h3>
+          <p>Convention CSS Block Element Modifier.<br>Code clair & maintenable.</p>
+        </div>
+        <div class="card-rect">
+          <h3>Communication directe</h3>
+          <p>Travail en binôme et échange permanent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10 -->
+    <section class="slide" data-index="9">
+      <h2>Mes missions principales 💻</h2>
+      <ul>
+        <li>Conception d'interfaces utilisateur</li>
+        <li>Création de composants réutilisables</li>
+        <li>Design responsive</li>
+        <li>Optimisation des performances</li>
+      </ul>
+    </section>
+
+    <!-- Slide 11 -->
+    <section class="slide" data-index="10">
+      <h2>Stack technique 🛠️</h2>
+      <div class="card-row">
+        <div class="card-rect">
+          <h3>Front-end</h3>
+          <p>HTML5, CSS3, JavaScript (ES6+)</p>
+        </div>
+        <div class="card-rect">
+          <h3>Outils & Frameworks</h3>
+          <p>Bootstrap, Git, Méthodologie BEM</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12 -->
+    <section class="slide" data-index="11">
+      <h2>Compétences acquises 🎓</h2>
+      <div class="card-row">
+        <div class="card-rect">
+          <h3>HTML5 & CSS3</h3>
+          <p>Sémantique, Flexbox & Grid</p>
+        </div>
+        <div class="card-rect">
+          <h3>JavaScript</h3>
+          <p>DOM, AJAX, Promesses</p>
+        </div>
+        <div class="card-rect">
+          <h3>Responsive Design</h3>
+          <p>Mobile-first, Media queries</p>
+        </div>
+        <div class="card-rect">
+          <h3>BEM</h3>
+          <p>CSS structuré et maintenable</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 13 -->
+    <section class="slide" data-index="12">
+      <h2>Résultats obtenus 🎉</h2>
+      <ul>
+        <li>Site e-commerce fonctionnel</li>
+        <li>Interface intuitive utilisateur</li>
+        <li>Meilleure expérience client</li>
+        <li>Retour positif du gérant</li>
+      </ul>
+      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/cba911ce-443f-45fb-9727-3702ed561233" alt="Page d'accueil BXTTERFLY" class="img-preview">
+    </section>
+
+    <!-- Slide 14 -->
+    <section class="slide" data-index="13">
+      <h2>Bilan personnel 💡</h2>
+      <div class="card-row">
+        <div class="card-rect">
+          <h3>Expérience formatrice</h3>
+          <p>Compétences front-end consolidées</p>
+        </div>
+        <div class="card-rect">
+          <h3>Pratique professionnelle</h3>
+          <p>Mise en œuvre des acquis théoriques</p>
+        </div>
+        <div class="card-rect">
+          <h3>Découverte du e-commerce</h3>
+          <p>Spécificités et enjeux du secteur</p>
+        </div>
+        <div class="card-rect">
+          <h3>Orientation SLAM confirmée</h3>
+          <p>Motivation renforcée pour la spécialité</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 15 -->
+    <section class="slide" data-index="14">
+      <div class="accent-bar"></div>
+      <h2>Merci de votre attention</h2>
+      <p style="color: var(--color-accent); font-size: 1.3rem;">Questions ?</p>
+    </section>
+  </div>
+  <div class="controls">
+    <button class="control-btn" id="btn-prev" title="Précédent" aria-label="Précédent">&#8592;</button>
+    <span class="slide-index" id="slide-index"></span>
+    <button class="control-btn" id="btn-next" title="Suivant" aria-label="Suivant">&#8594;</button>
+  </div>
+  <button class="fullscreen-btn" id="fullscreen-btn">Plein écran</button>
+
+  <script>
+    // Slide navigation logic
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((s, i) => {
+        if (i === idx) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+      document.getElementById('slide-index').textContent = (idx + 1) + ' / ' + slides.length;
+      current = idx;
+    }
+    function nextSlide() {
+      if (current < slides.length - 1) showSlide(current + 1);
+    }
+    function prevSlide() {
+      if (current > 0) showSlide(current - 1);
+    }
+    document.getElementById('btn-next').onclick = nextSlide;
+    document.getElementById('btn-prev').onclick = prevSlide;
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'Home') showSlide(0);
+      if (e.key === 'End') showSlide(slides.length - 1);
+    });
+
+    // fullscreen logic
+    const fsBtn = document.getElementById('fullscreen-btn');
+    fsBtn.onclick = () => {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    };
+
+    // Init
+    showSlide(0);
+  </script>
+</body>
+</html>
