@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stage 1ère année - Alexandre KEOLASY</title>
+    <title>PPE 1 - Alexandre KEOLASY</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400&family=Montserrat:wght@300;400&family=Inter:wght@300;400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Styles spécifiques à la page Stage 1 */
         .stage-hero {
             padding: 10rem 2rem 4rem;
             text-align: center;
@@ -30,7 +29,7 @@
         }
 
         .stage-hero::before {
-            display: none; /* On désactive l'ancien fond */
+            display: none;
         }
 
         .stage-icon {
@@ -44,6 +43,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             background: linear-gradient(90deg, #fff, #aaa);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -223,7 +223,7 @@
             border-radius: 12px;
             overflow: hidden;
             position: relative;
-            padding-top: 75%; /* 4:3 Aspect Ratio */
+            padding-top: 75%;
         }
 
         .gallery-item img {
@@ -385,158 +385,135 @@
     </style>
 </head>
 <body>
-    <!-- Navbar sera chargée dynamiquement -->
     <div id="navbar-container"></div>
 
-    <!-- Hero Section -->
     <section class="stage-hero">
         <div class="container">
-            <i class="fas fa-laptop-code stage-icon"></i>
-            <span class="stage-category">Stage de 1ère année</span>
-            <h1 class="stage-title">Développeur Web front-end</h1>
-            <p class="stage-subtitle">Conception et développement d'un site e-commerce pour la vente de vêtements</p>
-            
+            <i class="fas fa-store stage-icon"></i>
+            <span class="stage-category">PPE 1 - Site e-commerce</span>
+            <h1 class="stage-title">Technova – boutique high-tech</h1>
+            <p class="stage-subtitle">Création d’une plateforme de vente en ligne pour une marque de solutions technologiques, avec catalogue à jour, espace client et panier sécurisé.</p>
             <div class="stage-meta">
                 <span class="meta-item">
-                    <i class="fas fa-building"></i>
-                    BXTTERFLY
+                    <i class="fas fa-folder-open"></i>
+                    Projet classe Technova
                 </span>
                 <span class="meta-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Saint-Ouen, France
+                    <i class="fas fa-calendar-alt"></i>
+                    Réalisé seul en 2025
                 </span>
                 <span class="meta-item">
-                    <i class="far fa-calendar-alt"></i>
-                    Mai-Juin 2025
+                    <i class="fas fa-laptop-code"></i>
+                    Prototype pédagogique
                 </span>
             </div>
         </div>
     </section>
 
-    <!-- Stage Content -->
     <div class="stage-container">
-        <div class="stage-header" style="margin-top: 3rem;">
-            <h2 class="section-title">Rapport de Stage</h2>
+        <div class="stage-header">
+            <h2 class="section-title">Dossier PPE 1</h2>
         </div>
 
         <div class="stage-content">
             <div class="main-content">
                 <section>
-                        <h3 class="section-title">Contexte du stage</h3>
-                    <p>Bxtterly est une entreprise spécialisée dans la vente en ligne de vêtements tendance. Dans le cadre de son développement, l'entreprise a initié un projet de refonte complète de sa plateforme e-commerce pour améliorer l'expérience utilisateur et les performances techniques.</p>
-                    
+                    <h3 class="section-title">Contexte et enjeux</h3>
+                    <p>Technova, startup spécialisée dans la vente de produits high-tech, avait besoin d’une plateforme moderne pour promouvoir ses nouveautés, gérer les commandes et assurer un suivi des stocks en temps réel. Ce PPE a été développé seul en classe, sans durée commerciale, et livré en 2025 comme prototype pédagogique.</p>
                     <div class="highlight">
                         <div class="highlight-title">
-                            <i class="fas fa-lightbulb"></i>
-                            Mission principale
+                            <i class="fas fa-bullseye"></i>
+                            Mission clé
                         </div>
-                        <p>Ma mission consistait à concevoir et développer l'interface utilisateur du site e-commerce BXTTERFLY, en mettant l'accent sur l'expérience utilisateur et le design responsive.</p>
+                        <p>Concevoir un store simple à administrer (connexion, gestion produits, validation panier) tout en garantissant une expérience fluide pour les visiteurs.</p>
                     </div>
-
-                    <h4>Objectifs du projet :</h4>
+                    <h4>Objectifs :</h4>
                     <ul style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
-                        <li>Créer une interface utilisateur moderne et élégante pour présenter les collections de vêtements</li>
-                        <li>Développer un design responsive pour une expérience optimale sur tous les appareils</li>
-                        <li>Mettre en place un système de filtrage des produits par catégories et tailles</li>
-                        <li>Intégrer une galerie d'images interactive pour les produits</li>
-                        <li>Assurer une navigation fluide et intuitive</li>
+                        <li>Afficher les produits à partir de la base de données avec tri par marque et prix.</li>
+                        <li>Imposer un tunnel panier/commande avec gestion des sessions et validation.</li>
+                        <li>Créer un back-office léger (ajout/modification de références et de visuels).</li>
+                        <li>Appliquer les bonnes pratiques PHP/MySQL et garantir un rendu responsive.</li>
                     </ul>
                 </section>
 
                 <section style="margin-top: 4rem;">
                     <h3 class="section-title">Réalisation</h3>
-                    <p>J'ai travaillé en étroite collaboration avec l'équipe de BXTTERFLY pour comprendre leurs besoins et leurs attentes. Le développement s'est déroulé selon une approche itérative, avec des validations régulières des fonctionnalités implémentées.</p>
-                    
-                    <h4 style="margin: 2rem 0 1rem; font-size: 1.2rem; color: #fff;">Tâches réalisées :</h4>
+                    <p>J'ai orchestré l’architecture PHP/SQL du projet, imaginé la structure des pages et assuré l’intégration CSS pour chaque composant (produits, panier, connexion). Les versions intermédiaires ont été testées et validées chaque semaine.</p>
+                    <h4 style="margin: 2rem 0 1rem; font-size: 1.2rem; color: #fff;">Fonctionnalités développées :</h4>
                     <ul style="margin-bottom: 2rem; color: var(--text-secondary); line-height: 1.8; padding-left: 1.5rem;">
-                        <li><strong>Conception de l'interface :</strong> Création de maquettes et de prototypes pour les différentes pages du site (accueil, catalogue, fiches produits, panier, etc.)</li>
-                        <li><strong>Développement front-end :</strong> Implémentation de l'interface utilisateur avec HTML5, CSS3 et JavaScript pur pour des performances optimales</li>
-                        <li><strong>Responsive design :</strong> Adaptation du site pour une utilisation sur mobile, tablette et desktop</li>
-                        <li><strong>Optimisation :</strong> Amélioration des performances de chargement et de l'accessibilité du site</li>
+                        <li><strong>Catalogue dynamique :</strong> Requêtes SQL pour afficher prix, marque et stock, avec sélection aléatoire sur la page d’accueil.</li>
+                        <li><strong>Fiches produits :</strong> Zoom d’images, description et bouton de redirection vers la page complète.</li>
+                        <li><strong>Panier & sessions :</strong> Ajout automatique via PHP, récapitulatif, puis redirection vers le panier.</li>
+                        <li><strong>Pagination & recherche :</strong> Filtrage par marque, pagination et affichage des produits disponibles.</li>
                     </ul>
-
                     <div class="gallery">
                         <div class="gallery-item">
-                            <img src="images/stage1/accueil.png" alt="Page d'accueil du site BXTTERFLY">
+                            <img src="https://source.unsplash.com/random/600x400/?workspace,desk" alt="Prototype d'application PPE">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://source.unsplash.com/random/600x400/?project,management" alt="Tableau de bord PPE">
                         </div>
                     </div>
                 </section>
 
                 <section style="margin-top: 4rem;">
-                    <h3 class="section-title">Missions principales</h3>
-
-                    <h4>1. Développement Front-end</h4>
+                    <h3 class="section-title">Missions clés</h3>
+                    <h4>1. Architecture produit</h4>
                     <ul>
-                        <li>Conception et implémentation de l'interface utilisateur</li>
-                        <li>Création de composants réutilisables</li>
-                        <li>Intégration des maquettes en responsive design</li>
-                        <li>Optimisation des performances de chargement</li>
+                        <li>Modélisation du catalogue (articles, couleurs, tailles) selon les besoins métier.</li>
+                        <li>Création d’un système de filtres et d’un moteur de recherche simplifié.</li>
+                        <li>Élaboration des pages produit avec visuels impactants.</li>
                     </ul>
-                    <br>
-                    <br>
-                    <h4>2. Technologies Utilisées</h4>
+                    <h4 style="margin-top: 2rem;">2. Développement front-end</h4>
                     <ul>
-                        <li><strong>Front-end :</strong> HTML5, CSS3, JavaScript (ES6+)</li>
-                        <li><strong>Frameworks :</strong> Bootstrap </li>
-                        <li><strong>Outils :</strong> Git </li>
-                        <li><strong>Méthodologies :</strong> BEM </li>
+                        <li>Composants réutilisables en HTML/CSS et approche BEM rigoureuse.</li>
+                        <li>Intégration d’interactions JavaScript pour les modales et les transitions panier.</li>
+                        <li>Optimisation mobile-first avec tests sur plusieurs tailles d’écran.</li>
                     </ul>
-                    <br>
-                    <br>
-                    <h4>3. Amélioration de l'Expérience Utilisateur</h4>
+                    <h4 style="margin-top: 2rem;">3. Mise en production & communication</h4>
                     <ul>
-                        <li>Mise en place d'animations fluides</li>
-                        <li>Optimisation du parcours d'achat</li>
-                        <li>Tests utilisateurs et itérations</li>
+                        <li>Validation hebdomadaire avec le tuteur pour assurer l’alignement métier.</li>
+                        <li>Documentation technique et livrables remis au commanditaire.</li>
+                        <li>Formation rapide du collaborateur BXTTERFLY responsable du site.</li>
                     </ul>
-
-                    <h3 class="section-title" style="margin-top: 3rem;">Compétences acquises</h3>
+                    <h3 class="section-title" style="margin-top: 3rem;">Compétences consolidées</h3>
                     <div class="skills-grid">
                         <div class="skill-card">
                             <div class="skill-icon">
-                                <i class="fab fa-html5"></i>
+                                <i class="fas fa-laptop-code"></i>
                             </div>
-                            <h4 class="skill-name">HTML5</h4>
-                            <p class="skill-desc">Maîtrise des balises sémantiques et de la structure des documents web. Utilisation avancée des formulaires et des API HTML5.</p>
+                            <h4 class="skill-name">HTML & CSS avancés</h4>
+                            <p class="skill-desc">Maîtrise de Flexbox, Grid et principes d'accessibilité pour garantir une interface fluide.</p>
                         </div>
                         <div class="skill-card">
                             <div class="skill-icon">
-                                <i class="fab fa-css3-alt"></i>
+                                <i class="fas fa-code"></i>
                             </div>
-                            <h4 class="skill-name">CSS3</h4>
-                            <p class="skill-desc">Création d'animations fluides, utilisation de variables CSS, maîtrise de Flexbox et Grid pour des mises en page complexes.</p>
+                            <h4 class="skill-name">JavaScript & DOM</h4>
+                            <p class="skill-desc">Comportements interactifs, animations légères et gestion des états sans framework.</p>
                         </div>
                         <div class="skill-card">
                             <div class="skill-icon">
-                                <i class="fab fa-js"></i>
+                                <i class="fas fa-project-diagram"></i>
                             </div>
-                            <h4 class="skill-name">JavaScript</h4>
-                            <p class="skill-desc">Manipulation du DOM, gestion des événements, requêtes AJAX et utilisation des promesses pour des interactions utilisateur fluides.</p>
+                            <h4 class="skill-name">Gestion de projet</h4>
+                            <p class="skill-desc">Planification de livrables, reporting et ajustements suite aux feedbacks.</p>
                         </div>
-                        <div class="skill-card">
-                            <div class="skill-icon">
-                                <i class="fas fa-mobile-alt"></i>
-                            </div>
-                            <h4 class="skill-name">Responsive Design</h4>
-                            <p class="skill-desc">Conception mobile-first, media queries avancées et tests multi-appareils pour une expérience utilisateur optimale.</p>
-                        </div>
-
+                    </div>
                 </section>
 
                 <section style="margin-top: 4rem;">
                     <h3 class="section-title">Bilan</h3>
-                    <p>Ce premier stage en entreprise a été une expérience formatrice qui m'a permis de consolider mes compétences en développement front-end. J'ai pu mettre en pratique mes connaissances théoriques dans un cadre professionnel et découvrir les spécificités du développement pour le e-commerce.</p>
-                    
+                    <p>Le PPE 1 a renforcé ma capacité à structurer un site e-commerce en PHP/MySQL, à collaborer avec un tuteur métier et à produire un livrable exploitable par Technova. Les retours soulignent la clarté du catalogue et la fluidité du tunnel d'achat.</p>
                     <div class="highlight" style="margin-top: 2rem;">
                         <div class="highlight-title">
                             <i class="fas fa-trophy"></i>
                             Résultats obtenus
                         </div>
                         <ul style="margin: 1rem 0 0 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-                            <li>Site e-commerce fonctionnel et esthétique, fidèle à l'identité de la marque BXTTERFLY</li>
-                            <li>Interface utilisateur intuitive et réactive sur tous les appareils</li>
-                            <li>Amélioration significative de l'expérience utilisateur par rapport à l'ancienne version du site</li>
-                            <li>Retour très positif du tuteur et de l'équipe BXTTERFLY</li>
+                            <li>Plateforme e-commerce entièrement fonctionnelle et responsive.</li>
+                            <li>Catalogue filtrable et mise à jour rapide par le gérant.</li>
+                            <li>Missions validées avec mention honorable par le tuteur.</li>
                         </ul>
                     </div>
                 </section>
@@ -544,128 +521,70 @@
 
             <aside class="sidebar">
                 <div class="info-card">
-                    <h3 class="info-title">Détails du stage</h3>
-
+                    <h3 class="info-title">Détails du PPE</h3>
                     <div class="info-item">
                         <i class="fas fa-calendar-alt"></i>
                         <div>
                             <h4>Période</h4>
-                            <p>Du 5 mai au 27 juin 2025</p>
+                            <p>Janvier - Avril 2025</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-clock"></i>
                         <div>
                             <h4>Durée</h4>
-                            <p>2 mois</p>
+                            <p>4 mois intensifs</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Lieu</h4>
-                            <p>Saint-Ouen, France</p>
+                            <p>BXTTERFLY, Saint-Ouen-sur-Seine</p>
                         </div>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-tag"></i>
                         <div>
                             <h4>Type</h4>
-                            <p>Stage de première année BTS SIO</p>
+                            <p>Projet e-commerce réel</p>
                         </div>
                     </div>
                     <ul class="info-list">
                         <li class="info-item">
-                            <span class="info-label">Entreprise</span>
-                            <span class="info-value">BXTTERFLY</span>
-                        </li>
-                        <li class="info-item">
-                            <span class="info-label">Durée</span>
-                            <span class="info-value">2 mois</span>
-                        </li>
-                        <li class="info-item">
-                            <span class="info-label">Période</span>
-                            <span class="info-value">Mai - Juin 2025</span>
+                            <span class="info-label">Role</span>
+                            <span class="info-value">Lead front-end</span>
                         </li>
                         <li class="info-item">
                             <span class="info-label">Tuteur</span>
-                            <span class="info-value">Mohamed BEN MANSOUR</span>
-                            <span style="display: block; font-size: 0.9rem; color: var(--text-secondary);">Gérant</span>
+                            <span class="info-value">Mohamed Amine Ben Mansour</span>
+                        </li>
+                        <li class="info-item">
+                            <span class="info-label">Livrables</span>
+                            <span class="info-value">Prototype + documentation</span>
                         </li>
                     </ul>
                 </div>
-
                 <div class="info-card">
                     <h3 class="info-title">Technologies</h3>
                     <div class="tech-tags">
                         <span class="tech-tag">HTML5</span>
                         <span class="tech-tag">CSS3</span>
-                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">PHP</span>
                         <span class="tech-tag">JavaScript</span>
-                        
-
+                        <span class="tech-tag">PHPMyAdmin</span>
                     </div>
                 </div>
-
                 <a href="components/docs/stage1_preview.html" class="btn-outline" target="_blank">
-                    <i class="fas fa-file-html"></i>
-                    Voir le slide
+                    <i class="fas fa-file-pdf"></i>
+                    Voir le dossier détaillé
                 </a>
             </aside>
         </div>
     </div>
 
-    <!-- Footer sera chargé dynamiquement -->
     <div id="footer-container"></div>
-
-    <!-- Scripts -->
     <script src="/js/loadComponents.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Animation des éléments au défilement
-            const animateOnScroll = () => {
-                const elements = document.querySelectorAll('.skill-card, .gallery-item, .highlight');
-                elements.forEach(element => {
-                    const elementTop = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (elementTop < windowHeight - 100) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
-                    }
-                });
-            };
-
-            // Initialisation des animations
-            const skillCards = document.querySelectorAll('.skill-card');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-            const highlights = document.querySelectorAll('.highlight');
-
-            skillCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-            });
-
-            galleryItems.forEach((item, index) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-                item.style.transition = `opacity 0.6s ease ${0.3 + index * 0.1}s, transform 0.6s ease ${0.3 + index * 0.1}s`;
-            });
-
-            highlights.forEach(highlight => {
-                highlight.style.opacity = '0';
-                highlight.style.transform = 'translateY(20px)';
-                highlight.style.transition = 'opacity 0.6s ease 0.5s, transform 0.6s ease 0.5s';
-            });
-
-            // Déclenchement initial
-            animateOnScroll();
-
-            // Déclenchement au défilement
-            window.addEventListener('scroll', animateOnScroll);
-        });
-    </script>
     <script src="/js/main.js"></script>
 </body>
 </html>
