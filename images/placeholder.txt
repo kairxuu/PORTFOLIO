@@ -1,6 +1,0 @@
-Ce dossier contient les images du site.
-
-Pour ajouter une image de profil :
-1. Renommez votre image en 'profile.jpg' ou 'profile.png'
-2. Placez-la dans ce dossier
-3. L'image sera automatiquement affichée dans le portfolio
