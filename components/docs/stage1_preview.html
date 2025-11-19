@@ -68,12 +68,12 @@
       letter-spacing: -.5px;
       text-shadow: 0 2px 8px rgba(168,85,247,0.08);
     }
-    .slide h1 { font-size: 2.5rem; margin-bottom: 2.5rem;}
-    .slide h2 { font-size: 2rem; margin-bottom: 2rem;}
+    .slide h1 { font-size: 3.9rem; margin-bottom: 3.5rem;}
+    .slide h2 { font-size: 3.2rem; margin-bottom: 3rem;}
 
     .slide p, .slide ul {
       color: var(--color-text);
-      font-size: 1.15rem;
+      font-size: 1.5rem;
       margin-bottom: 1.2rem;
       max-width: 700px;
       text-align: center;
@@ -86,7 +86,7 @@
     }
     .slide ul li {
       margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 1.55rem;
       position: relative;
       padding-left: 1.3em;
       text-align: left;
@@ -100,22 +100,58 @@
       position: absolute;
       left: 0;
     }
-    .slide .img-preview,
-    .slide .profile-pic {
+    .slide .img-preview {
       border-radius: 12px;
-      border: 2.5px solid var(--color-accent);
+      border: 3px solid var(--color-accent);
       margin: 2rem auto 1rem auto;
-      box-shadow: 0 6px 32px rgba(168,85,247,0.18);
-      max-width: 320px;
+      box-shadow: 0 8px 36px rgba(168,85,247,0.25);
+      max-width: 560px;
+      width: min(95vw, 520px);
       object-fit: cover;
       background: #222;
-      max-height: 300px;
+      max-height: 520px;
       display: block;
     }
     .slide .profile-pic {
       border-radius: 50%;
-      width: 136px;
-      height: 136px;
+      width: 220px;
+      height: 220px;
+      border: 3px solid var(--color-accent);
+      box-shadow: 0 8px 36px rgba(168,85,247,0.25);
+    }
+    .slide-row {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+      padding: 0 1rem;
+    }
+    .slide-row .slide-text {
+      flex: 1;
+    }
+    .slide-row .slide-media {
+      flex: 1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .slide-row .slide-media img {
+      width: 100%;
+      height: auto;
+    }
+    @media (min-width: 900px) {
+      .slide-row {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+      }
+      .slide-row.reverse {
+        flex-direction: row-reverse;
+      }
+      .slide-row .slide-text {
+        max-width: 55%;
+      }
     }
     .card-row {
       display: flex;
@@ -137,14 +173,15 @@
       text-align: center;
     }
     .card-rect h3 {
-      font-size: 1.02rem;
+      font-size: 1.25rem;
       color: var(--color-accent);
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.9rem;
     }
     .card-rect p {
-      font-size: 0.97rem;
+      font-size: 1.1rem;
       color: var(--color-muted);
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
     }
     .slide .accent-bar {
       width: 88px;
@@ -251,37 +288,55 @@
 
     <!-- Slide 3 -->
     <section class="slide" data-index="2">
-      <h2>BXTTERFLY</h2>
-      <ul>
-        <li>MOHAMED AMINE EI - BXTTERFLY</li>
-        <li>Saint-Ouen-sur-Seine (93400)</li>
-        <li>SIRET : 98079833400010</li>
-        <li>Vente de vêtements streetwear</li>
-      </ul>
-      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/2d4daf87-5a2f-4b8e-a9c7-8843b5e132f7" alt="BXTTERFLY Instagram" class="img-preview">
+      <div class="slide-row">
+        <div class="slide-text">
+          <h2>BXTTERFLY</h2>
+          <ul>
+            <li>MOHAMED AMINE EI - BXTTERFLY</li>
+            <li>Saint-Ouen-sur-Seine (93400)</li>
+            <li>SIRET : 98079833400010</li>
+            <li>Vente de vêtements streetwear</li>
+          </ul>
+        </div>
+        <div class="slide-media">
+          <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/2d4daf87-5a2f-4b8e-a9c7-8843b5e132f7" alt="BXTTERFLY Instagram" class="img-preview">
+        </div>
+      </div>
     </section>
 
     <!-- Slide 4 -->
     <section class="slide" data-index="3">
-      <h2>Contexte du stage 🎯</h2>
-      <ul>
-        <li>Entreprise spécialisée en e-commerce streetwear</li>
-        <li>Projet : refonte de la plateforme avec design moderne</li>
-        <li>Amélioration de l'expérience utilisateur</li>
-        <li>Optimisation technique du site</li>
-      </ul>
-      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/cba911ce-443f-45fb-9727-3702ed561233" alt="Preview de la page d'accueil BXTTERFLY" class="img-preview">
+      <div class="slide-row reverse">
+        <div class="slide-media">
+          <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/cba911ce-443f-45fb-9727-3702ed561233" alt="Preview de la page d'accueil BXTTERFLY" class="img-preview">
+        </div>
+        <div class="slide-text">
+          <h2>Contexte du stage 🎯</h2>
+          <ul>
+            <li>Entreprise spécialisée en e-commerce streetwear</li>
+            <li>Projet : refonte de la plateforme avec design moderne</li>
+            <li>Amélioration de l'expérience utilisateur</li>
+            <li>Optimisation technique du site</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Slide 5 -->
     <section class="slide" data-index="4">
-      <h2>Portrait du gérant</h2>
-      <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/e7ad4d77-8cb7-4a11-bcb4-b64c798cf569" alt="Mohamed Amine Ben Mansour" class="profile-pic">
-      <ul>
-        <li>Entrepreneur passionné dans le digital</li>
-        <li>Travail en binôme avec suivi quotidien</li>
-        <li>Validation régulière des fonctionnalités</li>
-      </ul>
+      <div class="slide-row reverse">
+        <div class="slide-media">
+          <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/e7ad4d77-8cb7-4a11-bcb4-b64c798cf569" alt="Mohamed Amine Ben Mansour" class="profile-pic">
+        </div>
+        <div class="slide-text">
+          <h2>Portrait du gérant</h2>
+          <ul>
+            <li>Entrepreneur passionné dans le digital</li>
+            <li>Travail en binôme avec suivi quotidien</li>
+            <li>Validation régulière des fonctionnalités</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Slide 6 -->
@@ -391,7 +446,6 @@
       <ul>
         <li>Site e-commerce fonctionnel</li>
         <li>Interface intuitive utilisateur</li>
-        <li>Meilleure expérience client</li>
         <li>Retour positif du gérant</li>
       </ul>
       <img src="https://agi-prod-file-upload-public-main-use1.s3.amazonaws.com/cba911ce-443f-45fb-9727-3702ed561233" alt="Page d'accueil BXTTERFLY" class="img-preview">
