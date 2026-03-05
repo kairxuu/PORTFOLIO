@@ -16,7 +16,14 @@ export default function Stage2Page() {
             <Header />
 
             <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
-                <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4">Expérience Professionnelle</h2>
+                <div className="flex flex-col gap-2 mb-4">
+                    <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase">
+                        Expérience Professionnelle
+                    </h2>
+                    <p className="text-sm font-medium text-foreground-secondary/80">
+                        Du 01/12/2025 au 26/12/2026
+                    </p>
+                </div>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8">
                     Stage de Deuxième Année.
                 </h1>
