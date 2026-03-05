@@ -846,10 +846,10 @@ function ContactPage() {
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-                className: "pt-40 pb-16 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full",
+                className: "pt-32 pb-12 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full text-center lg:text-left",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8",
+                        className: "text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-6 md:mb-8 leading-tight",
                         children: "Me contacter."
                     }, void 0, false, {
                         fileName: "[project]/src/app/contact/page.tsx",
@@ -857,7 +857,7 @@ function ContactPage() {
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed",
+                        className: "text-lg sm:text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed mx-auto lg:mx-0",
                         children: "Une idée de projet, une offre de stage, ou une question sur mon parcours ? N'hésitez pas à m'écrire."
                     }, void 0, false, {
                         fileName: "[project]/src/app/contact/page.tsx",
@@ -885,10 +885,10 @@ function ContactPage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-full lg:w-5/12 shrink-0",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "sticky top-32",
+                                className: "sticky top-32 text-center lg:text-left",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                        className: "text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-8",
+                                        className: "text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-6 md:mb-8",
                                         children: "Coordonnées"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/contact/page.tsx",
@@ -896,7 +896,7 @@ function ContactPage() {
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-foreground-secondary text-lg leading-relaxed font-light mb-12",
+                                        className: "text-foreground-secondary text-base sm:text-lg leading-relaxed font-light mb-10 md:mb-12",
                                         children: "Je suis actuellement à la recherche d'opportunités en développement (Alternance / Stages / CDI). Laissez-moi un message avec les détails de votre proposition."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/contact/page.tsx",
@@ -1008,7 +1008,7 @@ function ContactPage() {
                                         columnNumber: 29
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-4",
+                                        className: "flex justify-center lg:justify-start gap-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                 href: "https://github.com/kairxuu",
@@ -1064,7 +1064,7 @@ function ContactPage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "w-full lg:w-7/12",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["GlassCard"], {
-                                className: "p-8 md:p-12 lg:p-16",
+                                className: "p-6 md:p-12 lg:p-16",
                                 children: isSuccess ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "flex flex-col items-center justify-center h-[400px] text-center gap-6 animate-in fade-in zoom-in",
                                     children: [
@@ -1127,7 +1127,7 @@ function ContactPage() {
                                         }
                                     },
                                     id: "contactForm",
-                                    className: "flex flex-col gap-10",
+                                    className: "flex flex-col gap-8 md:gap-10",
                                     children: [
                                         error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium",
@@ -1154,7 +1154,7 @@ function ContactPage() {
                                                     id: "name",
                                                     name: "name",
                                                     required: true,
-                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none",
+                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none",
                                                     placeholder: "Ex: John Doe"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
@@ -1184,7 +1184,7 @@ function ContactPage() {
                                                     id: "email",
                                                     name: "email",
                                                     required: true,
-                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none",
+                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none",
                                                     placeholder: "Ex: jean.dupont@entreprise.com"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
@@ -1212,7 +1212,7 @@ function ContactPage() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
                                                     id: "type",
                                                     name: "type",
-                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors rounded-none appearance-none cursor-pointer",
+                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors rounded-none appearance-none cursor-pointer",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                             value: "default",
@@ -1297,7 +1297,7 @@ function ContactPage() {
                                                     name: "message",
                                                     rows: 4,
                                                     required: true,
-                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 resize-none rounded-none",
+                                                    className: "w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 resize-none rounded-none",
                                                     placeholder: "Décrivez votre proposition, votre projet ou votre idée..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
@@ -1313,11 +1313,11 @@ function ContactPage() {
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "submit",
                                             disabled: isSubmitting,
-                                            className: "mt-8 flex items-center justify-between w-full h-20 px-8 lg:px-12 bg-foreground text-background rounded-full font-bold text-xl hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
+                                            className: "mt-6 md:mt-8 flex items-center justify-between w-full h-16 md:h-20 px-6 md:px-8 lg:px-12 bg-foreground text-background rounded-full font-bold text-lg md:text-xl hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
                                             children: [
                                                 isSubmitting ? "Envoi en cours..." : "Envoyer la demande",
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                    className: `w-8 h-8 ${isSubmitting ? 'animate-pulse' : ''}`
+                                                    className: `w-6 h-6 md:w-8 md:h-8 ${isSubmitting ? 'animate-pulse' : ''}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
                                                     lineNumber: 190,

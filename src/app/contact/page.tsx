@@ -19,11 +19,11 @@ export default function ContactPage() {
             <Header />
 
             {/* Editorial Header */}
-            <section className="pt-40 pb-16 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8">
+            <section className="pt-32 pb-12 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full text-center lg:text-left">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-6 md:mb-8 leading-tight">
                     Me contacter.
                 </h1>
-                <p className="text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed mx-auto lg:mx-0">
                     Une idée de projet, une offre de stage, ou une question sur mon parcours ? N'hésitez pas à m'écrire.
                 </p>
                 <div className="w-full h-px bg-[var(--glass-border)] mt-20" />
@@ -35,11 +35,11 @@ export default function ContactPage() {
 
                     {/* Left: Info */}
                     <div className="w-full lg:w-5/12 shrink-0">
-                        <div className="sticky top-32">
-                            <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-8">
+                        <div className="sticky top-32 text-center lg:text-left">
+                            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground tracking-tight mb-6 md:mb-8">
                                 Coordonnées
                             </h2>
-                            <p className="text-foreground-secondary text-lg leading-relaxed font-light mb-12">
+                            <p className="text-foreground-secondary text-base sm:text-lg leading-relaxed font-light mb-10 md:mb-12">
                                 Je suis actuellement à la recherche d'opportunités en développement (Alternance / Stages / CDI). Laissez-moi un message avec les détails de votre proposition.
                             </p>
 
@@ -69,7 +69,7 @@ export default function ContactPage() {
                             </div>
 
                             {/* Social Links */}
-                            <div className="flex gap-4">
+                            <div className="flex justify-center lg:justify-start gap-4">
                                 <a
                                     href="https://github.com/kairxuu"
                                     target="_blank"
@@ -92,7 +92,7 @@ export default function ContactPage() {
 
                     {/* Right: Form */}
                     <div className="w-full lg:w-7/12">
-                        <GlassCard className="p-8 md:p-12 lg:p-16">
+                        <GlassCard className="p-6 md:p-12 lg:p-16">
                             {isSuccess ? (
                                 <div className="flex flex-col items-center justify-center h-[400px] text-center gap-6 animate-in fade-in zoom-in">
                                     <div className="w-20 h-20 rounded-full bg-[var(--glass-bg)] text-foreground flex items-center justify-center mb-2 border border-[var(--glass-border)] shadow-sm">
@@ -121,7 +121,7 @@ export default function ContactPage() {
                                         const form = document.getElementById("contactForm") as HTMLFormElement;
                                         if (form) form.reset();
                                     }
-                                }} id="contactForm" className="flex flex-col gap-10">
+                                }} id="contactForm" className="flex flex-col gap-8 md:gap-10">
                                     
                                     {error && (
                                         <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium">
@@ -136,7 +136,7 @@ export default function ContactPage() {
                                             id="name"
                                             name="name"
                                             required
-                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
+                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
                                             placeholder="Ex: John Doe"
                                         />
                                     </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                                             id="email"
                                             name="email"
                                             required
-                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
+                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
                                             placeholder="Ex: jean.dupont@entreprise.com"
                                         />
                                     </div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                                         <select
                                             id="type"
                                             name="type"
-                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors rounded-none appearance-none cursor-pointer"
+                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors rounded-none appearance-none cursor-pointer"
                                         >
                                             <option value="default" className="bg-background text-foreground">Sélectionnez une option...</option>
                                             <option value="job" className="bg-background text-foreground">CDI / Opportunité d'emploi</option>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                                             name="message"
                                             rows={4}
                                             required
-                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 resize-none rounded-none"
+                                            className="w-full bg-transparent border-b border-[var(--glass-border)] pb-3 md:pb-4 text-lg md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 resize-none rounded-none"
                                             placeholder="Décrivez votre proposition, votre projet ou votre idée..."
                                         />
                                     </div>
@@ -184,10 +184,10 @@ export default function ContactPage() {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="mt-8 flex items-center justify-between w-full h-20 px-8 lg:px-12 bg-foreground text-background rounded-full font-bold text-xl hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="mt-6 md:mt-8 flex items-center justify-between w-full h-16 md:h-20 px-6 md:px-8 lg:px-12 bg-foreground text-background rounded-full font-bold text-lg md:text-xl hover:bg-foreground/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         {isSubmitting ? "Envoi en cours..." : "Envoyer la demande"}
-                                        <ArrowRight className={`w-8 h-8 ${isSubmitting ? 'animate-pulse' : ''}`} />
+                                        <ArrowRight className={`w-6 h-6 md:w-8 md:h-8 ${isSubmitting ? 'animate-pulse' : ''}`} />
                                     </button>
                                 </form>
                             )}
