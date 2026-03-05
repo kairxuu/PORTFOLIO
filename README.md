@@ -1,86 +1,36 @@
-# Portfolio Alexandre KEOLASY
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Bienvenue sur le code source de mon portfolio personnel en tant qu'étudiant en 2ème année de BTS SIO option SLAM. Ce site présente mon parcours, mes compétences et mes réalisations.
+## Getting Started
 
-## 🚀 Technologies utilisées
+First, run the development server:
 
-- **HTML5** - Structure du site
-- **CSS3** - Styles et mises en page
-- **JavaScript Vanilla** - Interactivité et animations
-- **Vercel** - Hébergement et déploiement
-- **Firebase** - Backend et base de données
-
-## 🎨 Design
-
-- **Thème** : Monochrome glassmorphisme
-- **Polices** : Outfit, Montserrat, Inter, Poppins (poids 300/400)
-- **Couleurs** : Noir profond (#181818), blanc pur, et nuances de gris
-- **Effets** : Transparences, flous, et animations subtiles
-
-## 📂 Structure du projet
-
-```
-PORTFOLIO/
-├── index.html          # Page d'accueil
-├── css/
-│   └── styles.css      # Feuille de style principale
-├── js/
-│   └── main.js         # Scripts JavaScript
-├── assets/             # Images, icônes, etc.
-└── README.md           # Ce fichier
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## 🛠 Installation en local
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-1. Clonez le dépôt :
-   ```bash
-   git clone https://github.com/votre-utilisateur/portfolio.git
-   cd portfolio
-   ```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-2. Ouvrez `index.html` dans votre navigateur ou utilisez un serveur local :
-   ```bash
-   # Avec Python
-   python -m http.server 8000
-   ```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🌐 Déploiement
+## Learn More
 
-Le site est configuré pour être déployé sur Vercel. Pour déployer :
+To learn more about Next.js, take a look at the following resources:
 
-1. Installez Vercel CLI :
-   ```bash
-   npm install -g vercel
-   ```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-2. Connectez-vous à votre compte Vercel :
-   ```bash
-   vercel login
-   ```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-3. Déployez :
-   ```bash
-   vercel --prod
-   ```
+## Deploy on Vercel
 
-## 🔧 Configuration Firebase
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-1. Créez un projet sur [Firebase Console](https://console.firebase.google.com/)
-2. Activez l'authentification et la base de données Firestore
-3. Copiez la configuration Firebase dans un fichier `firebase-config.js`
-
-## 📝 Fonctionnalités
-
-- [x] Design responsive
-- [x] Animations fluides
-- [ ] Formulaire de contact fonctionnel
-- [ ] Gestion des projets
-- [ ] Blog technique
-
-## 📄 Licence
-
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
-
----
-
-✨ Fait avec passion par Alexandre KEOLASY
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

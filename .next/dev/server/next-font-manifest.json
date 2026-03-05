@@ -1,0 +1,43 @@
+{
+  "app": {
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/_not-found/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/about/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/contact/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe1/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/stage1/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/stage2/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/projets/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/stage/stage1/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/stage/stage2/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ],
+    "[project]/Documents/GitHub/PORTFOLIO/src/app/veille/page": [
+      "static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

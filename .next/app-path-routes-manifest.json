@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/about/page": "/about",
+  "/contact/page": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/ppe/ppe1/page": "/ppe/ppe1",
+  "/ppe/ppe2/page": "/ppe/ppe2",
+  "/services/page": "/services",
+  "/stage/stage1/page": "/stage/stage1",
+  "/stage/stage2/page": "/stage/stage2",
+  "/veille/page": "/veille"
+}
