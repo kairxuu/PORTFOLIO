@@ -96,3 +96,4 @@ Parsing ecmascript source code failed
   14 |
 
 Expression expected
+[03:39:00.731] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
