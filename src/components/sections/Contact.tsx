@@ -5,22 +5,13 @@ import { SectionWrapper } from "../ui/SectionWrapper";
 import { GlassCard } from "../ui/GlassCard";
 import { GlassButton } from "../ui/GlassButton";
 import { Send, Mail, MapPin, Loader2 } from "lucide-react";
-import { useState, FormEvent } from "react";
+import { useState } from "react";
+import { sendContactEmail } from "@/actions/contact";
 
 export const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-
-    const handleSubmit = (e: FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        // Simulate API call
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setIsSuccess(true);
-            setTimeout(() => setIsSuccess(false), 5000); // Reset after 5s
-        }, 1500);
-    };
+    const [error, setError] = useState<string | null>(null);
 
     return (
         <SectionWrapper id="contact" className="relative z-10">
@@ -110,16 +101,43 @@ export const Contact = () => {
                                     <Send className="w-8 h-8" />
                                 </div>
                                 <h4 className="text-xl font-bold text-foreground">Message Envoyé !</h4>
-                                <p className="text-foreground/60">Merci de m'avoir contacté. Je reviens vers vous très prochainement en impesanteur.</p>
+                                <p className="text-foreground/60">Merci de m'avoir contacté. Je reviens vers vous très prochainement.</p>
+                                <button 
+                                    onClick={() => setIsSuccess(false)}
+                                    className="mt-4 px-6 py-2 rounded-full border border-[var(--glass-border)] text-sm font-medium hover:bg-background-secondary transition-colors"
+                                >
+                                    Envoyer un autre message
+                                </button>
                             </div>
                         ) : (
-                            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                            <form action={async (formData) => {
+                                setIsSubmitting(true);
+                                setError(null);
+                                const result = await sendContactEmail(formData);
+                                setIsSubmitting(false);
+                                
+                                if (result.error) {
+                                    setError(result.error);
+                                } else {
+                                    setIsSuccess(true);
+                                    const form = document.getElementById("homeContactForm") as HTMLFormElement;
+                                    if (form) form.reset();
+                                }
+                            }} id="homeContactForm" className="flex flex-col gap-5">
+                                
+                                {error && (
+                                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium">
+                                        {error}
+                                    </div>
+                                )}
+
                                 <div className="grid grid-cols-2 gap-5">
                                     <div className="flex flex-col gap-2">
                                         <label htmlFor="name" className="text-sm font-medium text-foreground/70">Nom complet</label>
                                         <input
                                             type="text"
                                             id="name"
+                                            name="name"
                                             required
                                             className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all font-medium"
                                             placeholder="Nom complet"
@@ -130,6 +148,7 @@ export const Contact = () => {
                                         <input
                                             type="email"
                                             id="email"
+                                            name="email"
                                             required
                                             className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all font-medium"
                                             placeholder="Email"
@@ -139,9 +158,10 @@ export const Contact = () => {
 
                                 <div className="grid grid-cols-2 gap-5">
                                     <div className="flex flex-col gap-2">
-                                        <label htmlFor="project" className="text-sm font-medium text-foreground/70">Type de projet</label>
+                                        <label htmlFor="type" className="text-sm font-medium text-foreground/70">Type de projet</label>
                                         <select
-                                            id="project"
+                                            id="type"
+                                            name="type"
                                             className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground focus:outline-none focus:border-foreground/50 transition-all appearance-none font-medium"
                                         >
                                             <option value="uiux">UI/UX Design</option>
@@ -168,6 +188,7 @@ export const Contact = () => {
                                     <label htmlFor="message" className="text-sm font-medium text-foreground/70">Votre message</label>
                                     <textarea
                                         id="message"
+                                        name="message"
                                         rows={4}
                                         required
                                         className="bg-[var(--glass-bg)] border border-[var(--glass-border)] rounded-xl px-4 py-3 text-foreground placeholder:text-foreground/30 focus:outline-none focus:border-foreground/30 focus:ring-1 focus:ring-foreground/10 transition-all resize-none font-medium"
@@ -178,7 +199,7 @@ export const Contact = () => {
                                 <GlassButton
                                     type="submit"
                                     variant="primary"
-                                    className="w-full mt-2 h-12"
+                                    className="w-full mt-2 h-12 disabled:opacity-50 disabled:cursor-not-allowed"
                                     disabled={isSubmitting}
                                 >
                                     {isSubmitting ? (
