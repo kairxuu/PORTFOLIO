@@ -2593,6 +2593,12 @@
   }
 
   @media (min-width: 48rem) {
+    .md\:h-8 {
+      height: calc(var(--spacing) * 8);
+    }
+  }
+
+  @media (min-width: 48rem) {
     .md\:h-80 {
       height: calc(var(--spacing) * 80);
     }
@@ -2607,6 +2613,12 @@
   @media (min-width: 48rem) {
     .md\:h-\[400px\] {
       height: 400px;
+    }
+  }
+
+  @media (min-width: 48rem) {
+    .md\:w-8 {
+      width: calc(var(--spacing) * 8);
     }
   }
 

@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   Server,
   Globe,
+  Github,
 } from "lucide-react";
 
 export const metadata = {
@@ -38,9 +39,20 @@ export default function PPE1Page() {
             <span>Projet Pédagogique</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground">
-            Technova.
-          </h1>
+          <div className="flex items-center gap-6">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground">
+              Technova.
+            </h1>
+            <a
+              href="https://github.com/kairxuu/Technova"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 md:p-4 rounded-full border border-glass-border bg-white/5 hover:bg-white/10 transition-colors text-foreground group"
+              aria-label="Voir le code source sur GitHub"
+            >
+              <Github className="w-6 h-6 md:w-8 md:h-8 group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
           <p className="text-2xl md:text-3xl font-light text-foreground-secondary tracking-tight">
             Boutique High-Tech
           </p>
