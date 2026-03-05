@@ -81,11 +81,11 @@ var _s = __turbopack_context__.k.signature();
 const Header = ()=>{
     _s();
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(16);
-    if ($[0] !== "bb684687c37a9ba8964779b5c9ab46aea8061e7378422656d04e76c3f79f1447") {
+    if ($[0] !== "89419d668b6a2b782abf5f627d644eace31c54a8d10ac182a6f562962e907ff2") {
         for(let $i = 0; $i < 16; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "bb684687c37a9ba8964779b5c9ab46aea8061e7378422656d04e76c3f79f1447";
+        $[0] = "89419d668b6a2b782abf5f627d644eace31c54a8d10ac182a6f562962e907ff2";
     }
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -133,17 +133,17 @@ const Header = ()=>{
             subLinks: [
                 {
                     name: "Stage 1",
-                    href: "/ppe/stage1"
+                    href: "/stage/stage1"
                 },
                 {
                     name: "Stage 2",
-                    href: "/ppe/stage2"
+                    href: "/stage/stage2"
                 }
             ]
         },
         {
-            name: "Projets",
-            href: "/projets"
+            name: "Veille",
+            href: "/veille"
         },
         {
             name: "\xC0 propos",
@@ -583,11 +583,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTF
 ;
 const Footer = ()=>{
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(11);
-    if ($[0] !== "f9aa56d59a0cdbade7b9ff19959ce8c8c218015251aef037a06284d58114c157") {
+    if ($[0] !== "ff08f31ea6dc943b576f6998c1daef8476de4b3d714e5d38a70f8446591f78b4") {
         for(let $i = 0; $i < 11; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "f9aa56d59a0cdbade7b9ff19959ce8c8c218015251aef037a06284d58114c157";
+        $[0] = "ff08f31ea6dc943b576f6998c1daef8476de4b3d714e5d38a70f8446591f78b4";
     }
     let t0;
     let t1;
@@ -728,9 +728,9 @@ const Footer = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/projets",
+                                href: "/ppe/ppe1",
                                 className: "hover:text-foreground transition-colors",
-                                children: "Projets"
+                                children: "PPE"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                                 lineNumber: 44,
@@ -743,18 +743,18 @@ const Footer = ()=>{
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/ppe/ppe1",
+                                href: "/veille",
                                 className: "hover:text-foreground transition-colors",
-                                children: "PPE"
+                                children: "Veille"
                             }, void 0, false, {
                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                                 lineNumber: 44,
-                                columnNumber: 271
+                                columnNumber: 268
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                             lineNumber: 44,
-                            columnNumber: 267
+                            columnNumber: 264
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
@@ -981,11 +981,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTF
 ;
 function ContactPage() {
     const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(15);
-    if ($[0] !== "79815a15f2714f36151b7ede2788d75e0637b70c2be88ac7da777d1f55995177") {
+    if ($[0] !== "be3b018594adaa1806a3985af1ec8c25ee717baf435c9908d106f1a6e5b7c02e") {
         for(let $i = 0; $i < 15; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "79815a15f2714f36151b7ede2788d75e0637b70c2be88ac7da777d1f55995177";
+        $[0] = "be3b018594adaa1806a3985af1ec8c25ee717baf435c9908d106f1a6e5b7c02e";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -1093,7 +1093,7 @@ function ContactPage() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                             href: "mailto:alexandre@wyze-conseil.com",
                             className: "text-xl md:text-2xl font-bold text-foreground",
-                            children: "alexandre@wyze-conseil.com"
+                            children: "alexklsy@proton.me"
                         }, void 0, false, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/contact/page.tsx",
                             lineNumber: 44,

@@ -46,7 +46,7 @@ export default function ContactPage() {
                                     <div>
                                         <span className="block text-sm text-foreground-secondary font-medium tracking-wide uppercase mb-1">Email</span>
                                         <a href="mailto:alexandre@wyze-conseil.com" className="text-xl md:text-2xl font-bold text-foreground">
-                                            alexandre@wyze-conseil.com
+                                            alexklsy@proton.me
                                         </a>
                                     </div>
                                 </div>

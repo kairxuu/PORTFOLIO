@@ -125,17 +125,17 @@ const Header = ()=>{
             subLinks: [
                 {
                     name: "Stage 1",
-                    href: "/ppe/stage1"
+                    href: "/stage/stage1"
                 },
                 {
                     name: "Stage 2",
-                    href: "/ppe/stage2"
+                    href: "/stage/stage2"
                 }
             ]
         },
         {
-            name: "Projets",
-            href: "/projets"
+            name: "Veille",
+            href: "/veille"
         },
         {
             name: "À propos",
@@ -617,9 +617,9 @@ const Footer = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/projets",
+                                                href: "/ppe/ppe1",
                                                 className: "hover:text-foreground transition-colors",
-                                                children: "Projets"
+                                                children: "PPE"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                                                 lineNumber: 32,
@@ -632,9 +632,9 @@ const Footer = ()=>{
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/ppe/ppe1",
+                                                href: "/veille",
                                                 className: "hover:text-foreground transition-colors",
-                                                children: "PPE"
+                                                children: "Veille"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                                                 lineNumber: 33,
@@ -915,7 +915,7 @@ function ContactPage() {
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
                                                                 href: "mailto:alexandre@wyze-conseil.com",
                                                                 className: "text-xl md:text-2xl font-bold text-foreground",
-                                                                children: "alexandre@wyze-conseil.com"
+                                                                children: "alexklsy@proton.me"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/contact/page.tsx",
                                                                 lineNumber: 48,
