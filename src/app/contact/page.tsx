@@ -21,10 +21,10 @@ export default function ContactPage() {
             {/* Editorial Header */}
             <section className="pt-40 pb-16 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8">
-                    Démarrer un projet.
+                    Me contacter.
                 </h1>
                 <p className="text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed">
-                    Une refonte technique, la création d'un design system ou le développement de zéro ? Parlons de votre vision.
+                    Une idée de projet, une offre de stage, ou une question sur mon parcours ? N'hésitez pas à m'écrire.
                 </p>
                 <div className="w-full h-px bg-[var(--glass-border)] mt-20" />
             </section>
@@ -40,7 +40,7 @@ export default function ContactPage() {
                                 Coordonnées
                             </h2>
                             <p className="text-foreground-secondary text-lg leading-relaxed font-light mb-12">
-                                Je réponds généralement sous 24h. Laissez-moi un maximum de détails sur votre projet (contexte, design existant, deadline) pour une réponse précise.
+                                Je suis actuellement à la recherche d'opportunités en développement (Alternance / Stages / CDI). Laissez-moi un message avec les détails de votre proposition.
                             </p>
 
                             <div className="space-y-8 mb-12">
@@ -50,7 +50,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <span className="block text-sm text-foreground-secondary font-medium tracking-wide uppercase mb-1">Email</span>
-                                        <a href="mailto:alexandre@wyze-conseil.com" className="text-xl md:text-2xl font-bold text-foreground">
+                                        <a href="mailto:alexklsy@proton.me" className="text-xl md:text-2xl font-bold text-foreground">
                                             alexklsy@proton.me
                                         </a>
                                     </div>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                                             name="name"
                                             required
                                             className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
-                                            placeholder="John Doe"
+                                            placeholder="Ex: John Doe"
                                         />
                                     </div>
 
@@ -149,22 +149,23 @@ export default function ContactPage() {
                                             name="email"
                                             required
                                             className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 rounded-none"
-                                            placeholder="john@entreprise.com"
+                                            placeholder="Ex: jean.dupont@entreprise.com"
                                         />
                                     </div>
 
                                     <div className="space-y-3">
-                                        <label htmlFor="type" className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase">Type de Projet</label>
+                                        <label htmlFor="type" className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase">Type de demande</label>
                                         <select
                                             id="type"
                                             name="type"
                                             className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors rounded-none appearance-none cursor-pointer"
                                         >
                                             <option value="default" className="bg-background text-foreground">Sélectionnez une option...</option>
-                                            <option value="webapp" className="bg-background text-foreground">Application Web Front-End</option>
-                                            <option value="design" className="bg-background text-foreground">Design UI/UX & Prototypage</option>
-                                            <option value="audit" className="bg-background text-foreground">Audit de Performance Web</option>
-                                            <option value="other" className="bg-background text-foreground">Autre / Conseil</option>
+                                            <option value="job" className="bg-background text-foreground">CDI / Opportunité d'emploi</option>
+                                            <option value="internship" className="bg-background text-foreground">Offre de stage / Alternance</option>
+                                            <option value="freelance" className="bg-background text-foreground">Projet Freelance</option>
+                                            <option value="networking" className="bg-background text-foreground">Échange / Networking</option>
+                                            <option value="other" className="bg-background text-foreground">Autre demande</option>
                                         </select>
                                     </div>
 
@@ -176,7 +177,7 @@ export default function ContactPage() {
                                             rows={4}
                                             required
                                             className="w-full bg-transparent border-b border-[var(--glass-border)] pb-4 text-xl md:text-2xl text-foreground font-light focus:outline-none focus:border-foreground transition-colors placeholder:text-foreground/20 resize-none rounded-none"
-                                            placeholder="Décrivez vos objectifs principaux..."
+                                            placeholder="Décrivez votre proposition, votre projet ou votre idée..."
                                         />
                                     </div>
 

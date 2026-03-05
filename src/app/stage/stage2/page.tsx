@@ -35,7 +35,7 @@ export default function Stage2Page() {
                             <Calendar className="w-4 h-4" />
                             <span className="text-sm font-semibold uppercase tracking-wider">Année</span>
                         </div>
-                        <span className="text-foreground font-medium">2ème Année</span>
+                        <span className="text-foreground font-medium">01/12/25 - 26/12/25</span>
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2 text-foreground-secondary mb-1">

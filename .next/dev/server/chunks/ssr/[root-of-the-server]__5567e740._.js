@@ -29,10 +29,11 @@ async function sendContactEmail(formData) {
         };
     }
     const typeLabels = {
-        webapp: "Application Web Front-End",
-        design: "Design UI/UX & Prototypage",
-        audit: "Audit de Performance Web",
-        other: "Autre / Conseil",
+        job: "CDI / Opportunité d'emploi",
+        internship: "Offre de stage / Alternance",
+        freelance: "Projet Freelance",
+        networking: "Échange / Networking",
+        other: "Autre demande",
         default: "Non spécifié"
     };
     const projectType = typeLabels[type] || typeLabels.default;

@@ -850,7 +850,7 @@ function ContactPage() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8",
-                        children: "Démarrer un projet."
+                        children: "Me contacter."
                     }, void 0, false, {
                         fileName: "[project]/src/app/contact/page.tsx",
                         lineNumber: 23,
@@ -858,7 +858,7 @@ function ContactPage() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                         className: "text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed",
-                        children: "Une refonte technique, la création d'un design system ou le développement de zéro ? Parlons de votre vision."
+                        children: "Une idée de projet, une offre de stage, ou une question sur mon parcours ? N'hésitez pas à m'écrire."
                     }, void 0, false, {
                         fileName: "[project]/src/app/contact/page.tsx",
                         lineNumber: 26,
@@ -897,7 +897,7 @@ function ContactPage() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-foreground-secondary text-lg leading-relaxed font-light mb-12",
-                                        children: "Je réponds généralement sous 24h. Laissez-moi un maximum de détails sur votre projet (contexte, design existant, deadline) pour une réponse précise."
+                                        children: "Je suis actuellement à la recherche d'opportunités en développement (Alternance / Stages / CDI). Laissez-moi un message avec les détails de votre proposition."
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/contact/page.tsx",
                                         lineNumber: 42,
@@ -934,7 +934,7 @@ function ContactPage() {
                                                                 columnNumber: 41
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                                                href: "mailto:alexandre@wyze-conseil.com",
+                                                                href: "mailto:alexklsy@proton.me",
                                                                 className: "text-xl md:text-2xl font-bold text-foreground",
                                                                 children: "alexklsy@proton.me"
                                                             }, void 0, false, {
@@ -1203,7 +1203,7 @@ function ContactPage() {
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                     htmlFor: "type",
                                                     className: "text-sm font-semibold text-foreground-secondary tracking-widest uppercase",
-                                                    children: "Type de Projet"
+                                                    children: "Type de demande"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
                                                     lineNumber: 157,
@@ -1224,39 +1224,48 @@ function ContactPage() {
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                            value: "webapp",
+                                                            value: "job",
                                                             className: "bg-background text-foreground",
-                                                            children: "Application Web Front-End"
+                                                            children: "CDI / Opportunité d'emploi"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/contact/page.tsx",
                                                             lineNumber: 164,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                            value: "design",
+                                                            value: "internship",
                                                             className: "bg-background text-foreground",
-                                                            children: "Design UI/UX & Prototypage"
+                                                            children: "Offre de stage / Alternance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/contact/page.tsx",
                                                             lineNumber: 165,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                            value: "audit",
+                                                            value: "freelance",
                                                             className: "bg-background text-foreground",
-                                                            children: "Audit de Performance Web"
+                                                            children: "Projet Freelance"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/contact/page.tsx",
                                                             lineNumber: 166,
                                                             columnNumber: 45
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
-                                                            value: "other",
+                                                            value: "networking",
                                                             className: "bg-background text-foreground",
-                                                            children: "Autre / Conseil"
+                                                            children: "Échange / Networking"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/contact/page.tsx",
                                                             lineNumber: 167,
+                                                            columnNumber: 45
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
+                                                            value: "other",
+                                                            className: "bg-background text-foreground",
+                                                            children: "Autre demande"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/contact/page.tsx",
+                                                            lineNumber: 168,
                                                             columnNumber: 45
                                                         }, this)
                                                     ]
@@ -1280,7 +1289,7 @@ function ContactPage() {
                                                     children: "Message"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 172,
+                                                    lineNumber: 173,
                                                     columnNumber: 41
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1292,13 +1301,13 @@ function ContactPage() {
                                                     placeholder: "Décrivez vos objectifs principaux..."
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 173,
+                                                    lineNumber: 174,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 172,
                                             columnNumber: 37
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1311,13 +1320,13 @@ function ContactPage() {
                                                     className: `w-8 h-8 ${isSubmitting ? 'animate-pulse' : ''}`
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/contact/page.tsx",
-                                                    lineNumber: 189,
+                                                    lineNumber: 190,
                                                     columnNumber: 41
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/contact/page.tsx",
-                                            lineNumber: 183,
+                                            lineNumber: 184,
                                             columnNumber: 37
                                         }, this)
                                     ]
@@ -1349,7 +1358,7 @@ function ContactPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/src/app/contact/page.tsx",
-                lineNumber: 199,
+                lineNumber: 200,
                 columnNumber: 13
             }, this)
         ]

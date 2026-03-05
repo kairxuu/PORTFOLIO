@@ -439,10 +439,46 @@ function PPE2Page() {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
                 className: "pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full",
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4",
-                        children: "Projet Personnel Encadré (PPE 2)"
-                    }, void 0, false, {
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-wrap items-center gap-4 text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "PPE 2"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 20,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "w-1.5 h-1.5 rounded-full bg-foreground/20"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 21,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "2025"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 22,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "w-1.5 h-1.5 rounded-full bg-foreground/20"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 23,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                children: "Projet Pédagogique"
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 24,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
                         lineNumber: 19,
                         columnNumber: 17
@@ -452,7 +488,7 @@ function PPE2Page() {
                         children: "FixIT."
                     }, void 0, false, {
                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                        lineNumber: 20,
+                        lineNumber: 26,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -460,7 +496,7 @@ function PPE2Page() {
                         children: "Application de bureau développée en C# pour la gestion et la manipulation d'une base de données relationnelle SQL Server."
                     }, void 0, false, {
                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                        lineNumber: 23,
+                        lineNumber: 29,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -471,7 +507,7 @@ function PPE2Page() {
                                 children: "C#"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 27,
+                                lineNumber: 33,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -479,7 +515,7 @@ function PPE2Page() {
                                 children: "Visual Studio"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 28,
+                                lineNumber: 34,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -487,7 +523,7 @@ function PPE2Page() {
                                 children: "SQL Server"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 29,
+                                lineNumber: 35,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -495,20 +531,20 @@ function PPE2Page() {
                                 children: "SSMS"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 30,
+                                lineNumber: 36,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                        lineNumber: 26,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full h-px bg-glass-border mt-20"
                     }, void 0, false, {
                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                        lineNumber: 32,
+                        lineNumber: 38,
                         columnNumber: 17
                     }, this)
                 ]
@@ -531,12 +567,12 @@ function PPE2Page() {
                                         className: "w-6 h-6 text-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 45,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 44,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -544,7 +580,7 @@ function PPE2Page() {
                                     children: "Interface et Manipulation"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 41,
+                                    lineNumber: 47,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -552,13 +588,13 @@ function PPE2Page() {
                                     children: "Conception d'une interface utilisateur intuitive sous Visual Studio permettant l'interaction directe et la manipulation des données."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 42,
+                                    lineNumber: 48,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 37,
+                            lineNumber: 43,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GlassCard"], {
@@ -570,12 +606,12 @@ function PPE2Page() {
                                         className: "w-6 h-6 text-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 49,
+                                        lineNumber: 55,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 54,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -583,7 +619,7 @@ function PPE2Page() {
                                     children: "Base de Données Reliée"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 51,
+                                    lineNumber: 57,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -591,13 +627,13 @@ function PPE2Page() {
                                     children: "Intégration d'un système de gestion de base de données via SQL Server (SSMS) pour garantir l'intégrité et la permanence des informations."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 58,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 47,
+                            lineNumber: 53,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GlassCard"], {
@@ -609,12 +645,12 @@ function PPE2Page() {
                                         className: "w-6 h-6 text-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 59,
+                                        lineNumber: 65,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 64,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -622,7 +658,7 @@ function PPE2Page() {
                                     children: "Suivi et Historique"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 67,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -630,24 +666,24 @@ function PPE2Page() {
                                     children: "Fonctionnalité clé d'historisation permettant le suivi détaillé des personnes, des équipements (devices) et des dates d'interventions."
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 62,
+                                    lineNumber: 68,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 57,
+                            lineNumber: 63,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                    lineNumber: 36,
+                    lineNumber: 42,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 35,
+                lineNumber: 41,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -660,7 +696,7 @@ function PPE2Page() {
                             children: "Découvrir les autres projets"
                         }, void 0, false, {
                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 71,
+                            lineNumber: 77,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -674,40 +710,40 @@ function PPE2Page() {
                                             className: "w-4 h-4 mr-2 rotate-180"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                            lineNumber: 75,
+                                            lineNumber: 81,
                                             columnNumber: 33
                                         }, this),
                                         " Voir PPE 1"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 74,
+                                    lineNumber: 80,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 73,
+                                lineNumber: 79,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 72,
+                            lineNumber: 78,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                    lineNumber: 70,
+                    lineNumber: 76,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 69,
+                lineNumber: 75,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 82,
+                lineNumber: 88,
                 columnNumber: 13
             }, this)
         ]

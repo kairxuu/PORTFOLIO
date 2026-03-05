@@ -16,7 +16,13 @@ export default function PPE2Page() {
             <Header />
 
             <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
-                <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4">Projet Personnel Encadré (PPE 2)</h2>
+                <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4">
+                    <span>PPE 2</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
+                    <span>2025</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
+                    <span>Projet Pédagogique</span>
+                </div>
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8">
                     FixIT.
                 </h1>
