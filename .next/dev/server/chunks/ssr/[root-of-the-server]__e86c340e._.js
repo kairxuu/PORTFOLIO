@@ -192,6 +192,21 @@ const Footer = ()=>{
                                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
                                             lineNumber: 32,
                                             columnNumber: 29
+                                        }, ("TURBOPACK compile-time value", void 0)),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/veille",
+                                                className: "hover:text-foreground transition-colors",
+                                                children: "Veille"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
+                                                lineNumber: 33,
+                                                columnNumber: 33
+                                            }, ("TURBOPACK compile-time value", void 0))
+                                        }, void 0, false, {
+                                            fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
+                                            lineNumber: 33,
+                                            columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
@@ -212,7 +227,7 @@ const Footer = ()=>{
                                     children: "Contact"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                    lineNumber: 37,
+                                    lineNumber: 38,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -225,31 +240,31 @@ const Footer = ()=>{
                                                 children: "alexklsy@proton.me"
                                             }, void 0, false, {
                                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                                lineNumber: 39,
+                                                lineNumber: 40,
                                                 columnNumber: 33
                                             }, ("TURBOPACK compile-time value", void 0))
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                            lineNumber: 39,
+                                            lineNumber: 40,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: "Paris, France"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                            lineNumber: 40,
+                                            lineNumber: 41,
                                             columnNumber: 29
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 39,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                            lineNumber: 36,
+                            lineNumber: 37,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -265,7 +280,7 @@ const Footer = ()=>{
                             children: "© 2026 – Alexandre KEOLASY. Tous droits réservés."
                         }, void 0, false, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                            lineNumber: 46,
+                            lineNumber: 47,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -277,7 +292,7 @@ const Footer = ()=>{
                                     children: "Mentions légales"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                    lineNumber: 48,
+                                    lineNumber: 49,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -286,19 +301,19 @@ const Footer = ()=>{
                                     children: "Politique de confidentialité"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 50,
                                     columnNumber: 25
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                            lineNumber: 47,
+                            lineNumber: 48,
                             columnNumber: 21
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/components/layout/Footer.tsx",
-                    lineNumber: 45,
+                    lineNumber: 46,
                     columnNumber: 17
                 }, ("TURBOPACK compile-time value", void 0))
             ]

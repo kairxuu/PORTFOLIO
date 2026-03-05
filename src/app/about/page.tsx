@@ -43,8 +43,8 @@ export default function AboutPage() {
                         <GlassCard className="p-2 md:p-4 rotate-1">
                             <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-background-secondary/50 grayscale contrast-125">
                                 <img
-                                    src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
-                                    alt="Alexandre Keolasy - Abstract Representation"
+                                    src="/images/about/profile.jpg"
+                                    alt="Alexandre Keolasy"
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-foreground/10 mix-blend-overlay" />

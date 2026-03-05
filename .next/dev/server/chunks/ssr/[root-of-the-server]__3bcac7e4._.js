@@ -413,9 +413,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTF
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$src$2f$components$2f$ui$2f$GlassButton$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/src/components/ui/GlassButton.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/next/dist/client/app-dir/link.react-server.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-rsc] (ecmascript) <export default as ArrowRight>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/layers.js [app-rsc] (ecmascript) <export default as Layers>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/smartphone.js [app-rsc] (ecmascript) <export default as Smartphone>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/zap.js [app-rsc] (ecmascript) <export default as Zap>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/database.js [app-rsc] (ecmascript) <export default as Database>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/history.js [app-rsc] (ecmascript) <export default as History>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$monitor$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Monitor$3e$__ = __turbopack_context__.i("[project]/Documents/GitHub/PORTFOLIO/node_modules/lucide-react/dist/esm/icons/monitor.js [app-rsc] (ecmascript) <export default as Monitor>");
 ;
 ;
 ;
@@ -424,8 +424,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTF
 ;
 ;
 const metadata = {
-    title: "PPE 2 - Alexandre KEOLASY | Étudiant BTS SIO",
-    description: "Présentation approfondie du Projet Personnel Encadré (PPE 2). Focus sur l'architecture logicielle, l'optimisation et les enjeux du développement web moderne en BTS SIO."
+    title: "PPE 2 : FixIT - Alexandre KEOLASY | Étudiant BTS SIO",
+    description: "Présentation du projet FixIT (PPE 2) : une application C# de manipulation de base de données reliée à SQL Server."
 };
 function PPE2Page() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -441,7 +441,7 @@ function PPE2Page() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         className: "text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4",
-                        children: "Parcours Académique"
+                        children: "Projet Personnel Encadré (PPE 2)"
                     }, void 0, false, {
                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
                         lineNumber: 19,
@@ -449,25 +449,66 @@ function PPE2Page() {
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8",
-                        children: "PPE 2 (Projets Personnels Encadrés)."
+                        children: "FixIT."
                     }, void 0, false, {
                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
                         lineNumber: 20,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed",
-                        children: "Approfondissement des compétences en développement et conception d'applications plus complexes, incluant des aspects de connectivité, de sécurité et d'optimisation."
+                        className: "text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed mb-6",
+                        children: "Application de bureau développée en C# pour la gestion et la manipulation d'une base de données relationnelle SQL Server."
                     }, void 0, false, {
                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
                         lineNumber: 23,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex flex-wrap gap-3 mt-8",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "px-4 py-2 rounded-full bg-white/5 border border-glass-border text-sm text-foreground-secondary font-medium",
+                                children: "C#"
+                            }, void 0, false, {
+                                fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 27,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "px-4 py-2 rounded-full bg-white/5 border border-glass-border text-sm text-foreground-secondary font-medium",
+                                children: "Visual Studio"
+                            }, void 0, false, {
+                                fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 28,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "px-4 py-2 rounded-full bg-white/5 border border-glass-border text-sm text-foreground-secondary font-medium",
+                                children: "SQL Server"
+                            }, void 0, false, {
+                                fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 29,
+                                columnNumber: 21
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "px-4 py-2 rounded-full bg-white/5 border border-glass-border text-sm text-foreground-secondary font-medium",
+                                children: "SSMS"
+                            }, void 0, false, {
+                                fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                lineNumber: 30,
+                                columnNumber: 21
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                        lineNumber: 26,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "w-full h-px bg-glass-border mt-20"
                     }, void 0, false, {
                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                        lineNumber: 26,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, this)
                 ]
@@ -486,77 +527,38 @@ function PPE2Page() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "w-14 h-14 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-8 shadow-sm",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$layers$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Layers$3e$__["Layers"], {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$monitor$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Monitor$3e$__["Monitor"], {
                                         className: "w-6 h-6 text-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 33,
+                                        lineNumber: 39,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 32,
+                                    lineNumber: 38,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     className: "text-xl font-bold text-foreground mb-4",
-                                    children: "Architecture Complexe"
+                                    children: "Interface et Manipulation"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 35,
+                                    lineNumber: 41,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-foreground-secondary leading-relaxed font-light",
-                                    children: "Mise en place d'architectures n-tiers et séparation des préoccupations pour une meilleure maintenabilité."
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 36,
-                                    columnNumber: 25
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 31,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GlassCard"], {
-                            className: "p-8",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "w-14 h-14 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-8 shadow-sm",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__["Zap"], {
-                                        className: "w-6 h-6 text-foreground"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 43,
-                                        columnNumber: 29
-                                    }, this)
+                                    children: "Conception d'une interface utilisateur intuitive sous Visual Studio permettant l'interaction directe et la manipulation des données."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
                                     lineNumber: 42,
                                     columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                    className: "text-xl font-bold text-foreground mb-4",
-                                    children: "Optimisation"
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 45,
-                                    columnNumber: 25
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "text-foreground-secondary leading-relaxed font-light",
-                                    children: "Amélioration des performances et de la sécurité des échanges de données."
-                                }, void 0, false, {
-                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 46,
-                                    columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 41,
+                            lineNumber: 37,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GlassCard"], {
@@ -564,49 +566,88 @@ function PPE2Page() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "w-14 h-14 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-8 shadow-sm",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$smartphone$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Smartphone$3e$__["Smartphone"], {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$database$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Database$3e$__["Database"], {
                                         className: "w-6 h-6 text-foreground"
                                     }, void 0, false, {
                                         fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                        lineNumber: 53,
+                                        lineNumber: 49,
                                         columnNumber: 29
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 52,
+                                    lineNumber: 48,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                                     className: "text-xl font-bold text-foreground mb-4",
-                                    children: "Multi-plateforme"
+                                    children: "Base de Données Reliée"
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 51,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-foreground-secondary leading-relaxed font-light",
-                                    children: "Conception d'interfaces adaptatives et enjeux du développement web moderne."
+                                    children: "Intégration d'un système de gestion de base de données via SQL Server (SSMS) pour garantir l'intégrité et la permanence des informations."
                                 }, void 0, false, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 56,
+                                    lineNumber: 52,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 51,
+                            lineNumber: 47,
+                            columnNumber: 21
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$src$2f$components$2f$ui$2f$GlassCard$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["GlassCard"], {
+                            className: "p-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-14 h-14 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-8 shadow-sm",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__["History"], {
+                                        className: "w-6 h-6 text-foreground"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                        lineNumber: 59,
+                                        columnNumber: 29
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                    lineNumber: 58,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                    className: "text-xl font-bold text-foreground mb-4",
+                                    children: "Suivi et Historique"
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                    lineNumber: 61,
+                                    columnNumber: 25
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-foreground-secondary leading-relaxed font-light",
+                                    children: "Fonctionnalité clé d'historisation permettant le suivi détaillé des personnes, des équipements (devices) et des dates d'interventions."
+                                }, void 0, false, {
+                                    fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                                    lineNumber: 62,
+                                    columnNumber: 25
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
+                            lineNumber: 57,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                    lineNumber: 30,
+                    lineNumber: 36,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 29,
+                lineNumber: 35,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -616,10 +657,10 @@ function PPE2Page() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             className: "text-3xl font-bold text-foreground mb-8",
-                            children: "Retourner au PPE 1"
+                            children: "Découvrir les autres projets"
                         }, void 0, false, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 65,
+                            lineNumber: 71,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -633,40 +674,40 @@ function PPE2Page() {
                                             className: "w-4 h-4 mr-2 rotate-180"
                                         }, void 0, false, {
                                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                            lineNumber: 69,
+                                            lineNumber: 75,
                                             columnNumber: 33
                                         }, this),
                                         " Voir PPE 1"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                    lineNumber: 68,
+                                    lineNumber: 74,
                                     columnNumber: 29
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                                lineNumber: 67,
+                                lineNumber: 73,
                                 columnNumber: 25
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                            lineNumber: 66,
+                            lineNumber: 72,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                    lineNumber: 64,
+                    lineNumber: 70,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 63,
+                lineNumber: 69,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Documents$2f$GitHub$2f$PORTFOLIO$2f$src$2f$components$2f$layout$2f$Footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Documents/GitHub/PORTFOLIO/src/app/ppe/ppe2/page.tsx",
-                lineNumber: 76,
+                lineNumber: 82,
                 columnNumber: 13
             }, this)
         ]
