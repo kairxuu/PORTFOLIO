@@ -18,9 +18,16 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "PPE 1 : Technova - Alexandre KEOLASY",
+  title: "PPE 1 Technova — E-commerce PHP MySQL | Alexandre Keolasy",
   description:
-    "Création d'une plateforme de vente en ligne pour une marque de solutions technologiques : Technova.",
+    "PPE 1 BTS SIO : création d'un site e-commerce complet en PHP et MySQL (Technova). Catalogue produits, panier, gestion admin — réalisé seul en 2025.",
+  keywords: ["PPE 1", "Technova", "BTS SIO", "e-commerce PHP", "MySQL", "Alexandre Keolasy"],
+  alternates: { canonical: "https://keolasy.dev/ppe/ppe1" },
+  openGraph: {
+    title: "PPE 1 Technova — E-commerce PHP | Alexandre Keolasy",
+    description: "Site e-commerce PHP/MySQL développé seul en BTS SIO SLAM partant de 0.",
+    url: "https://keolasy.dev/ppe/ppe1",
+  },
 };
 
 export default function PPE1Page() {

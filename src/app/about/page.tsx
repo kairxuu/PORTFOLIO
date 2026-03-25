@@ -7,8 +7,16 @@ import { GlassButton } from "@/components/ui/GlassButton";
 import { ArrowRight, Terminal, Layers, Figma, Database } from "lucide-react";
 
 export const metadata = {
-    title: "À propos - Alexandre KEOLASY",
-    description: "Mon parcours, de l'analytique mathématique à l'ingénierie front-end.",
+    title: "Mon Parcours — BTS SIO SLAM | Alexandre Keolasy",
+    description:
+        "Découvrez le parcours d'Alexandre Keolasy, étudiant en BTS SIO option SLAM. Passionné par le développement web avec Next.js, React, TypeScript, C# et SQL Server.",
+    keywords: ["Alexandre Keolasy", "BTS SIO SLAM", "parcours développeur web", "étudiant informatique"],
+    alternates: { canonical: "https://keolasy.dev/about" },
+    openGraph: {
+        title: "Parcours d'Alexandre Keolasy — BTS SIO SLAM",
+        description: "De la curiosité technique à la maîtrise du développement web : Next.js, C#, SQL.",
+        url: "https://keolasy.dev/about",
+    },
 };
 
 const stack = [
