@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -12,7 +12,6 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 export default function Home() {
   const containerRef = useRef(null);
 
-
   // Advanced Parallax Global
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -21,13 +20,20 @@ export default function Home() {
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
-  // 3D Card Parallax Local - REMOVED sectionRef tracking to fix hydration error
-
   const heroScale = useTransform(smoothProgress, [0, 1], [1, 1.25]);
   const heroOpacity = useTransform(smoothProgress, [0, 0.5], [1, 0]);
   const heroY = useTransform(smoothProgress, [0, 1], ["0%", "50%"]);
   const textY = useTransform(smoothProgress, [0, 0.4], ["0%", "60%"]);
 
+  // Halo parallax transforms (extracted from JSX to respect Rules of Hooks)
+  const halo1X = useTransform(smoothProgress, [0, 1], ["0%", "30%"]);
+  const halo1Y = useTransform(smoothProgress, [0, 1], ["0%", "40%"]);
+  const halo1Scale = useTransform(smoothProgress, [0, 0.5, 1], [1, 1.2, 0.8]);
+  const halo2X = useTransform(smoothProgress, [0, 1], ["0%", "-40%"]);
+  const halo2Y = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
+  const halo3X = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
+  const halo3Y = useTransform(smoothProgress, [0, 1], ["0%", "-50%"]);
+  const halo3Rotate = useTransform(smoothProgress, [0, 1], [0, 45]);
 
   return (
     <main className="min-h-screen bg-background flex flex-col relative" ref={containerRef}>
@@ -40,33 +46,22 @@ export default function Home() {
           className="absolute inset-0 z-0 origin-center bg-black overflow-hidden"
           style={{ scale: heroScale, opacity: heroOpacity }}
         >
-          {/* Base Noise for Texture - Reduced opacity significantly */}
+          {/* Base Noise for Texture */}
           <div className="absolute inset-0 z-20 opacity-5 mix-blend-overlay pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
 
-          {/* Dynamic Halos reacting to Scroll */}
+          {/* Dynamic Halos */}
           <div className="absolute inset-0 z-0 filter blur-[100px] opacity-25">
             <motion.div
               className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-900/40"
-              style={{
-                x: useTransform(smoothProgress, [0, 1], ["0%", "30%"]),
-                y: useTransform(smoothProgress, [0, 1], ["0%", "40%"]),
-                scale: useTransform(smoothProgress, [0, 0.5, 1], [1, 1.2, 0.8]),
-              }}
+              style={{ x: halo1X, y: halo1Y, scale: halo1Scale }}
             />
             <motion.div
               className="absolute top-[20%] right-[-10%] w-[50%] h-[70%] rounded-full bg-violet-900/30"
-              style={{
-                x: useTransform(smoothProgress, [0, 1], ["0%", "-40%"]),
-                y: useTransform(smoothProgress, [0, 1], ["0%", "20%"]),
-              }}
+              style={{ x: halo2X, y: halo2Y }}
             />
             <motion.div
               className="absolute bottom-[-20%] left-[20%] w-[80%] h-[60%] rounded-full bg-slate-800/40"
-              style={{
-                x: useTransform(smoothProgress, [0, 1], ["0%", "20%"]),
-                y: useTransform(smoothProgress, [0, 1], ["0%", "-50%"]),
-                rotate: useTransform(smoothProgress, [0, 1], [0, 45]),
-              }}
+              style={{ x: halo3X, y: halo3Y, rotate: halo3Rotate }}
             />
           </div>
         </motion.div>
@@ -85,7 +80,7 @@ export default function Home() {
               Alexandre KEOLASY.
             </h1>
             <p className="text-2xl md:text-3xl text-neutral-400 max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
-              Étudiant en BTS SIO. <br className="hidden md:block" />Passionné par le développement d'applications web modernes et performantes.
+              Étudiant en BTS SIO. <br className="hidden md:block" />Passionné par le développement d&apos;applications web modernes et performantes.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/ppe/ppe1">
@@ -106,7 +101,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Premium Bento Grid - Spans wider */}
+      {/* Premium Bento Grid */}
       <section className="relative z-30 w-full px-6 pb-40 -mt-32 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-fr">
 
@@ -118,7 +113,7 @@ export default function Home() {
                 Alexandre Keolasy
               </h3>
               <p className="text-foreground-secondary text-xl font-light leading-relaxed max-w-2xl mb-10">
-                Actuellement en formation BTS SIO (Services Informatiques aux Organisations), je me spécialise dans le développement web. J'allie rigueur technique et curiosité pour construire des solutions logicielles innovantes.
+                Actuellement en formation BTS SIO (Services Informatiques aux Organisations), je me spécialise dans le développement web. J&apos;allie rigueur technique et curiosité pour construire des solutions logicielles innovantes.
               </p>
               <Link href="/about" className="text-foreground flex items-center gap-2 text-lg font-medium hover:text-foreground/70 transition-colors w-fit duration-300">
                 Mon parcours académique <ArrowRight className="w-5 h-5" />
@@ -169,9 +164,9 @@ export default function Home() {
 
             <div className="relative grow flex flex-col justify-center p-10 md:p-12 bg-white z-20">
               <h2 className="text-[11px] font-bold text-foreground-secondary tracking-widest uppercase mb-3">Sélection</h2>
-              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Projets & PPE</h3>
+              <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">Projets &amp; PPE</h3>
               <p className="text-foreground-secondary max-w-xl mb-8 text-xl font-light leading-relaxed">
-                Réalisation d'applications dans le cadre de ma formation BTS, mettant en œuvre des technologies modernes pour répondre à des besoins métiers réels.
+                Réalisation d&apos;applications dans le cadre de ma formation BTS, mettant en œuvre des technologies modernes pour répondre à des besoins métiers réels.
               </p>
               <div className="mt-auto">
                 <Link href="/ppe/ppe1">
@@ -185,8 +180,7 @@ export default function Home() {
         </div>
       </section>
 
-
       <Footer />
-    </main >
+    </main>
   );
 }
