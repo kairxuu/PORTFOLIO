@@ -1,24 +1,18 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import Link from "next/link";
-import { ArrowRight, Code2, Users, Calendar, MapPin, User, CheckCircle2, Rocket, RotateCcw, Download } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Code2, Users, Calendar, MapPin, User, CheckCircle2, Rocket, RotateCcw, Download, Presentation, X } from "lucide-react";
 
-export const metadata = {
-    title: "Stage 2 Wyze Academy — Développeur Web Next.js | Alexandre Keolasy",
-    description:
-        "Stage de 2ème année BTS SIO SLAM chez Wyze Academy : refonte front-end en Next.js, React et Tailwind CSS, travail en équipe de stagiaires sur un projet complexe.",
-    keywords: ["stage BTS SIO", "Wyze Academy", "Next.js", "React", "Tailwind CSS", "développeur front-end", "Alexandre Keolasy"],
-    alternates: { canonical: "https://keolasy.dev/stage/stage2" },
-    openGraph: {
-        title: "Stage 2 Wyze Academy — Dev Web Next.js | Alexandre Keolasy",
-        description: "Refonte front-end Next.js/React en équipe chez Wyze Academy.",
-        url: "https://keolasy.dev/stage/stage2",
-    },
-};
+const PPT_EMBED_URL = "https://drive.google.com/file/d/1s3dYz3sVJ-Eq9s9QezRomokZb1YYrS41/preview";
 
 export default function Stage2Page() {
+    const [showPpt, setShowPpt] = useState(false);
+
     return (
         <main className="min-h-screen bg-background flex flex-col">
             <Header />
@@ -36,14 +30,40 @@ export default function Stage2Page() {
                     Refonte d'un site web non abouti en travaillant en collaboration avec d'autres stagiaires.
                 </p>
 
-                <a
-                    href="/ppt/Stage BTS SIO SLAM - Wyze Academy.pptx"
-                    download
-                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 mb-12 group"
-                >
-                    <Download className="w-4 h-4 group-hover:animate-bounce" />
-                    Télécharger la présentation PPT
-                </a>
+                <div className="flex flex-wrap items-center gap-4 mb-12">
+                    <a
+                        href="/ppt/Stage BTS SIO SLAM - Wyze Academy.pptx"
+                        download
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 group"
+                    >
+                        <Download className="w-4 h-4 group-hover:animate-bounce" />
+                        Télécharger la présentation PPT
+                    </a>
+                    <button
+                        onClick={() => setShowPpt((v) => !v)}
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-white/10 transition-all text-foreground font-medium text-sm group"
+                    >
+                        {showPpt ? (
+                            <><X className="w-4 h-4" /> Fermer l&apos;aperçu</>
+                        ) : (
+                            <><Presentation className="w-4 h-4 group-hover:scale-110 transition-transform" /> Voir la présentation</>
+                        )}
+                    </button>
+                </div>
+
+                {showPpt && (
+                    <div className="mb-12 w-full rounded-2xl overflow-hidden border border-glass-border bg-white/5">
+                        <iframe
+                            src={PPT_EMBED_URL}
+                            width="100%"
+                            height="600"
+                            frameBorder="0"
+                            allowFullScreen
+                            title="Présentation Stage Wyze Academy"
+                            className="w-full"
+                        />
+                    </div>
+                )}
 
                 {/* Key Info Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">

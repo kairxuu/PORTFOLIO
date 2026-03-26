@@ -1,20 +1,13 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { BellRing, Youtube, Headphones, ArrowRight, Rss, Bot, Cpu, Network, Download } from "lucide-react";
+import { BellRing, Youtube, Headphones, ArrowRight, Rss, Bot, Cpu, Network, Download, Presentation, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
-export const metadata = {
-    title: "Veille Technologique IA — Agents Autonomes | Alexandre Keolasy",
-    description:
-        "Veille technologique BTS SIO SLAM (épreuve E4) : l'automatisation des agents IA. AutoGPT, LangChain, LLMs — analyse des enjeux, outils et risques des IA autonomes.",
-    keywords: ["veille technologique", "BTS SIO", "agents IA", "AutoGPT", "LangChain", "intelligence artificielle", "Alexandre Keolasy"],
-    alternates: { canonical: "https://keolasy.dev/veille" },
-    openGraph: {
-        title: "Veille IA — Agents Autonomes | Alexandre Keolasy",
-        description: "Veille BTS SIO sur les agents IA autonomes : AutoGPT, LangChain, LLMs.",
-        url: "https://keolasy.dev/veille",
-    },
-};
+const PPT_EMBED_URL = "https://drive.google.com/file/d/1ldFlvyKKkCxEfdUYZWUhPsQ73M62ELb9/preview";
+
 async function getRecentNews() {
 
     try {
@@ -41,8 +34,13 @@ async function getRecentNews() {
     }
 }
 
-export default async function VeillePage() {
-    const recentNews = await getRecentNews();
+export default function VeillePage() {
+    const [showPpt, setShowPpt] = useState(false);
+    const [recentNews, setRecentNews] = useState<any[]>([]);
+
+    useEffect(() => {
+        getRecentNews().then(setRecentNews);
+    }, []);
 
     return (
         <main className="min-h-screen bg-background flex flex-col">
@@ -66,14 +64,40 @@ export default async function VeillePage() {
                     Étude de l'évolution des intelligences artificielles autonomes capables d'exécuter des tâches complexes en cascade sans intervention humaine.
                 </p>
 
-                <a
-                    href="/ppt/Veille Technologique - Automatisation des Agents IA.pptx"
-                    download
-                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 mb-12 group"
-                >
-                    <Download className="w-4 h-4 group-hover:animate-bounce" />
-                    Télécharger la présentation PPT
-                </a>
+                <div className="flex flex-wrap items-center gap-4 mb-12">
+                    <a
+                        href="/ppt/Veille Technologique - Automatisation des Agents IA.pptx"
+                        download
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 group"
+                    >
+                        <Download className="w-4 h-4 group-hover:animate-bounce" />
+                        Télécharger la présentation PPT
+                    </a>
+                    <button
+                        onClick={() => setShowPpt((v) => !v)}
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-white/10 transition-all text-foreground font-medium text-sm group"
+                    >
+                        {showPpt ? (
+                            <><X className="w-4 h-4" /> Fermer l&apos;aperçu</>
+                        ) : (
+                            <><Presentation className="w-4 h-4 group-hover:scale-110 transition-transform" /> Voir la présentation</>
+                        )}
+                    </button>
+                </div>
+
+                {showPpt && (
+                    <div className="mb-12 w-full rounded-2xl overflow-hidden border border-glass-border bg-white/5">
+                        <iframe
+                            src={PPT_EMBED_URL}
+                            width="100%"
+                            height="600"
+                            frameBorder="0"
+                            allowFullScreen
+                            title="Veille Technologique - Agents IA"
+                            className="w-full"
+                        />
+                    </div>
+                )}
 
                 <div className="w-full h-px bg-glass-border" />
             </section>

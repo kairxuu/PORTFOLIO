@@ -1,8 +1,11 @@
+"use client";
+
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import Link from "next/link";
+import { useState } from "react";
 import {
   ArrowRight,
   MapPin,
@@ -14,23 +17,17 @@ import {
   CheckCircle2,
   Github,
   Search,
-  Wrench,
+  Presentation,
+  X,
 } from "lucide-react";
 
-export const metadata = {
-  title: "PPE 2 FixIT — Application C# SQL Server | Alexandre Keolasy",
-  description:
-    "PPE 2 BTS SIO : application desktop C# connectée à SQL Server pour la gestion des interventions informatiques. CRUD, historique, Windows Forms — réalisé seul en 2025.",
-  keywords: ["PPE 2", "FixIT", "BTS SIO", "C#", "SQL Server", "Windows Forms", "Alexandre Keolasy"],
-  alternates: { canonical: "https://keolasy.dev/ppe/ppe2" },
-  openGraph: {
-    title: "PPE 2 FixIT — App C# SQL Server | Alexandre Keolasy",
-    description: "Application de gestion d'interventions informatiques en C#/.NET et SQL Server.",
-    url: "https://keolasy.dev/ppe/ppe2",
-  },
-};
+// PPT URL — remplace FILE_ID par l'identifiant de ton fichier Google Drive
+const PPT_EMBED_URL =
+  "https://docs.google.com/presentation/d/FILE_ID/embed?start=false&loop=false";
 
 export default function PPE2Page() {
+  const [showPpt, setShowPpt] = useState(false);
+
   return (
     <main className="min-h-screen bg-background flex flex-col">
       <Header />
@@ -82,6 +79,41 @@ export default function PPE2Page() {
               ),
             )}
           </div>
+
+          {/* Bouton aperçu PPT */}
+          <div className="mt-8">
+            <button
+              onClick={() => setShowPpt((v) => !v)}
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-white/10 transition-all text-foreground font-medium text-sm group"
+            >
+              {showPpt ? (
+                <>
+                  <X className="w-4 h-4" />
+                  Fermer l&apos;aperçu
+                </>
+              ) : (
+                <>
+                  <Presentation className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                  Voir la présentation
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* Aperçu PPT inline */}
+          {showPpt && (
+            <div className="mt-8 w-full rounded-2xl overflow-hidden border border-glass-border bg-white/5">
+              <iframe
+                src={PPT_EMBED_URL}
+                width="100%"
+                height="600"
+                frameBorder="0"
+                allowFullScreen
+                title="Présentation PPE 2 FixIT"
+                className="w-full"
+              />
+            </div>
+          )}
         </div>
 
         <div className="w-full h-px bg-glass-border mt-20" />
