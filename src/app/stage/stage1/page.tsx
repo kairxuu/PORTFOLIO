@@ -3,7 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import Link from "next/link";
-import { ArrowRight, Code2, Rocket, Briefcase, Calendar, MapPin, User, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Code2, Rocket, Briefcase, Calendar, MapPin, User, CheckCircle2, Download } from "lucide-react";
 
 export const metadata = {
     title: "Stage 1 BXTTERFLY — Développeur Web Frontend | Alexandre Keolasy",
@@ -32,9 +32,18 @@ export default function Stage1Page() {
                 <p className="text-2xl md:text-3xl text-foreground font-medium mb-6">
                     Développeur Web front-end
                 </p>
-                <p className="text-xl md:text-2xl text-foreground-secondary max-w-4xl font-light leading-relaxed mb-12">
+                <p className="text-xl md:text-2xl text-foreground-secondary max-w-4xl font-light leading-relaxed mb-8">
                     Conception et développement d'un site e-commerce pour la vente de vêtements.
                 </p>
+
+                <a
+                    href="/ppt/Stage BXTTERFLY - BTS SIO SLAM.pptx"
+                    download
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 mb-12 group"
+                >
+                    <Download className="w-4 h-4 group-hover:animate-bounce" />
+                    Télécharger la présentation PPT
+                </a>
 
                 {/* Key Info Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">

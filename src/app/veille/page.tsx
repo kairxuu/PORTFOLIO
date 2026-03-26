@@ -1,7 +1,7 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { BellRing, Youtube, Headphones, ArrowRight, Rss, Bot, Cpu, Network } from "lucide-react";
+import { BellRing, Youtube, Headphones, ArrowRight, Rss, Bot, Cpu, Network, Download } from "lucide-react";
 
 export const metadata = {
     title: "Veille Technologique IA — Agents Autonomes | Alexandre Keolasy",
@@ -62,9 +62,18 @@ export default async function VeillePage() {
                 <p className="text-2xl md:text-3xl text-foreground font-medium mb-6">
                     L'automatisation des agents IA
                 </p>
-                <p className="text-xl md:text-2xl text-foreground-secondary max-w-4xl font-light leading-relaxed mb-12">
+                <p className="text-xl md:text-2xl text-foreground-secondary max-w-4xl font-light leading-relaxed mb-8">
                     Étude de l'évolution des intelligences artificielles autonomes capables d'exécuter des tâches complexes en cascade sans intervention humaine.
                 </p>
+
+                <a
+                    href="/ppt/Veille Technologique - Automatisation des Agents IA.pptx"
+                    download
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full border border-glass-border bg-white/5 hover:bg-foreground hover:text-white text-foreground font-medium text-sm transition-all duration-300 mb-12 group"
+                >
+                    <Download className="w-4 h-4 group-hover:animate-bounce" />
+                    Télécharger la présentation PPT
+                </a>
 
                 <div className="w-full h-px bg-glass-border" />
             </section>
