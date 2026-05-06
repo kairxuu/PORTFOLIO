@@ -9,6 +9,9 @@ import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { GlassButton } from "@/components/ui/GlassButton";
 import { HeroParallax } from "@/components/sections/HeroParallax";
+import { Services } from "@/components/sections/Services";
+import { Projects } from "@/components/sections/Projects";
+import { Contact } from "@/components/sections/Contact";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Code2, Cpu, Layout } from "lucide-react";
@@ -141,6 +144,19 @@ export default function Home() {
           </GlassCard>
         </div>
       </section>
+
+      {/* Détail de l'expertise */}
+      <Services />
+
+      {/* Preuve sociale & réalisations */}
+      <Projects />
+
+      {/* Appel à l'action */}
+      <div className="relative pb-24">
+        {/* Un séparateur visuel doux */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-glass-border to-transparent opacity-50"></div>
+        <Contact />
+      </div>
 
       <Footer />
     </main>
