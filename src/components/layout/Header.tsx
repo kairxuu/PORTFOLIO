@@ -6,21 +6,18 @@ import { GlassButton } from "../ui/GlassButton";
 import { Github, Linkedin, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useScroll, useMotionValueEvent } from "framer-motion";
 
 export const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const pathname = usePathname();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        // { passive: true } → déclare qu'on n'appelle pas preventDefault()
-        // ce qui libère le thread principal pendant le scroll
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        setScrolled(latest > 50);
+    });
 
     const navLinks = [
         { name: "Accueil", href: "/" },

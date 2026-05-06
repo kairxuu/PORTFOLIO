@@ -50,11 +50,11 @@ h6 {
 /* Base Glassmorphism utility classes - refined */
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* Le backdrop-filter est extrêmement lourd pour le GPU. 
+     Sur un fond uni (Apple Light Mode), il ne sert à rien visuellement.
+     On le retire pour retrouver les 60 FPS. Le Header le garde via Tailwind. */
   border: 1px solid var(--glass-border);
-  /* Isolation GPU : évite que les re-paints du backdrop-filter
-     ne se propagent aux éléments voisins */
+  /* Isolation GPU : évite que les re-paints ne se propagent aux éléments voisins */
   transform: translateZ(0);
   will-change: transform;
   /* Limite la portée du layout recalcul */
