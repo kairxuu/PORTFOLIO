@@ -19,11 +19,11 @@ export const HeroParallax = () => {
     offset: ["start start", "end start"],
   });
 
-  // Spring léger — damping élevé = moins de rebond = moins de frames recalculées
+  // Spring léger — damping élevé = moins de rebond, restDelta moins strict pour s'arrêter plus vite
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 35,
-    restDelta: 0.001,
+    stiffness: 70,
+    damping: 30,
+    restDelta: 0.005,
   });
 
   // Transforms parallax
@@ -47,32 +47,46 @@ export const HeroParallax = () => {
       ref={containerRef}
       className="relative h-[120vh] flex items-center justify-center overflow-hidden"
     >
+      {/* Bruit de texture (SVG inline) — Sorti du div qui s'agrandit pour éviter les recalculs GPU (repaints) constants au scroll */}
+      <div
+        className="absolute inset-0 z-10 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+
       {/* Fond parallax — couche GPU isolée */}
       <motion.div
         className="absolute inset-0 z-0 origin-center bg-black overflow-hidden"
         style={{ scale: heroScale, opacity: heroOpacity }}
       >
-        {/* Bruit de texture (SVG inline = 0 requête réseau) */}
-        <div
-          className="absolute inset-0 z-20 opacity-5 mix-blend-overlay pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-          }}
-        />
-
-        {/* Halos lumineux */}
-        <div className="absolute inset-0 z-0 filter blur-[100px] opacity-25">
+        {/* Halos lumineux — Remplacés par des radial-gradients (100x plus rapides que filter: blur() pour le GPU) */}
+        <div className="absolute inset-0 z-0">
           <motion.div
-            className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-900/40"
-            style={{ x: halo1X, y: halo1Y, scale: halo1Scale }}
+            className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full"
+            style={{ 
+              x: halo1X, 
+              y: halo1Y, 
+              scale: halo1Scale,
+              background: 'radial-gradient(circle at center, rgba(30, 58, 138, 0.4) 0%, transparent 60%)' // blue-900
+            }}
           />
           <motion.div
-            className="absolute top-[20%] right-[-10%] w-[50%] h-[70%] rounded-full bg-violet-900/30"
-            style={{ x: halo2X, y: halo2Y }}
+            className="absolute top-[20%] right-[-10%] w-[50%] h-[70%] rounded-full"
+            style={{ 
+              x: halo2X, 
+              y: halo2Y,
+              background: 'radial-gradient(circle at center, rgba(76, 29, 149, 0.3) 0%, transparent 60%)' // violet-900
+            }}
           />
           <motion.div
-            className="absolute bottom-[-20%] left-[20%] w-[80%] h-[60%] rounded-full bg-slate-800/40"
-            style={{ x: halo3X, y: halo3Y, rotate: halo3Rotate }}
+            className="absolute bottom-[-20%] left-[20%] w-[80%] h-[60%] rounded-full"
+            style={{ 
+              x: halo3X, 
+              y: halo3Y, 
+              rotate: halo3Rotate,
+              background: 'radial-gradient(circle at center, rgba(30, 41, 59, 0.4) 0%, transparent 60%)' // slate-800
+            }}
           />
         </div>
       </motion.div>
