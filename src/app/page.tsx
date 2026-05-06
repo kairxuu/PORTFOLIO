@@ -25,7 +25,7 @@ export default function Home() {
       <HeroParallax />
 
       {/* Premium Bento Grid — rendu côté serveur */}
-      <section className="relative z-30 w-full px-6 pb-40 -mt-32 max-w-5xl mx-auto">
+      <section className="relative z-30 w-full px-6 pb-12 md:pb-16 -mt-32 max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 auto-rows-fr">
 
           {/* À propos */}

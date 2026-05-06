@@ -14,7 +14,7 @@ export const SectionWrapper = forwardRef<HTMLElement, HTMLMotionProps<"section">
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className={cn(
-                    "py-24 md:py-32 w-full max-w-5xl mx-auto px-6",
+                    "py-16 md:py-20 w-full max-w-5xl mx-auto px-6",
                     className
                 )}
                 {...props}
