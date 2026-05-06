@@ -1,7 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Process } from "@/components/sections/Process";
 import Link from "next/link";
 import { GlassButton } from "@/components/ui/GlassButton";
 import { ArrowRight, Terminal, Layers, Figma, Database } from "lucide-react";
@@ -44,24 +43,9 @@ export default function AboutPage() {
 
             {/* Biography Split Section */}
             <section className="px-6 md:px-12 max-w-7xl mx-auto w-full pb-32">
-                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
-
-                    {/* Left: Image / Portrait */}
-                    <div className="w-full lg:w-5/12 shrink-0">
-                        <GlassCard className="p-2 md:p-4 rotate-1">
-                            <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-background-secondary/50 grayscale contrast-125">
-                                <img
-                                    src="/images/about/profile.jpg"
-                                    alt="Alexandre Keolasy"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-foreground/10 mix-blend-overlay" />
-                            </div>
-                        </GlassCard>
-                    </div>
-
-                    {/* Right: Text Content */}
-                    <div className="w-full lg:w-7/12 flex flex-col justify-center pt-4 lg:pt-12">
+                <div className="flex flex-col gap-16 items-start max-w-4xl mx-auto">
+                    {/* Text Content */}
+                    <div className="w-full flex flex-col justify-center pt-4">
                         <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-8">Parcours</h2>
                         <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-8 tracking-tight leading-snug">
                             De la curiosité technique à la maîtrise du développement web.

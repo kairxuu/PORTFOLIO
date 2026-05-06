@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <footer className="border-t border-glass-border bg-background w-full pt-16 pb-8">
             <div className="px-6 w-full max-w-5xl mx-auto">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
+                <div className="grid md:grid-cols-3 gap-12 mb-12">
                     <div className="md:col-span-2">
                         <Link href="/" className="inline-flex items-center gap-2 group mb-6">
                             <span className="font-bold text-lg tracking-tight text-foreground">
@@ -34,13 +34,6 @@ export const Footer = () => {
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 className="text-foreground font-semibold mb-6 tracking-tight">Contact</h3>
-                        <ul className="flex flex-col gap-3 text-foreground/60">
-                            <li><a href="mailto:alexklsy@proton.me" className="hover:text-foreground transition-colors">alexklsy@proton.me</a></li>
-                            <li>Paris, France</li>
-                        </ul>
-                    </div>
                 </div>
 
                 <div className="border-t border-foreground/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-foreground/40">

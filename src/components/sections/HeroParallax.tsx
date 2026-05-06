@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, ChevronDown } from "lucide-react";
 
 /**
  * HeroParallax — composant client isolé.
@@ -93,7 +93,7 @@ export const HeroParallax = () => {
 
       {/* Typographie Hero */}
       <motion.div
-        className="relative z-20 w-full px-6 max-w-5xl mx-auto text-center mt-[-15vh]"
+        className="relative z-20 w-full px-6 max-w-5xl mx-auto text-left mt-[-15vh]"
         style={{ y: textY, opacity: heroOpacity }}
       >
         <motion.div
@@ -104,13 +104,13 @@ export const HeroParallax = () => {
           <h1 className="text-6xl md:text-[8rem] lg:text-[11rem] font-bold tracking-tighter text-white mb-6 leading-none">
             Alexandre KEOLASY.
           </h1>
-          <p className="text-2xl md:text-3xl text-neutral-400 max-w-5xl mx-auto font-light leading-tight mb-12 tracking-tight">
+          <p className="text-2xl md:text-3xl text-neutral-400 max-w-5xl font-light leading-tight mb-12 tracking-tight">
             Étudiant en BTS SIO.{" "}
             <br className="hidden md:block" />
             Passionné par le développement d&apos;applications web modernes et
             performantes.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-col sm:flex-row items-start justify-start gap-6">
             <Link href="/ppe/ppe1">
               <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-xl bg-white text-black font-semibold text-lg px-10 h-16 shadow-[0_8px_20px_rgba(255,255,255,0.18),0_2px_4px_rgba(255,255,255,0.12)] hover:-translate-y-1 transition-all">
                 Voir mes PPE
@@ -137,6 +137,21 @@ export const HeroParallax = () => {
               </a>
             </div>
           </div>
+        </motion.div>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-8 h-8" />
         </motion.div>
       </motion.div>
     </section>

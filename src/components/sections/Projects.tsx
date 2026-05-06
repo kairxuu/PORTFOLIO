@@ -109,12 +109,12 @@ export const Projects = () => {
             </div>
 
             <div className="mt-12 text-center">
-                <Link href="/projets">
+                <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer">
                     <GlassButton variant="secondary" className="group rounded-full px-8 py-3 h-12 text-sm font-semibold">
                         Voir tous les projets sur Github
                         <Github className="ml-2 w-4 h-4 group-hover:rotate-12 transition-transform" />
                     </GlassButton>
-                </Link>
+                </a>
             </div>
         </SectionWrapper>
     );

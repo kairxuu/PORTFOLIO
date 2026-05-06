@@ -132,7 +132,7 @@ export const Header = () => {
 
             {/* CTA & Mobile Toggle */}
             <div className="flex items-center gap-2 shrink-0">
-                <div className="hidden md:flex items-center gap-2 mr-2 border-r border-glass-border pr-4">
+                <div className="hidden md:flex items-center gap-2 mr-2">
                     <a href="https://github.com/kairxuu" target="_blank" rel="noreferrer" aria-label="GitHub Profile" className="w-10 h-10 rounded-full flex items-center justify-center text-foreground/70 hover:text-foreground hover:bg-foreground/5 transition-colors">
                         <Github className="w-4 h-4" />
                     </a>
@@ -140,11 +140,6 @@ export const Header = () => {
                         <Linkedin className="w-4 h-4" />
                     </a>
                 </div>
-                <Link href="/contact" tabIndex={-1} className="hidden sm:block">
-                    <GlassButton variant="primary" className="h-12 px-6 text-sm rounded-full">
-                        Me contacter
-                    </GlassButton>
-                </Link>
 
                 {/* Mobile menu toggle */}
                 <button
@@ -206,11 +201,6 @@ export const Header = () => {
                                 <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
-                        <Link href="/contact" tabIndex={-1} className="w-full" onClick={() => setMobileMenuOpen(false)}>
-                            <GlassButton className="w-full h-12 rounded-xl">
-                                Me contacter
-                            </GlassButton>
-                        </Link>
                     </div>
                 </div>
             )}
