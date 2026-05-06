@@ -16,7 +16,9 @@ export const Header = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
         };
-        window.addEventListener("scroll", handleScroll);
+        // { passive: true } → déclare qu'on n'appelle pas preventDefault()
+        // ce qui libère le thread principal pendant le scroll
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 

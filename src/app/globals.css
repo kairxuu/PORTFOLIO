@@ -29,9 +29,12 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth retiré — causes des saccades sur Safari/Firefox;
+     utiliser Framer Motion pour les scroll programmés */
   letter-spacing: -0.01em;
   /* Tighter tracking for premium feel */
+  /* Empêche le layout shift lors du chargement de la police */
+  font-display: swap;
 }
 
 /* Elegant typography hierarchy */
@@ -50,9 +53,21 @@ h6 {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
+  /* Isolation GPU : évite que les re-paints du backdrop-filter
+     ne se propagent aux éléments voisins */
+  transform: translateZ(0);
+  will-change: transform;
+  /* Limite la portée du layout recalcul */
+  contain: layout style;
 }
 
 /* Subtle elevation, no more heavy colored glows */
 .elevation-subtle {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Optimisation scroll — hint navigateur pour les sections animées */
+.scroll-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }

@@ -6,6 +6,7 @@ import { GlassCard } from "../ui/GlassCard";
 import { GlassButton } from "../ui/GlassButton";
 import { ExternalLink, Github, Lock } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
     {
@@ -46,10 +47,13 @@ export const Projects = () => {
                         className={`overflow-hidden flex flex-col h-full group ${project.className}`}
                     >
                         <div className={`relative w-full ${project.imageClass} shrink-0 overflow-hidden border-b border-[var(--glass-border)]`}>
-                            <img
+                            <Image
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-in-out"
+                                fill
+                                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                                sizes="(max-width: 768px) 100vw, 66vw"
+                                loading="lazy"
                             />
                         </div>
 
