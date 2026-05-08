@@ -135,7 +135,7 @@ export default function PPE2Page() {
                       Lieu
                     </p>
                     <p className="text-foreground font-medium">
-                      Lycée, cadre scolaire
+                      Aurlom, Paris
                     </p>
                   </div>
                 </div>
