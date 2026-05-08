@@ -327,7 +327,7 @@ export default function PPE2Page() {
             <ul className="space-y-3">
               <li className="flex gap-3 text-foreground-secondary font-light">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50 mt-2 shrink-0" />
-                Connexion à SQL Server via ADO.NET (SqlConnection, SqlCommand).
+                Connexion à SQL Server via .NET Framework (SqlConnection, SqlCommand).
               </li>
               <li className="flex gap-3 text-foreground-secondary font-light">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50 mt-2 shrink-0" />
@@ -381,11 +381,11 @@ export default function PPE2Page() {
               </div>
               <div>
                 <h4 className="font-semibold text-foreground mb-2">
-                  SQL Server &amp; ADO.NET
+                  SQL Server &amp; .NET Framework
                 </h4>
                 <p className="text-foreground-secondary font-light text-sm leading-relaxed">
                   Connexion et manipulation d&apos;une base de données
-                  relationnelle depuis une application .NET via ADO.NET.
+                  relationnelle depuis une application .NET Framework.
                 </p>
               </div>
               <div>
