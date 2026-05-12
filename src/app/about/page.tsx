@@ -8,7 +8,7 @@ import { ArrowRight, Terminal, Layers, Figma, Database } from "lucide-react";
 export const metadata = {
     title: "Mon Parcours — BTS SIO SLAM | Alexandre Keolasy",
     description:
-        "Découvrez le parcours d'Alexandre Keolasy, étudiant en BTS SIO option SLAM. Passionné par le développement web avec Next.js, React, TypeScript, C# et SQL Server.",
+        "Découvrez le parcours d'Alexandre Keolasy, étudiant en BTS SIO option SLAM. Passionné par le développement web avec Next.js, React, Next.js, C# et SQL Server.",
     keywords: ["Alexandre Keolasy", "BTS SIO SLAM", "parcours développeur web", "étudiant informatique"],
     alternates: { canonical: "https://keolasy.dev/about" },
     openGraph: {
@@ -19,7 +19,7 @@ export const metadata = {
 };
 
 const stack = [
-    { icon: Terminal, title: "Core Front-End", items: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)"] },
+    { icon: Terminal, title: "Core Front-End", items: ["React", "Next.js", "JavaScript (ES6+)"] },
     { icon: Layers, title: "Styling & UI", items: ["Tailwind CSS", "Framer Motion", "GSAP", "Radix UI"] },
     { icon: Database, title: "Architecture & Data", items: ["Zustand", "Redux", "React Query", "REST / GraphQL"] },
     { icon: Figma, title: "Design & Process", items: ["Figma", "Git / GitHub", "Vercel", "CI/CD"] },
@@ -56,7 +56,7 @@ export default function AboutPage() {
                                 Passionné par les nouvelles technologies, j'ai choisi de m'orienter vers un <strong>BTS SIO</strong> (Services Informatiques aux Organisations) pour concrétiser mon intérêt pour la création numérique.
                             </p>
                             <p>
-                                Au cours de ma formation, j'ai découvert une réelle vocation pour le développement, et plus particulièrement pour l'écosystème <strong>JavaScript/TypeScript</strong>. Cette spécialisation m'a permis de comprendre comment articuler logique backend et interfaces frontend intuitives.
+                                Au cours de ma formation, j'ai découvert une réelle vocation pour le développement, et plus particulièrement pour l'écosystème <strong>JavaScript</strong>. Cette spécialisation m'a permis de comprendre comment articuler logique backend et interfaces frontend intuitives.
                             </p>
                             <p>
                                 Ma participation aux <strong>PPE</strong> (Projets Personnels Encadrés) a été un tournant majeur. Ces projets m'ont permis de mettre en pratique mes connaissances dans des contextes concrets, en apprenant à structurer mes développements et à travailler de manière autonome et rigoureuse.

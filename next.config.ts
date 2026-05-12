@@ -24,6 +24,9 @@ const nextConfig: NextConfig = {
   // Note : Next.js n'accepte pas les groupes capturants dans source —
   // on utilise des patterns non-capturants distincts.
   async headers() {
+    if (process.env.NODE_ENV === 'development') {
+      return [];
+    }
     return [
       {
         source: "/:path*.js",

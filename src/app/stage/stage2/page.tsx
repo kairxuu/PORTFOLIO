@@ -76,15 +76,6 @@ export default function Stage2Page() {
                     </div>
                     <div className="flex flex-col gap-2">
                         <div className="flex items-center gap-2 text-foreground-secondary mb-1">
-                            <MapPin className="w-4 h-4" />
-                            <span className="text-sm font-semibold uppercase tracking-wider">Lien</span>
-                        </div>
-                        <a href="https://guinee.wyze-academy.com/" target="_blank" rel="noreferrer" className="text-foreground font-medium hover:underline">
-                            Site Web ↗
-                        </a>
-                    </div>
-                    <div className="flex flex-col gap-2">
-                        <div className="flex items-center gap-2 text-foreground-secondary mb-1">
                             <Users className="w-4 h-4" />
                             <span className="text-sm font-semibold uppercase tracking-wider">Équipe</span>
                         </div>
