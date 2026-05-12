@@ -97,6 +97,37 @@ export default function Stage1Page() {
                     </div>
                 </div>
 
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-foreground-secondary mb-1">
+                            <Briefcase className="w-4 h-4" />
+                            <span className="text-sm font-semibold uppercase tracking-wider">Statut</span>
+                        </div>
+                        <span className="text-foreground font-medium">EI (PME)</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-foreground-secondary mb-1">
+                            <Rocket className="w-4 h-4" />
+                            <span className="text-sm font-semibold uppercase tracking-wider">SIREN</span>
+                        </div>
+                        <span className="text-foreground font-medium">980 798 334</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-foreground-secondary mb-1">
+                            <User className="w-4 h-4" />
+                            <span className="text-sm font-semibold uppercase tracking-wider">Effectif</span>
+                        </div>
+                        <span className="text-foreground font-medium">1 personne</span>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2 text-foreground-secondary mb-1">
+                            <Code2 className="w-4 h-4" />
+                            <span className="text-sm font-semibold uppercase tracking-wider">Domaine</span>
+                        </div>
+                        <span className="text-foreground font-medium">E-commerce Textile</span>
+                    </div>
+                </div>
+
                 <div className="w-full h-px bg-glass-border" />
             </section>
 
@@ -110,12 +141,12 @@ export default function Stage1Page() {
                         <div className="prose prose-invert max-w-none">
                             <h4 className="text-xl font-semibold text-foreground mb-3">Contexte</h4>
                             <p className="text-foreground-secondary font-light leading-relaxed mb-8">
-                                Bxtterly est une entreprise spécialisée dans la vente en ligne de vêtements tendance. Dans le cadre de son développement, l'entreprise a initié un projet de refonte complète de sa plateforme e-commerce pour améliorer l'expérience utilisateur et les performances techniques.
+                                BXTTERFLY est une Entreprise Individuelle (PME) spécialisée dans la vente en ligne de vêtements tendance. Sous la direction de Mohamed BEN MANSOUR, l'entreprise gère l'ensemble de la chaîne, de la relation fournisseur textile à la logistique de vente.
                             </p>
                             
                             <h4 className="text-xl font-semibold text-foreground mb-3">Mission Principale</h4>
                             <p className="text-foreground-secondary font-light leading-relaxed mb-8">
-                                Ma mission consistait à concevoir et développer l'interface utilisateur du site e-commerce BXTTERFLY, en mettant l'accent sur l'expérience utilisateur et le design responsive.
+                                Ma mission s'est articulée autour de la refonte complète de l'interface visuelle du site e-commerce, visant à moderniser l'image de marque et à optimiser l'expérience utilisateur pour le catalogue textile.
                             </p>
                         </div>
                     </div>
@@ -194,9 +225,9 @@ export default function Stage1Page() {
                         <div className="w-12 h-12 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-6 shadow-sm">
                             <Code2 className="w-5 h-5 text-foreground" />
                         </div>
-                        <h3 className="text-xl font-bold text-foreground mb-4">Développement Front-end</h3>
+                        <h3 className="text-xl font-bold text-foreground mb-4">Modernisation</h3>
                         <ul className="space-y-3">
-                            {["Conception et implémentation de l'interface", "Création de composants réutilisables", "Intégration responsive design", "Optimisation des temps de chargement"].map((item, i) => (
+                            {["Refonte complète de l'interface visuelle", "Conception d'un rendu moderne et épuré", "Mise en valeur des collections textiles", "Adaptation de la charte graphique"].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-foreground-secondary text-sm font-light">
                                     <div className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
                                     {item}
@@ -209,9 +240,9 @@ export default function Stage1Page() {
                         <div className="w-12 h-12 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-6 shadow-sm">
                             <Rocket className="w-5 h-5 text-foreground" />
                         </div>
-                        <h3 className="text-xl font-bold text-foreground mb-4">Technologies & Outils</h3>
+                        <h3 className="text-xl font-bold text-foreground mb-4">Optimisation UX</h3>
                         <ul className="space-y-3">
-                            {["Front-end : HTML5, CSS3, JavaScript (ES6+)", "Frameworks : Bootstrap", "Outils : Git", "Méthodologies : BEM"].map((item, i) => (
+                            {["Amélioration du parcours utilisateur", "Ajout de fonctionnalités interactives", "Optimisation du catalogue produit", "Fluidité de la navigation"].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-foreground-secondary text-sm font-light">
                                     <div className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
                                     {item}
@@ -224,9 +255,9 @@ export default function Stage1Page() {
                         <div className="w-12 h-12 rounded-2xl bg-white border border-glass-border flex items-center justify-center mb-6 shadow-sm">
                             <User className="w-5 h-5 text-foreground" />
                         </div>
-                        <h3 className="text-xl font-bold text-foreground mb-4">Expérience Utilisateur</h3>
+                        <h3 className="text-xl font-bold text-foreground mb-4">Outils & Stack</h3>
                         <ul className="space-y-3">
-                            {["Mise en place d'animations fluides", "Optimisation du parcours d'achat", "Tests utilisateurs", "Itérations de design"].map((item, i) => (
+                            {["Langages : HTML, Tailwind CSS, JS", "Design : Figma", "Versionnage : Github / Git", "Communication : Google Meet / Whatsapp"].map((item, i) => (
                                 <li key={i} className="flex items-center gap-3 text-foreground-secondary text-sm font-light">
                                     <div className="w-1.5 h-1.5 rounded-full bg-foreground/20" />
                                     {item}
@@ -251,9 +282,9 @@ export default function Stage1Page() {
                         </p>
                     </GlassCard>
                     <GlassCard className="p-8">
-                        <h4 className="text-xl font-bold text-foreground mb-3">CSS3</h4>
+                        <h4 className="text-xl font-bold text-foreground mb-3">Tailwind CSS</h4>
                         <p className="text-foreground-secondary font-light leading-relaxed">
-                            Création d'animations fluides, utilisation de variables CSS, maîtrise de Flexbox et Grid pour des mises en page complexes.
+                            Utilisation de classes utilitaires pour un développement rapide et un design cohérent. Maîtrise des concepts de responsive design natifs à Tailwind.
                         </p>
                     </GlassCard>
                     <GlassCard className="p-8">
