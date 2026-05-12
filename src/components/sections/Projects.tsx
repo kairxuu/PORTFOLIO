@@ -40,13 +40,13 @@ export const Projects = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 auto-rows-[minmax(0,1fr)]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 auto-rows-fr">
                 {projects.map((project, index) => (
                     <GlassCard
                         key={index}
                         className={`overflow-hidden flex flex-col h-full group ${project.className}`}
                     >
-                        <div className={`relative w-full ${project.imageClass} shrink-0 overflow-hidden border-b border-[var(--glass-border)]`}>
+                        <div className={`relative w-full ${project.imageClass} shrink-0 overflow-hidden border-b border-glass-border`}>
                             <Image
                                 src={project.image}
                                 alt={project.title}
@@ -57,26 +57,26 @@ export const Projects = () => {
                             />
                         </div>
 
-                        <div className="flex flex-col flex-grow p-6 sm:p-8 bg-background-secondary z-10">
+                        <div className="flex flex-col grow p-6 sm:p-8 bg-background-secondary z-10">
                             <span className="text-foreground-secondary text-[11px] font-bold tracking-widest uppercase mb-3">
                                 {project.role}
                             </span>
                             <h3 className={`font-bold text-foreground mb-3 tracking-tight group-hover:text-foreground-secondary transition-colors duration-500 ${project.className.includes('row-span-2') ? 'text-3xl sm:text-4xl' : 'text-2xl'}`}>
                                 {project.title}
                             </h3>
-                            <p className="text-foreground-secondary text-sm sm:text-base mb-8 flex-grow leading-relaxed">
+                            <p className="text-foreground-secondary text-sm sm:text-base mb-8 grow leading-relaxed">
                                 {project.desc}
                             </p>
 
                             <div className="flex flex-wrap gap-2 mb-8">
                                 {project.stack.map(tech => (
-                                    <span key={tech} className="text-[11px] px-3 py-1.5 font-medium rounded-full bg-[var(--background)] border border-[var(--glass-border)] text-foreground/80 whitespace-nowrap">
+                                    <span key={tech} className="text-[11px] px-3 py-1.5 font-medium rounded-full bg-background border border-glass-border text-foreground/80 whitespace-nowrap">
                                         {tech}
                                     </span>
                                 ))}
                             </div>
 
-                            <div className="flex items-center gap-3 pt-6 border-t border-[var(--glass-border)] mt-auto">
+                            <div className="flex items-center gap-3 pt-6 border-t border-glass-border mt-auto">
                                 <Link href={project.demoLink} className="flex-1">
                                     <GlassButton variant="primary" className="w-full py-3 h-12 text-sm rounded-full font-semibold shadow-sm">
                                         Consulter <ExternalLink className="ml-2 w-4 h-4" />
@@ -85,10 +85,10 @@ export const Projects = () => {
                                 {(project as any).isPrivate ? (
                                     <div
                                         title="Dépôt privé"
-                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground/40 shrink-0 border border-[var(--glass-border)] cursor-not-allowed relative group/priv"
+                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground/40 shrink-0 border border-glass-border cursor-not-allowed relative group/priv"
                                     >
                                         <Github className="w-5 h-5 opacity-50" />
-                                        <div className="absolute -bottom-1 -right-1 bg-background-secondary border border-[var(--glass-border)] rounded-full p-1 shadow-sm">
+                                        <div className="absolute -bottom-1 -right-1 bg-background-secondary border border-glass-border rounded-full p-1 shadow-sm">
                                             <Lock className="w-3 h-3 text-foreground" />
                                         </div>
                                     </div>
@@ -97,7 +97,7 @@ export const Projects = () => {
                                         href={project.githubLink}
                                         target="_blank"
                                         rel="noreferrer"
-                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground-secondary hover:text-foreground hover:bg-foreground/5 transition-colors shrink-0 border border-[var(--glass-border)]"
+                                        className="w-12 h-12 rounded-full glass-panel flex items-center justify-center text-foreground-secondary hover:text-foreground hover:bg-foreground/5 transition-colors shrink-0 border border-glass-border"
                                     >
                                         <Github className="w-5 h-5" />
                                     </a>

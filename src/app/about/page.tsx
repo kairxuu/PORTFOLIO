@@ -27,7 +27,7 @@ const stack = [
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[var(--background)] flex flex-col">
+        <main className="min-h-screen bg-background flex flex-col">
             <Header />
 
             {/* Editorial Header */}
@@ -38,7 +38,7 @@ export default function AboutPage() {
                 <p className="text-xl md:text-3xl text-foreground-secondary max-w-4xl font-light leading-relaxed">
                     De la rigueur mathématique à la création d'expériences numériques immersives.
                 </p>
-                <div className="w-full h-px bg-[var(--glass-border)] mt-20" />
+                <div className="w-full h-px bg-glass-border mt-20" />
             </section>
 
             {/* Biography Split Section */}

@@ -32,7 +32,7 @@ export const About = () => {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 auto-rows-[minmax(0,1fr)]">
+            <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 lg:gap-6 auto-rows-fr">
                 {/* Main Bio - Large Tile */}
                 <GlassCard className="md:col-span-2 md:row-span-2 flex flex-col justify-center p-8 relative overflow-hidden">
                     <h3 className="text-3xl font-bold text-foreground mb-6 relative z-10 tracking-tight">Mon Parcours</h3>
@@ -49,7 +49,7 @@ export const About = () => {
 
                 {/* Tech Stack - Wide Tile */}
                 <GlassCard className="md:col-span-2 md:row-span-1 p-6 md:p-8 flex flex-col justify-between overflow-hidden relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-linear-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <h3 className="text-xl font-bold text-foreground mb-4 relative z-10">Tech Stack & Outils</h3>
                     <div className="flex flex-wrap gap-2 relative z-10">
                         {stack.map((tech, i) => (
@@ -59,7 +59,7 @@ export const About = () => {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.05 }}
-                                className="px-3 py-1.5 rounded-lg bg-background/40 border border-[var(--glass-border)] text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-foreground/10 hover:border-[var(--glass-border-hover)] transition-all cursor-default"
+                                className="px-3 py-1.5 rounded-lg bg-background/40 border border-glass-border text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-foreground/10 hover:border-glass-border-hover transition-all cursor-default"
                             >
                                 {tech}
                             </motion.div>
@@ -69,7 +69,7 @@ export const About = () => {
 
                 {/* Location - Square Tile */}
                 <GlassCard className="md:col-span-1 md:row-span-1 p-6 flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 rounded-full bg-background/40 border border-[var(--glass-border)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+                    <div className="w-16 h-16 rounded-full bg-background/40 border border-glass-border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
                         <MapPin className="w-8 h-8 text-foreground-secondary group-hover:text-foreground transition-colors" />
                     </div>
                     <h4 className="text-lg font-bold text-foreground mb-1">Saint-Ouen</h4>
@@ -82,7 +82,7 @@ export const About = () => {
                     <div className="flex flex-col gap-3">
                         {values.map((v, i) => (
                             <div key={i} className="flex items-start gap-3">
-                                <div className="mt-0.5 shrink-0 bg-background/5 p-1.5 rounded-md border border-[var(--glass-border)]">{v.icon}</div>
+                                <div className="mt-0.5 shrink-0 bg-background/5 p-1.5 rounded-md border border-glass-border">{v.icon}</div>
                                 <div>
                                     <h5 className="text-sm font-semibold text-foreground/90">{v.title}</h5>
                                     <p className="text-xs text-foreground/50">{v.desc}</p>
