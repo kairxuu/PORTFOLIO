@@ -109,7 +109,7 @@ export default function VeillePage() {
             <Header />
 
             {/* ── Hero ── */}
-            <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full relative">
+            <section className="pt-28 md:pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full relative">
                 <div className="absolute top-20 right-10 w-64 h-64 bg-foreground/5 rounded-full blur-[80px] pointer-events-none" />
 
                 <h2 className="text-sm font-semibold text-foreground-secondary tracking-widest uppercase mb-4 flex items-center gap-2">

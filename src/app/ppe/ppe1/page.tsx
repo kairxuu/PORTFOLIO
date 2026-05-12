@@ -36,7 +36,7 @@ export default function PPE1Page() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
+      <section className="pt-28 md:pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-foreground-secondary tracking-widest uppercase">
             <span>PPE 1</span>
@@ -103,7 +103,7 @@ export default function PPE1Page() {
                       Lieu
                     </p>
                     <p className="text-foreground font-medium">
-                      BXTTERFLY, Saint-Ouen-sur-Seine
+                      Aurlom, Paris
                     </p>
                   </div>
                 </div>
@@ -114,7 +114,7 @@ export default function PPE1Page() {
                       Type
                     </p>
                     <p className="text-foreground font-medium">
-                      Projet e-commerce réel (Prototype)
+                      PPE — Projet Pédagogique Encadré
                     </p>
                   </div>
                 </div>
@@ -139,12 +139,10 @@ export default function PPE1Page() {
                 Contexte et enjeux
               </h2>
               <p className="text-lg text-foreground-secondary leading-relaxed font-light">
-                Technova, startup spécialisée dans la vente de produits
-                high-tech, avait besoin d'une plateforme moderne pour promouvoir
-                ses nouveautés, gérer les commandes et assurer un suivi des
-                stocks en temps réel. Ce PPE a été développé seul en classe,
-                sans durée commerciale, et livré en 2025 comme prototype
-                pédagogique.
+                Dans le cadre du BTS SIO à l&apos;école Aurlom, ce PPE avait pour
+                objectif de concevoir une plateforme de vente en ligne fictive
+                pour une marque de produits high-tech (Technova). Le projet a
+                été développé seul et livré en 2025 comme prototype pédagogique.
               </p>
             </div>
 
@@ -323,7 +321,7 @@ export default function PPE1Page() {
               </li>
               <li className="flex gap-3 text-foreground-secondary font-light">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/50 mt-2 shrink-0" />
-                Formation rapide du collaborateur BXTTERFLY responsable du site.
+                Documentation technique et livraison du projet complet.
               </li>
             </ul>
           </div>
@@ -372,9 +370,9 @@ export default function PPE1Page() {
             <h3 className="text-2xl font-bold mb-6">Bilan & Résultats</h3>
             <p className="font-light leading-relaxed mb-8 opacity-90">
               Le PPE 1 a renforcé ma capacité à structurer un site e-commerce en
-              PHP/MySQL, à collaborer avec un tuteur métier et à produire un
-              livrable exploitable par Technova. Les retours soulignent la
-              clarté du catalogue et la fluidité du tunnel d'achat.
+              PHP/MySQL, à travailler en autonomie et à produire un
+              livrable complet. Les retours soulignent la
+              clarté du catalogue et la fluidité du tunnel d&apos;achat.
             </p>
 
             <div className="space-y-4 border-t border-background/20 pt-6">

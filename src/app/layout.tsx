@@ -83,7 +83,7 @@ const jsonLd = {
   url: baseUrl,
   jobTitle: "Étudiant BTS SIO SLAM — Développeur Web",
   description:
-    "Étudiant en BTS SIO option SLAM, passionné par le développement web avec Next.js, React, TypeScript et C#.",
+    "Étudiant en BTS SIO option SLAM, passionné par le développement web.",
   sameAs: [
     "https://github.com/kairxuu",
     "https://www.linkedin.com/in/alexandre-keolasy-287887276",

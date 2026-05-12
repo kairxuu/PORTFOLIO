@@ -31,7 +31,7 @@ export default function AboutPage() {
             <Header />
 
             {/* Editorial Header */}
-            <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
+            <section className="pt-28 md:pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-8">
                     Mon Parcours.
                 </h1>

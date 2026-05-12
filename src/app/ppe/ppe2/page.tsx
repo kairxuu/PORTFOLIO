@@ -33,7 +33,7 @@ export default function PPE2Page() {
       <Header />
 
       {/* Hero Section */}
-      <section className="pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
+      <section className="pt-28 md:pt-40 pb-20 px-6 md:px-12 xl:px-24 max-w-7xl mx-auto w-full">
         <div className="flex flex-col gap-6">
           <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-foreground-secondary tracking-widest uppercase">
             <span>PPE 2</span>
@@ -146,7 +146,7 @@ export default function PPE2Page() {
                       Type
                     </p>
                     <p className="text-foreground font-medium">
-                      Application desktop (Prototype)
+                      PPE — Projet Pédagogique Encadré
                     </p>
                   </div>
                 </div>
