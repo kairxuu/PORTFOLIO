@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowRight, Code2, Users, Calendar, MapPin, User, CheckCircle2, Rocket, RotateCcw, Download, Presentation, X } from "lucide-react";
 
-const PPT_EMBED_URL = "https://drive.google.com/file/d/1s3dYz3sVJ-Eq9s9QezRomokZb1YYrS41/preview";
+const PPT_EMBED_URL = "https://docs.google.com/presentation/d/1Bi_rbCBNV1OW82ZEcasJ_vYXm_g9ewz1/edit?usp=drive_link&ouid=116936924506428949760&rtpof=true&sd=true";
 
 export default function Stage2Page() {
     const [showPpt, setShowPpt] = useState(false);
